@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Línea de tiempo · AMICTUS</title>
+<meta name="description" content="La historia de la moda en doce estaciones: de la sandalia de Fort Rock a la sostenibilidad. Cada nodo enlaza a su capítulo AMICTUS.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="amictus.css">
+<style>
+.tl-hint{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dorado);margin-bottom:1.5rem}
+.tl-wrap{overflow-x:auto;padding-bottom:1.5rem;scrollbar-color:var(--dorado) var(--negro-2)}
+.tl{display:flex;min-width:max-content;padding:1rem 0 1rem}
+.tl-item{width:320px;flex-shrink:0;padding:0 2rem;border-left:2px solid var(--azul);position:relative}
+.tl-item::before{content:"";position:absolute;left:-6px;top:.5rem;width:10px;height:10px;border-radius:50%;background:var(--dorado)}
+.tl-year{font-family:var(--display);color:var(--dorado);font-size:1.7rem;line-height:1}
+.tl-item h3{font-family:var(--titulos);font-weight:500;font-size:1.45rem;margin:.7rem 0 .5rem}
+.tl-item p{font-size:.92rem;opacity:.8}
+.tl-link{display:inline-block;margin-top:1.1rem;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--dorado);border-bottom:1px solid var(--dorado);padding-bottom:.3rem}
+.tl-link:hover{color:var(--dorado-claro)}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">ADN AMICTUS · Historia</p>
+    <h1>Línea de <span>tiempo</span></h1>
+    <p class="tagline">Doce estaciones para leer la moda como lo que es: historia.</p>
+    <p class="bajada">Cada nodo enlaza al capítulo donde se cuenta en profundidad. La línea completa, con sus cuatro capas de referentes, vive en MODUS.</p>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="contenedor">
+    <p class="tl-hint">Deslizá horizontalmente →</p>
+    <div class="tl-wrap"><div class="tl" id="tl"></div></div>
+    <div class="cta-row"><a href="libro-modus.html" class="btn btn--oro">MODUS · historia transversal</a><a href="capitulo-01.html" class="btn btn--linea">Cap. 1 · El origen</a></div>
+  </div>
+</section>
+
+<script src="amictus.js"></script>
+<script>
+const TL=[
+ ['~8000 a. C.','La sandalia de Fort Rock','El calzado conservado más antiguo: corteza tejida en Oregón. Suela + sujeción: todo el oficio en dos gestos.','CALCEUS · Cap. 1','capitulo-01.html'],
+ ['~3300 a. C.','Ötzi, la bota técnica','Cuero de oso y ciervo relleno de pasto: el primer aislante de alta montaña de la historia.','CALCEUS · Cap. 1','capitulo-01.html'],
+ ['~500 a. C.','El calceus romano','El zapato deja de ser objeto y se vuelve documento: ciudadanía, rango y ley en el pie.','CALCEUS · Cap. 1','capitulo-01.html'],
+ ['1300s','Gremios y oficio','Zapateros, curtidores y sastres organizan el saber: nace la calidad como norma.','OPUS · ARTIFEX','#'],
+ ['1600s','El pie cortesano','Tacones, sedas y protocolo: la moda como teatro del poder.','CALCEUS · Cap. 4','#'],
+ ['1800s','El dandy y el traje','Brummell inventa la elegancia moderna: menos oro, más corte. Nace el uniforme masculino.','TOGA · Historia','libro-toga.html'],
+ ['1850s','Denim: el uniforme obrero','Remaches y sarga azul: la prenda más duradera del mundo moderno.','INDICUM · Historia','libro-indicum.html'],
+ ['1920s','Chanel y el LBD','El little black dress libera el cuerpo y funda el armario contemporáneo.','STOLA · Monografías','libro-stola.html'],
+ ['1950s','Iconos y siluetas','La posguerra convierte la moda en lenguaje global de identidad.','MODUS · Décadas','libro-modus.html'],
+ ['1970s','La calle manda','Juventud, música y sportswear: el estilo baja de la pasarela a la vereda.','ATHLETA · Historia','libro-athleta.html'],
+ ['1990s','Minimalismo y fast fashion','Dos revoluciones opuestas: menos es más, y más es más barato.','TEXTUM · Sostenibilidad','libro-textum.html'],
+ ['2020s','Cuidar como revolución','Segunda mano, reparación y trazabilidad: el cuidado se vuelve declaración.','CURA · Fundamentos','libro-cura.html']
+];
+document.getElementById('tl').innerHTML=TL.map(t=>`
+ <article class="tl-item">
+  <p class="tl-year">${t[0]}</p><h3>${t[1]}</h3><p>${t[2]}</p>
+  <a class="tl-link" href="${t[4]}">${t[3]} →</a>
+ </article>`).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Hilo · newsletter de AMICTUS</title>
+<meta name="description" content="El Hilo: la newsletter de AMICTUS. Lo que pasa entre capítulo y capítulo: cuidado, historia y etiquetas leídas en 30 segundos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="amictus.css">
+<style>
+.hilo-item{border-top:1px solid rgba(10,10,11,.18);padding:1.8rem 0;display:grid;grid-template-columns:140px 1fr;gap:2.5rem;align-items:baseline}
+.hilo-item:last-of-type{border-bottom:1px solid rgba(10,10,11,.18)}
+.hilo-num{font-family:var(--display);color:var(--azul);font-size:1.6rem}
+.hilo-item h3{font-family:var(--titulos);font-weight:600;font-size:1.5rem;margin-bottom:.4rem}
+.hilo-item p{max-width:64ch;opacity:.85}
+.hilo-tag{display:inline-block;margin-left:.8rem;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;border:1px solid var(--dorado);color:#8F6F2C;padding:.25rem .5rem;vertical-align:middle}
+.form-hilo{display:flex;max-width:560px;margin-top:2.5rem;border:1px solid rgba(244,241,232,.4)}
+.form-hilo input{flex:1;min-width:0;background:transparent;border:0;padding:1.1rem 1.4rem;color:var(--blanco);font-family:var(--texto);font-size:1rem;outline:none}
+.form-hilo input::placeholder{color:rgba(244,241,232,.5);font-style:italic}
+.form-hilo button{border:0;background:var(--dorado);color:var(--negro);padding:0 2rem;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;cursor:pointer}
+@media (max-width:760px){.hilo-item{grid-template-columns:1fr;gap:.6rem}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Newsletter · desde el día 1</p>
+    <h1>El <span>Hilo</span></h1>
+    <p class="tagline">Lo que pasa entre capítulo y capítulo.</p>
+    <p class="bajada">Un correo por número: una idea de cuidado, una historia breve y una etiqueta leída en 30 segundos. Sin spam: solo moda, por correo.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <p class="etiqueta">Números publicados</p>
+    <h2>Últimos <em>hilos.</em></h2>
+    <article class="hilo-item"><span class="hilo-num">#04</span><div><h3>Por qué cruje tu oxford<span class="hilo-tag">Cuidado</span></h3><p>El contrafuerte seco avisa antes de romperse: tres gestos de hidratación que lo devuelven al silencio.</p></div></article>
+    <article class="hilo-item"><span class="hilo-num">#03</span><div><h3>Leer una etiqueta en 30 segundos<span class="hilo-tag">Etiquetas</span></h3><p>Composición, origen y construcción: el orden exacto en que hay que mirar, con ejemplos reales.</p></div></article>
+    <article class="hilo-item"><span class="hilo-num">#02</span><div><h3>Fort Rock: la sandalia de 10 000 años<span class="hilo-tag">Historia</span></h3><p>Lo que una suela de corteza tejida enseña sobre todo el calzado que vino después.</p></div></article>
+    <article class="hilo-item"><span class="hilo-num">#01</span><div><h3>Bienvenidos al Hilo<span class="hilo-tag">Manifiesto</span></h3><p>Por qué una colección de 40 libros necesita una newsletter: el hilo que cose los capítulos.</p></div></article>
+  </div>
+</section>
+
+<section class="sec sec--azul">
+  <div class="contenedor">
+    <p class="etiqueta">Suscripción</p>
+    <h2>Subite al <em style="color:var(--dorado-claro)">hilo.</em></h2>
+    <p class="bajada">Al suscribirte recibís además CURA gratis: el manual de cuidado de 18 capítulos, el primer regalo de la casa.</p>
+    <!-- ✏️ Conectar a MailerLite (lista "El Hilo") -->
+    <form class="form-hilo" onsubmit="return false"><input type="email" placeholder="tu@correo.com" required aria-label="Email"><button>Suscribirme</button></form>
+  </div>
+</section>
+
+<script src="amictus.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuentes verificadas · AMICTUS</title>
+<meta name="description" content="Cada afirmación histórica de AMICTUS con su enlace exacto. El libro queda blindado antes de imprimir.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="amictus.css">
+<style>
+.fuente{border-top:1px solid rgba(10,10,11,.18);padding:1.6rem 0;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start}
+.fuente:last-child{border-bottom:1px solid rgba(10,10,11,.18)}
+.fuente h3{font-family:var(--titulos);font-weight:600;font-size:1.3rem}
+.fuente .dato{font-size:.95rem;opacity:.85;margin:.4rem 0 .8rem;max-width:60ch}
+.fuente .ver a{font-size:.8rem;color:var(--azul);border-bottom:1px solid var(--azul);word-break:break-all}
+.estado{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;padding:.35rem .7rem;border:1px solid;white-space:nowrap}
+.estado--ok{background:var(--dorado);border-color:var(--dorado);color:var(--negro)}
+.estado--pend{border-style:dashed;border-color:rgba(10,10,11,.4);color:rgba(10,10,11,.55)}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Transparencia · el libro blindado</p>
+    <h1>Fuentes <span>verificadas</span></h1>
+    <p class="tagline">Cada «verificar en» del manuscrito, con su enlace exacto.</p>
+    <p class="bajada">Antes de imprimir, todo dato histórico de cada capítulo se confirma o corrige acá. Lo que está en verde-dorado está blindado; lo punteado, en verificación.</p>
+    <div class="chips" id="chips"></div>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div class="toolbar">
+      <input class="buscar" id="buscar" type="search" placeholder="Buscar por capítulo o dato…" aria-label="Buscar fuentes">
+      <button class="filtro is-active" data-e="">Todas</button>
+      <button class="filtro" data-e="ok">Verificadas</button>
+      <button class="filtro" data-e="pend">En verificación</button>
+    </div>
+    <div id="lista"></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="contenedor">
+    <p class="etiqueta">El método</p>
+    <h2>Verificar es <em>parte del oficio.</em></h2>
+    <p class="bajada">Recorremos el manuscrito ítem por ítem: confirmamos, corregimos y publicamos el bloque con enlace exacto. Cuando CALCEUS entre a imprenta, esta página estará 100 % en dorado.</p>
+  </div>
+</section>
+
+<script src="amictus.js"></script>
+<script>
+/* ✏️ Array vivo: agregá una entrada por cada «verificar en» del manuscrio. e=ok|pend */
+const F=[
+ {l:'CALCEUS',c:1,d:'Sandalias de Fort Rock, ~10 000 años (cueva de Oregón).',f:'Museo de Historia Natural y Cultural de Oregón',u:'https://naturalhistory.uoregon.edu',e:'ok'},
+ {l:'CALCEUS',c:1,d:'Ötzi y su calzado de cuero y pasto (~3300 a. C.).',f:'Museo de Arqueología del Tirol del Sur',u:'https://www.iceman.it',e:'ok'},
+ {l:'CALCEUS',c:1,d:'El calceus romano como distintivo de ciudadanía.',f:'The Met · Open Access',u:'https://www.metmuseum.org',e:'ok'},
+ {l:'CALCEUS',c:18,d:'Oxford vs. derby: cordón cerrado y abierto en colecciones históricas.',f:'V&A · Colecciones',u:'https://www.vam.ac.uk',e:'ok'},
+ {l:'CALCEUS',c:18,d:'Patente de la vira Goodyear (1869) y su expansión industrial.',f:'Oficina de patentes US · fuente secundaria en verificación',u:'#',e:'pend'},
+ {l:'CALCEUS',c:39,d:'Checklist de compra: rangos de precio por construcción.',f:'Contraste de tres retailers · en verificación',u:'#',e:'pend'},
+ {l:'ASIA',c:1,d:'Sashiko y boro como reparación tradicional japonesa.',f:'Kyoto Costume Institute',u:'https://www.kci.or.jp',e:'ok'},
+ {l:'CALCEUS',c:2,d:'Sandalias de oro y de uso cotidiano en la tumba de Tutankamón.',f:'The Met · Egyptian Art / Museo Egipcio de El Cairo',u:'https://www.metmuseum.org',e:'ok'},
+ {l:'CALCEUS',c:2,d:'«Ne sutor ultra crepidam»: Apeles y el zapatero (Plinio el Viejo).',f:'Plinio, Naturalis Historia, XXXV',u:'https://www.metmuseum.org',e:'ok'}
+];
+let fE='',fQ='';
+const $=id=>document.getElementById(id);
+function render(){
+  const items=F.filter(x=>(!fE||x.e===fE)&&(!fQ||(x.l+x.d+x.f).toLowerCase().includes(fQ)));
+  const ok=F.filter(x=>x.e==='ok').length;
+  $('chips').innerHTML=`<span class="chip chip--oro">${ok} verificadas</span><span class="chip">${F.length-ok} en verificación</span><span class="chip">${new Set(F.map(x=>x.l)).size} libros</span>`;
+  $('lista').innerHTML=items.length?items.map(x=>`
+   <article class="fuente">
+    <div><h3>${x.l} · Cap. ${x.c}</h3><p class="dato">${x.d}</p>
+     <p class="ver"><strong style="font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;opacity:.6">${x.f}</strong><br><a href="${x.u}" target="_blank" rel="noopener">${x.u}</a></p></div>
+    <span class="estado estado--${x.e}">${x.e==='ok'?'Verificada':'En verificación'}</span>
+   </article>`).join(''):'<p style="padding:2rem 0;font-style:italic;opacity:.6">Sin resultados.</p>';
+}
+document.querySelectorAll('.filtro').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filtro').forEach(x=>x.classList.remove('is-active'));
+  b.classList.add('is-active');fE=b.dataset.e;render();}));
+$('buscar').addEventListener('input',e=>{fQ=e.target.value.toLowerCase();render();});
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ✏️ PLANTILLA SERIE (volumen): duplicar por serie y cambiar ACTIVA (1–6).
+     Nombrado sugerido: serie-1.html … serie-6.html · y las copias de plantilla-libro.html como libro-<slug>.html -->
+<title>VOLÚMEN I · CODEX · AMICTUS</title>
+<meta name="description" content="CODEX, la serie enciclopédica de AMICTUS: siete libros sobre calzado, marroquinería, prendas, accesorios, textiles y joyería.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="amictus.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--negro);color:var(--blanco);font-family:var(--texto);font-size:1.05rem;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--dorado);color:var(--negro)}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.contenedor{width:min(1200px,92vw);margin-inline:auto}
+.etiqueta{display:flex;align-items:center;gap:1rem;font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;color:var(--dorado);margin-bottom:2rem}
+.etiqueta::before{content:"";width:3rem;height:1px;background:currentColor}
+.etiqueta--azul{color:var(--azul)}
+.etiqueta--clara{color:var(--dorado-claro)}
+.btn{display:inline-block;font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.3rem;border:1px solid var(--dorado);transition:.35s}
+.btn--oro{background:var(--dorado);color:var(--negro)}
+.btn--oro:hover{background:var(--dorado-claro)}
+.btn--linea{background:none;color:var(--blanco)}
+.btn--linea:hover{background:rgba(201,162,75,.14)}
+
+.topbar{position:sticky;top:0;z-index:50;background:rgba(10,10,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(244,241,232,.12)}
+.topbar .contenedor{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+.logo{display:flex;align-items:center;gap:.85rem}
+.logo-svg{width:38px;height:38px;color:var(--blanco)}
+.logo-nombre{font-family:var(--display);font-size:.95rem;letter-spacing:.42em;text-transform:uppercase}
+.topbar nav{display:flex;gap:1.9rem;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase}
+.topbar nav a{opacity:.8;transition:.3s}
+.topbar nav a:hover{opacity:1;color:var(--dorado)}
+
+/* ---------- Hero de la serie ---------- */
+.hero-serie{padding:7rem 0 6rem}
+.hero-serie h1{font-family:var(--display);font-weight:normal;text-transform:uppercase;font-size:clamp(4rem,13vw,12rem);line-height:.9;margin:.5rem 0 2.2rem}
+.hero-serie h1 span{color:var(--dorado)}
+.tagline{font-family:var(--titulos);font-style:italic;font-size:clamp(1.25rem,2vw,1.75rem);color:var(--dorado-claro);margin-bottom:1.2rem}
+.hero-serie .desc{max-width:56ch;opacity:.85}
+.chips{display:flex;gap:.7rem;flex-wrap:wrap;margin:2.2rem 0 2.6rem}
+.chip{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;border:1px solid rgba(244,241,232,.3);padding:.45rem .8rem}
+.chip--oro{border-color:var(--dorado);color:var(--dorado)}
+.cta-row{display:flex;gap:1.3rem;flex-wrap:wrap}
+
+/* ---------- Cinta con los libros ---------- */
+.marquee{background:var(--azul);overflow:hidden;padding:1.1rem 0}
+.marquee-track{display:flex;width:max-content;animation:desfile 32s linear infinite}
+.marquee-grupo{display:flex;flex-shrink:0}
+.marquee-grupo span{position:relative;padding-right:3.4rem;white-space:nowrap;font-family:var(--titulos);font-size:.9rem;letter-spacing:.45em;text-transform:uppercase;color:var(--blanco)}
+.marquee-grupo span::after{content:"·";position:absolute;right:1.3rem;color:var(--dorado-claro)}
+@keyframes desfile{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+/* ---------- Libros de la serie ---------- */
+.libros-sec{padding:7rem 0}
+.seccion-head h2{font-family:var(--titulos);font-weight:500;font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;margin-bottom:3.5rem}
+.libros-sec h2 em{color:var(--dorado)}
+.libros-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.7rem}
+.libro-card{display:block}
+.tapa{display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:2/3;padding:1.4rem;border:1px solid rgba(244,241,232,.18);transition:transform .4s,border-color .4s}
+.libro-card:hover .tapa{transform:translateY(-8px);border-color:var(--dorado)}
+.tapa--negro{background:var(--negro-2)}
+.tapa--azul{background:var(--azul-noche)}
+.tapa--vivo{background:var(--azul)}
+.tapa--pronto{opacity:.5;border-style:dashed}
+.tapa-top{display:flex;justify-content:space-between;gap:.5rem;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;opacity:.75}
+.tapa-filete{width:2.5rem;height:2px;background:var(--dorado);margin:1rem auto;}
+.tapa-titulo{font-family:var(--display);font-weight:normal;text-align:center;text-transform:uppercase;font-size:clamp(1.5rem,2.1vw,2.2rem);line-height:.95}
+.tapa-tema{font-size:.85rem;font-style:italic;opacity:.78;margin-top:.6rem;text-align:center;}
+.tapa-pie{display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
+.tag{font-style:normal;color:var(--dorado-claro);border:1px solid currentColor;padding:.25rem .5rem;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+.libro-cta{display:block;margin-top:1rem;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dorado);opacity:0;transform:translateY(4px);transition:.3s}
+.libro-card:hover .libro-cta{opacity:1;transform:none}
+.cifras{display:flex;justify-content:space-between;gap:2.5rem;flex-wrap:wrap;margin-top:5.5rem;padding-top:3.5rem;border-top:1px solid rgba(244,241,232,.15)}
+.cifra strong{display:block;font-family:var(--display);font-weight:normal;font-size:clamp(2.2rem,5vw,4rem);line-height:1;color:var(--dorado)}
+.cifra span{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.7}
+
+/* ---------- Carácter (banda blanca) ---------- */
+.caracter{background:var(--blanco);color:var(--negro);padding:7rem 0}
+.caracter-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:5rem;align-items:start}
+.caracter h2 em{color:var(--azul)}
+.caracter p{max-width:52ch}
+.ejes{margin-top:.5rem}
+.ejes li{padding:1rem 0 1rem 2.1rem;position:relative;border-top:1px solid rgba(10,10,11,.15);font-size:1rem}
+.ejes li::before{content:"";position:absolute;left:0;top:1.45rem;width:12px;height:12px;border:1.5px solid var(--azul)}
+.ejes li strong{font-family:var(--titulos);font-weight:600;letter-spacing:.06em}
+
+/* ---------- Bundle (banda azul) ---------- */
+.bundle{background:var(--azul);padding:7rem 0}
+.bundle h2{font-family:var(--titulos);font-weight:500;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;max-width:20ch}
+.bundle .bajada{margin-top:1.4rem;max-width:52ch;color:rgba(244,241,232,.88)}
+.bundle .cta-row{margin-top:2.6rem}
+
+/* ---------- Prev / siguiente serie ---------- */
+.pie-serie{padding:5rem 0;border-top:1px solid rgba(244,241,232,.12)}
+.pie-serie .contenedor{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.pie-link small{display:block;font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:.7rem}
+.pie-link a{font-family:var(--titulos);font-size:clamp(1.4rem,3vw,2.2rem);transition:.3s}
+.pie-link a:hover{color:var(--dorado)}
+.pie-link--sig{text-align:right}
+
+@media (max-width:960px){
+  .caracter-grid{grid-template-columns:1fr;gap:3.5rem}
+  .pie-serie .contenedor{grid-template-columns:1fr}
+  .pie-link--sig{text-align:left}
+}
+</style>
+</head>
+<script>window.AMICTUS_LAUNCH={tipo:'Preventa abierta · volumen completo',titulo:'CALCEUS — <em>edición de lanzamiento</em>',detalle:'Ebook + impreso con dorado · los primeros 100 suscriptos, con lámina regalada',fecha:'2026-11-20T10:00:00'};</script>
+<script src="amictus.js"></script>
+
+<body>
+
+<!-- ============ HERO (todo se renderiza desde SERIES[ACTIVA]) ============ -->
+<section class="hero-serie">
+  <div class="contenedor">
+    <p class="etiqueta" id="etq"></p>
+    <h1 id="h1"></h1>
+    <p class="tagline" id="tagline"></p>
+    <p class="desc" id="desc"></p>
+    <div class="chips" id="chips"></div>
+    <div class="cta-row">
+      <a href="#libros" class="btn btn--oro">Ver los libros</a>
+      <a href="#bundle" class="btn btn--linea">Bundle de la serie</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<!-- ============ LIBROS DE LA SERIE (linkeados a libro-<slug>.html) ============ -->
+<section class="libros-sec" id="libros">
+  <div class="contenedor">
+    <p class="etiqueta">Los libros de esta serie</p>
+    <div class="seccion-head"><h2 id="h2libros"></h2></div>
+    <div class="libros-grid" id="librosGrid"></div>
+    <div class="cifras" id="cifras"></div>
+  </div>
+</section>
+
+<!-- ============ CARÁCTER (banda blanca) ============ -->
+<section class="caracter">
+  <div class="contenedor caracter-grid">
+    <div>
+      <p class="etiqueta etiqueta--azul">El carácter de la serie</p>
+      <div class="seccion-head"><h2 id="h2car"></h2></div>
+      <p id="descCar"></p>
+    </div>
+    <ul class="ejes" id="ejes"></ul>
+  </div>
+</section>
+
+<!-- ============ BUNDLE (banda azul) ============ -->
+<section class="bundle" id="bundle">
+  <div class="contenedor">
+    <p class="etiqueta etiqueta--clara">Bundle · precio de serie</p>
+    <h2 id="h2bundle"></h2>
+    <p class="bajada" id="descBundle"></p>
+    <div class="cta-row">
+      <a href="#" class="btn btn--oro">Bundle · US$24.99</a>
+      <a href="index.html#cura" class="btn btn--linea">CURA gratis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREV / SIGUIENTE ============ -->
+<nav class="pie-serie">
+  <div class="contenedor">
+    <div class="pie-link" id="pieAnt"></div>
+    <div class="pie-link pie-link--sig" id="pieSig"></div>
+  </div>
+</nav>
+
+<script>
+/* ✏️ ACTIVA: 1=CODEX 2=PRAXIS 3=EXPANSION 4=MUNDUS 5=MERCATUS 6=OPUS.
+   Duplicá este archivo como serie-1.html … serie-6.html y cambiá el número. */
+const ACTIVA = 1;
+const ROM = ['I','II','III','IV','V','VI'];
+const TAGS = {imprenta:'En imprenta', listo:'Listo', gratis:'Gratis', pronto:'En escritura'};
+const PIELES = ['tapa--negro','tapa--azul','tapa--vivo'];
+
+const SERIES = {
+ 1:{nom:'CODEX',split:['Co','dex'],tag:'La enciclopedia de lo que vistes.',
+	 folder:'codex',
+    desc:'Siete libros-monografía que documentan cada territorio del vestir: calzado, marroquinería, prendas femeninas y masculinas, accesorios, textiles y joyería.',
+    car:'Documentar como se documenta una especie: cada libro CODEX aplica el método AMICTUS —historia, anatomía, monografías, cuidado y compra— a un territorio completo de la indumentaria. Leídos juntos, componen la enciclopedia.',
+    ejes:['Historia','Anatomía','Monografías','Cuidado','Compra'],
+    libros:[['CALCEUS','Calzado',40,'imprenta'],['CORIUM','Marroquinería',22,'listo'],['STOLA','Prendas femeninas',24,'listo'],['TOGA','Prendas masculinas',24,'listo'],['CULTUS','Accesorios',22,'listo'],['TEXTUM','Textiles',24,'listo'],['AURUM','Joyería y relojería',24,'listo']]},
+ 2:{nom:'PRAXIS',split:['Pra','xis'],tag:'El saber hacer, paso a paso.',
+    folder:'praxis',
+    desc:'Seis guías prácticas: estilo masculino, colorimetría, protocolo, patronaje, historia transversal y teoría del color.',
+    car:'PRAXIS es la serie de aplicación: toma el conocimiento de CODEX y lo convierte en método diario — decidir, combinar, ajustar y cuidar con criterio propio.',
+    ejes:['Método','Códigos','Fit','Práctica','Herramientas'],
+    libros:[['SARTOR','Estilo masculino',17,'listo'],['VENUSTA','Colorimetría y cuerpo',20,'listo'],['DECORUM','Protocolo y etiqueta',20,'listo'],['FORMA','Patronaje y sastrería',20,'listo'],['MODUS','Historia transversal',22,'listo'],['COLOR','Teoría del color',20,'listo']]},
+ 3:{nom:'EXPANSION',split:['Expan','sion'],tag:'Categorías que crecen contigo.',
+    folder:'expansion',
+    desc:'Seis categorías profundas: cuidado, outerwear, lencería, denim, sportswear y perfume. Incluye CURA, el manual gratuito.',
+    car:'EXPANSION abre el armario por cajones: cada libro agota una categoría completa, con su historia, sus materiales y su guía de compra. CURA —el lead magnet— es la puerta de entrada.',
+    ejes:['Categorías','Cuidado','Códigos','Compra'],
+    libros:[['CURA','Cuidado · lead magnet',18,'gratis'],['PALLIUM','Abrigos y outerwear',20,'listo'],['INTIMA','Lencería',17,'listo'],['INDICUM','Denim',20,'listo'],['ATHLETA','Sportswear y athleisure',20,'listo'],['ESSENTIA','Perfume',20,'listo']]},
+ 4:{nom:'MUNDUS',split:['Mun','dus'],tag:'La moda del mundo, región por región.',
+    folder:'mundus',
+    desc:'Seis geografías del vestir: Asia, África, América, mundo islámico, Oceanía y nórdicos. ASIA ya está escrito.',
+    car:'MUNDUS descentra la mirada: cada volumen lee una región como un sistema propio de prendas, rituales y códigos — sin jerarquías occidentales.',
+    ejes:['Regiones','Historia local','Códigos','Contemporáneo'],
+    libros:[['ASIA','Moda asiática',25,'listo'],['AFRICA','Moda africana',null,'pronto'],['AMÉRICA','Moda americana',null,'pronto'],['ISLAM','Moda islámica',null,'pronto'],['OCEANÍA','Moda de Oceanía',null,'pronto'],['BOREALIS','Moda nórdica',null,'pronto']]},
+ 5:{nom:'MERCATUS',split:['Mer','catus'],tag:'El negocio detrás de la prenda.',
+    folder:'mercatus',
+    desc:'Cuatro volúmenes de industria: inversión, cadena de suministro, comercio y moda digital.',
+    car:'MERCATUS lee la moda como lo que también es: una cadena de valor. Para quienes quieren entender —o trabajar— el negocio detrás de la etiqueta.',
+    ejes:['Inversión','Supply','Retail','Digital'],
+    libros:[['AURUM INVEST','Inversión en moda',null,'pronto'],['SUPPLY','Cadena de suministro',null,'pronto'],['MERCATOR','Comercio y retail',null,'pronto'],['DIGITALIS','Moda digital',null,'pronto']]},
+ 6:{nom:'OPUS',split:['O','pus'],tag:'Las manos que hacen la moda.',
+    folder:'opus',
+    desc:'Tres libros de oficio: artesanos, herramientas y técnicas detrás de cada prenda.',
+    car:'OPUS cierra el círculo: el homenaje a los oficios — las manos, las herramientas y las técnicas sin las que ninguna de las otras series existiría.',
+    ejes:['Artesanos','Herramientas','Técnicas'],
+    libros:[['ARTIFEX','Los oficios',null,'pronto'],['ORGANA','Herramientas',null,'pronto'],['TECHNICA','Técnicas',null,'pronto']]}
+};
+
+const slug = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const S = SERIES[ACTIVA];
+const caps = S.libros.reduce((a,l)=>a+(l[2]||0),0);
+const listos = S.libros.filter(l=>l[3]==='listo'||l[3]==='imprenta'||l[3]==='gratis').length;
+
+/* Hero */
+document.getElementById('etq').textContent = `VOLÚMEN ${ROM[ACTIVA-1]} · ${S.nom} · ${S.libros.length} libros`;
+document.getElementById('h1').innerHTML = `${S.split[0]}<span>${S.split[1]}</span>`;
+document.getElementById('tagline').textContent = S.tag;
+document.getElementById('desc').textContent = S.desc;
+document.getElementById('chips').innerHTML =
+  `<span class="chip chip--oro">${S.libros.length} libros</span>`+
+  `<span class="chip">${caps} capítulos escritos</span>`+
+  `<span class="chip">ES · EN · IT · FR</span>`+
+  `<span class="chip">${listos} listos · ${S.libros.length-listos} en escritura</span>`;
+
+/* Marquee con los nombres de los libros */
+const grupo = `<div class="marquee-grupo">${S.libros.map(l=>`<span>${l[0]}</span>`).join('')}</div>`;
+document.getElementById('marqueeTrack').innerHTML = grupo + grupo;
+
+/* Grilla de libros linkeados */
+document.getElementById('h2libros').innerHTML = `Los ${S.libros.length} libros de <em>${S.nom}.</em>`;
+document.getElementById('librosGrid').innerHTML = S.libros.map((l,i)=>{
+  const href = l[3]==='pronto' ? '#' : `${S.folder}/libro-${slug(l[0])}.html`;
+  return `
+  <a class="libro-card" href="${href}" ${l[3]==='pronto'?'aria-disabled="true"':''}>
+    <span class="tapa ${l[3]==='pronto'?'tapa--pronto':PIELES[i%3]}">
+      <span class="tapa-top"><span>Amictus · ${S.nom}</span><span>${ROM[ACTIVA-1]}·${String(i+1).padStart(2,'1')}</span></span>
+      <span><div class="tapa-filete"></div><div class="tapa-titulo">${l[0]}</div><div class="tapa-tema">${l[1]}</div></span>
+      <span class="tapa-pie"><span>${l[2]?l[2]+' capítulos':'Próximamente'}</span><em class="tag">${TAGS[l[3]]}</em></span>
+    </span>
+    <span class="libro-cta">${l[3]==='pronto'?'En escritura':'Ver libro →'}</span>
+  </a>`;
+}).join('');
+
+/* Cifras */
+document.getElementById('cifras').innerHTML = `
+  <div class="cifra"><strong>${String(S.libros.length).padStart(2,'0')}</strong><span>Libros</span></div>
+  <div class="cifra"><strong>${caps||'—'}</strong><span>Capítulos escritos</span></div>
+  <div class="cifra"><strong>04</strong><span>Idiomas</span></div>
+  <div class="cifra"><strong>${ROM[ACTIVA-1]}</strong><span>Serie de VI</span></div>`;
+
+/* Carácter */
+document.getElementById('h2car').innerHTML = `${S.nom} es <em>un modo de leer.</em>`;
+document.getElementById('descCar').textContent = S.car;
+document.getElementById('ejes').innerHTML = S.ejes.map(e=>`<li><strong>${e}</strong></li>`).join('');
+
+/* Bundle */
+document.getElementById('h2bundle').textContent = `La serie ${S.nom} completa, en un solo gesto.`;
+document.getElementById('descBundle').textContent = `Los ${S.libros.length} libros de ${S.nom} juntos, con descuento de serie y acceso anticipado a los volúmenes en escritura.`;
+
+/* Prev / siguiente */
+const ant = ACTIVA===1?6:ACTIVA-1, sig = ACTIVA===6?1:ACTIVA+1;
+document.getElementById('pieAnt').innerHTML = `<small>← VOLÚMEN ${ROM[ant-1]}</small><a href="volumen-${String(ant).padStart(2,0)}-${SERIES[ant].nom.toLowerCase()}.html">${SERIES[ant].nom}</a>`;
+document.getElementById('pieSig').innerHTML = `<small>VOLÚMEN ${ROM[sig-1]} →</small><a href="volumen-${String(sig).padStart(2,0)}-${SERIES[sig].nom.toLowerCase()}.html">${SERIES[sig].nom}</a>`;
+document.getElementById('pieMarca').textContent = `Serie ${ROM[ACTIVA-1]} · ${S.nom}`;
+</script>
+</body>
+</html>

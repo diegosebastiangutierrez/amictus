@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa del sitio · AMICTUS</title>
+<meta name="description" content="Mapa completo del portal AMICTUS: series, libros, capítulos, las 12 herramientas, tienda, afiliados y páginas editoriales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="amictus.css">
+<style>
+.grupo{margin-bottom:3.5rem}
+.grupo h3{font-family:var(--titulos);font-weight:500;font-size:1.6rem;margin-bottom:1.2rem;color:var(--azul)}
+.grupo .chips{margin:0}
+.nota{margin-top:2rem;font-size:.8rem;font-style:italic;opacity:.65}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Navegación completa</p>
+    <h1>Mapa del <span>sitio</span></h1>
+    <p class="tagline">Todo el armario, en un solo perchero.</p>
+    <p class="bajada">Lo punteado todavía no tiene archivo: nace en Drupal (libros restantes y capítulos 3–40). Todo lo demás, vivo y enlazado.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor" id="mapa"></div>
+</section>
+
+<script src="amictus.js"></script>
+<script>
+const L=(href,n,soon)=>`<a class="chip ${soon?'chip--soon':''}" href="${href}">${n}</a>`;
+const G=(t,c)=>`<div class="grupo"><h3>${t}</h3><div class="chips">${c.join('')}</div></div>`;
+const slug=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const SERIES=['CODEX','PRAXIS','EXPANSIÓN','MUNDUS','MERCATUS','OPUS'];
+const LIBROS={1:['CALCEUS','CORIUM','STOLA','TOGA','CULTUS','TEXTUM','AURUM'],2:['SARTOR','VENUSTA','DECORUM','FORMA','MODUS','COLOR'],3:['CURA','PALLIUM','INTIMA','INDICUM','ATHLETA','ESSENTIA'],4:['ASIA','AFRICA','AMÉRICA','ISLAM','OCEANÍA','BOREALIS'],5:['AURUM INVEST','SUPPLY','MERCATOR','DIGITALIS'],6:['ARTIFEX','INSTRUMENTUM','TECHNICA']};
+
+let html='';
+
+html+=G('Portal',[
+ L('index.html','Inicio'),
+ L('index.html#manifiesto','Manifiesto'),
+ L('index.html#cura','CURA gratis'),
+ L('autor.html','El autor + IA'),
+ L('prensa.html','Prensa & sponsors'),
+ L('el-hilo.html','El Hilo · newsletter'),
+ L('sitemap.html','Este mapa'),
+ L('404.html','404 · prenda extraviada')
+]);
+
+html+=G('Volúmenes',[
+ ...SERIES.map((n,i)=>L(`volumen-${String(i+1).padStart(2,0)}-${n.toLowerCase()}.html`,`Serie ${['I','II','III','IV','V','VI'][i]} · ${n}`))
+]);
+
+html+=G('Libros',[
+ ...Object.entries(LIBROS).flatMap(([s,ls])=>ls.map(n=>L('libro-'+slug(n)+'.html',n,n!=='CALCEUS')))
+]);
+
+html+=G('Capítulos',[
+ L('capitulo-01.html','CALCEUS · Cap. 1 · Origen'),
+ L('capitulo-02.html','CALCEUS · Cap. 2 · Sandalias antiguas'),
+ L('#','CALCEUS · Caps. 3–40 · en Drupal',1),
+ L('#','Capítulos de los demás libros · en Drupal',1)
+]);
+
+html+=G('Herramientas',[
+ L('herramientas.html','Hub · las 12'),
+ L('herramientas/tallas.html','01 · Conversor de talles'),
+ L('herramientas/cuidado.html','02 · Diagnóstico de cuidado'),
+ L('herramientas/precio-uso.html','03 · Precio por uso'),
+ L('herramientas/test-color.html','04 · Test del color'),
+ L('herramientas/simbolos.html','05 · Símbolos de lavado'),
+ L('herramientas/etiqueta.html','06 · Decodificador de etiquetas'),
+ L('herramientas/ocasiones.html','07 · Qué me pongo · look completo'),
+ L('herramientas/mitos.html','08 · Quiz de mitos'),
+ L('herramientas/cuanto-cuesta-vestir-bien.html','09 · ¿Cuánto cuesta vestir bien?'),
+ L('herramientas/libros-de-moda.html','10 · Libros de moda · pack'),
+ L('herramientas/perfume.html','11 · Pirámide de perfume'),
+ L('herramientas/casa-profesional.html','12 · ¿Casa o profesional?')
+]);
+
+html+=G('Tienda & afiliados',[
+ L('herramientas/libros-de-moda.html','Pack de libros con descuento'),
+ L('qrs.html','Índice QR · Casa/Compra/Fuente'),
+ L('index.html#cura','Lead magnet · CURA'),
+ L('laminas.html','Lead magnet · láminas')
+]);
+
+html+=G('Editorial',[
+ L('glosario.html','Glosario maestro 4 idiomas'),
+ L('fuentes.html','Fuentes verificadas'),
+ L('museos.html','Museos Open Access'),
+ L('laminas.html','Galería de láminas')
+]);
+
+document.getElementById('mapa').innerHTML=html+
+ '<p class="nota">En Drupal este mapa se vuelve una vista automática: cada content type (serie, libro, capítulo, herramienta, servicio) alimenta su grupo sin tocar el template.</p>';
+</script>
+</body>
+</html>

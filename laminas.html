@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Láminas · AMICTUS</title>
+<meta name="description" content="Las infografías de AMICTUS en cuatro idiomas, descargables. El segundo lead magnet de la colección.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="amictus.css">
+<style>
+.lam-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.6rem}
+.lam{background:#fff;border:1px solid rgba(10,10,11,.25);padding:1.3rem;display:flex;flex-direction:column;gap:1rem}
+.lam h3{font-family:var(--titulos);font-weight:600;font-size:1.3rem;color:var(--negro)}
+.lam .origen{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--azul)}
+.lam .btn{align-self:flex-start;padding:.8rem 1.6rem;border-color:var(--azul);color:var(--azul)}
+.lam .btn:hover{background:var(--azul);color:#fff}
+.lam .gate{display:none;gap:.6rem;flex-wrap:wrap}
+.lam .gate.is-on{display:flex}
+.lam .gate input{flex:1;min-width:160px;border:1px solid rgba(10,10,11,.35);padding:.7rem .9rem;font-family:var(--texto);color:var(--negro)}
+.lam .ok{font-size:.85rem;color:var(--azul);font-style:italic}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Infografías · ES EN IT FR</p>
+    <h1>Lá<span>minas</span></h1>
+    <p class="tagline">El libro, en una pared.</p>
+    <p class="bajada">Cada infografía de la colección, en alta resolución y cuatro idiomas. Dejalas tu email y te las mandamos: son el segundo regalo de la casa, después de CURA.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div class="lam-grid" id="lamGrid"></div>
+  </div>
+</section>
+
+<section class="sec sec--azul">
+  <div class="contenedor">
+    <p class="etiqueta">De la lámina al libro</p>
+    <h2>Cada lámina es <em style="color:var(--dorado-claro)">un capítulo.</em></h2>
+    <p class="bajada">Las láminas resumen; los capítulos explican. Si una pared te gusta, su libro te va a cambiar el armario.</p>
+    <div class="cta-row"><a href="index.html#catalogo" class="btn btn--oro">Ver catálogo</a><a href="index.html#cura" class="btn btn--linea">CURA gratis</a></div>
+  </div>
+</section>
+
+<script src="amictus.js"></script>
+<script>
+/* ✏️ Reemplazá los marcos por <img> de las infografías reales (Dola + Canva/Illustrator) */
+const LAM=[
+ ['Anatomía del zapato','CALCEUS · Cap. 12'],
+ ['Oxford vs. Derby','CALCEUS · Cap. 18'],
+ ['Pirámide de cueros','CALCEUS · Cap. 14'],
+ ['Pirámide olfativa','ESSENTIA · Cap. 4'],
+ ['Anatomía del denim','INDICUM · Cap. 3'],
+ ['Círculo cromático de estaciones','COLOR · Cap. 5']
+];
+document.getElementById('lamGrid').innerHTML=LAM.map((l,i)=>`
+ <article class="lam">
+  <p class="origen">${l[1]}</p>
+  <div class="figura" style="margin:0"><div class="figura-marco" style="aspect-ratio:4/5">${l[0]} · ES/EN/IT/FR</div></div>
+  <h3>${l[0]}</h3>
+  <button class="btn" data-i="${i}">Descargar</button>
+  <div class="gate"><input type="email" placeholder="tu@correo.com" aria-label="Email"><button class="btn btn--oro" style="border-color:var(--dorado)">Enviar</button></div>
+ </article>`).join('');
+document.querySelectorAll('.lam .btn[data-i]').forEach(b=>b.addEventListener('click',()=>{
+  b.style.display='none';b.nextElementSibling.classList.add('is-on');
+}));
+document.querySelectorAll('.gate .btn--oro').forEach(b=>b.addEventListener('click',()=>{
+  const g=b.parentElement;
+  if(!g.querySelector('input').value.includes('@'))return;
+  /* ✏️ Conectar a MailerLite: alta en lista "Láminas" + envío del PDF */
+  g.outerHTML='<p class="ok">✓ Lista: te llegan las 6 láminas por email.</p>';
+}));
+</script>
+</body>
+</html>

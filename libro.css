@@ -1,0 +1,185 @@
+/* ============================================================
+   AMICTUS · libro.css
+   Estilos de las páginas de libro (índice de volumen).
+   Se usa SIEMPRE junto a amictus.css (tokens, topbar, footer,
+   marquee, sec, etiqueta, btn, chip).
+   Linkear desde codex/:  <link rel="stylesheet" href="../libro.css">
+   ============================================================ */
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--negro);color:var(--blanco);font-family:var(--texto);font-size:1.05rem;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--dorado);color:var(--negro)}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.contenedor{width:min(1200px,92vw);margin-inline:auto}
+.etiqueta{display:flex;align-items:center;gap:1rem;font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;color:var(--dorado);margin-bottom:2rem}
+.etiqueta::before{content:"";width:3rem;height:1px;background:currentColor}
+.etiqueta--azul{color:var(--azul)}
+.btn{display:inline-block;font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.3rem;border:1px solid var(--dorado);transition:.35s}
+.btn--oro{background:var(--dorado);color:var(--negro)}
+.btn--oro:hover{background:var(--dorado-claro)}
+.btn--linea{background:none;color:var(--blanco)}
+.btn--linea:hover{background:rgba(201,162,75,.14)}
+
+.topbar{position:sticky;top:0;z-index:50;background:rgba(10,10,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(244,241,232,.12)}
+.topbar .contenedor{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+.logo{display:flex;align-items:center;gap:.85rem}
+.logo-svg{width:38px;height:38px;color:var(--blanco)}
+.logo-nombre{font-family:var(--display);font-size:.95rem;letter-spacing:.42em;text-transform:uppercase}
+.topbar nav{display:flex;gap:1.9rem;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase}
+.topbar nav a{opacity:.8;transition:.3s}
+.topbar nav a:hover{opacity:1;color:var(--dorado)}
+
+/* ---------- Hero del libro ---------- */
+.hero-libro{padding:6.5rem 0 6rem;display:grid;grid-template-columns:1.05fr .95fr;gap:5rem;align-items:center}
+.hero-libro h1{font-family:var(--display);font-weight:normal;text-transform:uppercase;font-size:clamp(3.6rem,10vw,9.5rem);line-height:.9;margin:0 0 1rem}
+.hero-libro h1 span{color:var(--dorado)}
+.tagline{font-family:var(--titulos);font-size:clamp(1.2rem,2vw,1.7rem);color:var(--dorado-claro);margin-bottom:1.2rem}
+.hero-libro .desc{max-width:50ch;opacity:.85}
+.chips{display:flex;gap:.7rem;flex-wrap:wrap;margin:2.2rem 0 2.5rem}
+.chip{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;border:1px solid rgba(244,241,232,.3);padding:.45rem .8rem}
+.chip--oro{border-color:var(--dorado);color:var(--dorado)}
+.cta-row{display:flex;gap:1.3rem;flex-wrap:wrap}
+.portada-wrap{position:relative}
+.portada-wrap::before{content:"";position:absolute;inset:1.4rem -1.4rem -1.4rem 1.4rem;border:1px solid var(--azul)}
+.portada{position:relative;aspect-ratio:2/3;background:var(--negro-2);border:1px solid rgba(201,162,75,.55);padding:2.2rem;display:flex;flex-direction:column;justify-content:space-between}
+.portada-top{display:flex;justify-content:space-between;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;opacity:.8}
+.portada-filete{width:3rem;height:2px;background:var(--dorado);margin:1.2rem auto}
+.portada-titulo{font-family:var(--display);font-weight:normal;text-transform:uppercase;font-size:clamp(2.6rem,4.6vw,4rem);text-align:center;line-height:.95}
+.portada-tema{font-style:italic;opacity:.8;margin-top:.8rem;text-align:center;}
+.portada-pie{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dorado)}
+.portada-wrap figcaption{margin-top:1.4rem;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dorado)}
+
+/* ---------- Cinta ---------- */
+.marquee{background:var(--azul);overflow:hidden;padding:1.1rem 0}
+.marquee-track{display:flex;width:max-content;animation:desfile 30s linear infinite}
+.marquee-grupo{display:flex;flex-shrink:0}
+.marquee-grupo span{position:relative;padding-right:3.4rem;white-space:nowrap;font-family:var(--titulos);font-size:.9rem;letter-spacing:.45em;text-transform:uppercase;color:var(--blanco)}
+.marquee-grupo span::after{content:"·";position:absolute;right:1.3rem;color:var(--dorado-claro)}
+@keyframes desfile{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+/* ---------- Partes (banda blanca) ---------- */
+.partes{background:var(--blanco);color:var(--negro);padding:7rem 0}
+.seccion-head h2{font-family:var(--titulos);font-weight:500;font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;margin-bottom:3.5rem}
+.partes .seccion-head h2 em{color:var(--azul)}
+.parte{display:grid;grid-template-columns:5.5rem 1fr auto;gap:2rem;align-items:baseline;padding:1.7rem 0;border-top:1px solid rgba(10,10,11,.2)}
+.parte:last-of-type{border-bottom:1px solid rgba(10,10,11,.2)}
+.parte-num{font-family:var(--titulos);color:var(--azul);font-size:1.5rem}
+.parte h3{font-family:var(--titulos);font-weight:500;font-size:1.5rem;letter-spacing:.08em}
+.parte p{opacity:.72;font-size:.95rem}
+.parte-rango{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;opacity:.6;white-space:nowrap}
+
+/* ---------- Índice (negro) ---------- */
+.indice{padding:7rem 0}
+.indice .seccion-head h2 em{color:var(--dorado)}
+.indice-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 3.5rem}
+.cap-link{display:flex;gap:1.2rem;align-items:baseline;padding:.85rem 0;border-bottom:1px dashed rgba(244,241,232,.18);transition:.3s}
+.cap-link:hover{color:var(--dorado);padding-left:.4rem}
+.cap-n{font-family:var(--display);color:var(--dorado);font-size:.8rem;min-width:2.1rem}
+.cap-t{flex:1;font-size:.98rem}
+.cap-p{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;opacity:.5}
+
+/* ---------- Así se lee (blanca) ---------- */
+.lectura-sec{background:var(--blanco);color:var(--negro);padding:7rem 0}
+.lectura-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.lectura-sec h2 em{color:var(--azul)}
+.herramientas{margin-top:2.5rem}
+.herramientas li{padding:.9rem 0 .9rem 2.1rem;position:relative;border-top:1px solid rgba(10,10,11,.15);font-size:.98rem}
+.herramientas li::before{content:"";position:absolute;left:0;top:1.35rem;width:12px;height:12px;border:1.5px solid var(--azul)}
+.figura{position:relative}
+.figura::before{content:"";position:absolute;inset:1.2rem -1.2rem -1.2rem 1.2rem;border:1px solid var(--azul)}
+.figura-marco{position:relative;aspect-ratio:4/5;background:#fff;border:1px solid rgba(10,10,11,.25);display:flex;align-items:center;justify-content:center;text-align:center;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;padding:1rem}
+.figura figcaption{position:relative;margin-top:1.8rem;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--azul)}
+
+/* ---------- QR (negro) ---------- */
+.qr-sec{padding:7rem 0}
+.qr-sec h2{font-family:var(--titulos);font-weight:500;font-size:clamp(2.2rem,5vw,3.8rem);margin-bottom:3rem}
+.qr-sec h2 em{color:var(--dorado)}
+.qr-cajas{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.qr-cajas .qr, .formatos-grid .formato{
+transition:transform .4s,border-color .4s;
+}
+.qr-cajas .qr:hover, .formatos-grid .formato:hover{
+transform:translateY(-8px);
+border-color:var(--dorado);
+}
+.qr{background:var(--negro-2);border:1px solid rgba(244,241,232,.16);border-top:3px solid var(--blanco);padding:1.7rem}
+.qr--casa{border-top-color:var(--dorado)}
+.qr--compra{border-top-color:var(--azul)}
+.qr h4{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:.8rem}
+.qr--casa h4{color:var(--dorado)}
+.qr--compra h4{color:var(--azul-claro)}
+.qr p{font-size:.88rem;opacity:.8}
+.qr code{display:block;margin-top:.8rem;color:var(--dorado);font-size:.75rem}
+
+/* ---------- Formatos (banda azul) ---------- */
+.formatos{background:var(--azul);padding:7rem 0}
+.formatos h2{font-family:var(--titulos);font-weight:500;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;margin-bottom:3.5rem}
+.formatos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.formato{border:1px solid rgba(244,241,232,.4);background:rgba(10,10,11,.14);padding:2.3rem 1.9rem;display:flex;flex-direction:column;gap:1.1rem}
+.formato--destacado{border-color:var(--dorado);background:rgba(10,10,11,.3)}
+.formato h3{font-family:var(--titulos);font-weight:500;font-size:1.4rem;letter-spacing:.1em}
+.precio{font-family:var(--display);font-size:2.5rem;color:var(--dorado-claro);line-height:1}
+.precio small{font-family:var(--texto);font-size:.85rem;color:var(--blanco);opacity:.65}
+.formato p{font-size:.9rem;opacity:.85}
+.canales{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto}
+.canal{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(244,241,232,.4);padding:.35rem .6rem}
+.nota-cura{margin-top:2.6rem;font-style:italic;color:rgba(244,241,232,.85)}
+.nota-cura a{color:var(--dorado-claro);border-bottom:1px solid var(--dorado-claro)}
+
+/* ---------- Siguiente + footer ---------- */
+.siguiente{border-top:1px solid rgba(244,241,232,.12);padding:4.5rem 0}
+.siguiente a{display:flex;justify-content:space-between;align-items:center;gap:2rem;font-family:var(--titulos);font-size:clamp(1.8rem,4.5vw,3.4rem);transition:.3s}
+.siguiente a:hover{color:var(--dorado);padding-left:1rem}
+.siguiente small{display:block;font-family:var(--texto);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:.6rem}
+
+/* ---------- Navegación entre libros (unificada) ---------- */
+.libros-nav{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.libros-nav a{display:flex;align-items:center;gap:.9rem;min-width:0;padding:1.1rem 1.3rem;transition:border-color .3s,color .3s}
+.libros-nav a:hover{color:var(--dorado)}
+.libros-nav .libro-next{justify-content:flex-end;text-align:right}
+.nav-arrow{font-family:var(--display);font-size:1.25rem;color:var(--dorado);flex:none;line-height:1}
+.nav-txt{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+.nav-txt small{font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;opacity:.6}
+.nav-txt strong{font-family:var(--titulos);font-weight:500;font-size:1.5rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:760px){
+ .nav-txt{display:none}
+ .libros-nav{gap:1rem}
+ .libros-nav a,.libros-nav .libro-next{justify-content:center;padding:1rem}
+}
+
+@media (max-width:960px){
+  .hero-libro{grid-template-columns:1fr;gap:4rem}
+  .indice-grid{grid-template-columns:1fr}
+  .lectura-grid{grid-template-columns:1fr;gap:3.5rem}
+  .formatos-grid{grid-template-columns:1fr}
+  .parte{grid-template-columns:3.5rem 1fr;gap:1.2rem}
+  .parte-rango{grid-column:2}
+}
+
+/* ---- Formatos: hover elegante ---- */
+.formato{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s,border-color .35s,background .35s}
+.formato::before{content:"";position:absolute;top:0;left:0;height:3px;width:0;background:var(--dorado);transition:width .5s cubic-bezier(.2,.7,.3,1)}
+.formato::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(105deg,transparent,rgba(244,241,232,.14),transparent);transform:skewX(-18deg);transition:left .65s ease;pointer-events:none}
+.formato:hover{transform:translateY(-8px);box-shadow:0 22px 45px rgba(0,0,0,.4);border-color:rgba(201,162,75,.65);background:rgba(10,10,11,.4)}
+.formato:hover::before{width:100%}
+.formato:hover::after{left:135%}
+.formato .precio{transition:color .3s}
+.formato:hover .precio{color:var(--dorado-claro)}
+.formato .canal{transition:border-color .3s,color .3s}
+.formato:hover .canal{border-color:var(--dorado);color:var(--dorado-claro)}
+.formato:hover .canal:nth-child(2){transition-delay:50ms}
+.formato:hover .canal:nth-child(3){transition-delay:100ms}
+.formato:hover .canal:nth-child(4){transition-delay:150ms}
+.formato:hover .canal:nth-child(5){transition-delay:200ms}
+/* El destacado ya vive con el filete puesto */
+.formato--destacado{border-color:rgba(201,162,75,.55)}
+.formato--destacado::before{width:100%}
+/* Accesibilidad: sin movimiento para quien lo pide */
+@media (prefers-reduced-motion:reduce){
+ .formato,.formato::before,.formato::after,.formato .canal{transition:none}
+ .formato:hover{transform:none}
+ .formato:hover::after{left:-70%}
+}

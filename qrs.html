@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Índice QR · AMICTUS</title>
+<meta name="description" content="Todos los códigos QR de la colección AMICTUS: Casa, Compra y Fuente, con su origen (serie, libro, capítulo).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="amictus.css">
+<!-- Librería QR: qrcodejs vía cdnjs (estable) · alternativa: https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+.qr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
+.qr-card{background:var(--negro-2);border:1px solid rgba(244,241,232,.16);border-top:3px solid var(--blanco);padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.qr-card--casa{border-top-color:var(--dorado)}.qr-card--compra{border-top-color:var(--azul)}
+.qr-img{background:#fff;padding:.9rem}
+.qr-img canvas,.qr-img img{width:100%;height:auto;display:block;image-rendering:pixelated}
+.qr-card h3{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase}
+.qr-card--casa h3{color:var(--dorado)}.qr-card--compra h3{color:var(--azul-claro)}
+.qr-url{font-size:.78rem;color:var(--dorado);word-break:break-all}
+.qr-card .prov{margin-top:auto}
+.sec--blanco .prov-libro{border-color:rgba(10,10,11,.5)}
+.reglas li{padding:.7rem 0 .7rem 2.1rem;position:relative;border-top:1px solid rgba(244,241,232,.12)}
+.reglas li::before{content:"";position:absolute;left:0;top:1.2rem;width:12px;height:12px;border:1.5px solid var(--dorado)}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Sistema QR tricromático · leyenda</p>
+    <h1>Códigos <span>QR</span></h1>
+    <p class="tagline">Tres colores, tres puertas: Casa, Compra, Fuente.</p>
+    <p class="bajada">Cada capítulo lleva 3–6 códigos. Este índice los reúne todos con su origen exacto. Hoy: placeholders funcionales; mañana, las URLs definitivas de amictus.press.</p>
+    <div class="chips" id="chips"></div>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div class="toolbar">
+      <input class="buscar" id="buscar" type="search" placeholder="Buscar por libro o URL…" aria-label="Buscar QR">
+      <button class="filtro is-active" data-t="">Todos</button>
+      <button class="filtro" data-t="casa">🏠 Casa</button>
+      <button class="filtro" data-t="compra">🛍 Compra</button>
+      <button class="filtro" data-t="fuente">📚 Fuente</button>
+    </div>
+    <div class="qr-grid" id="qrGrid"></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="contenedor">
+    <p class="etiqueta">Reglas del sistema</p>
+    <h2>Así se imprime <em>un QR.</em></h2>
+    <ul class="reglas">
+      <li><strong style="font-family:var(--display);color:var(--dorado)">🏠 Casa (dorado en web / oxblood en imprenta)</strong> → el portal: ampliaciones, vídeos y dossier.</li>
+      <li><strong style="font-family:var(--display);color:var(--azul-claro)">🛍 Compra (azul en web / cobre en imprenta)</strong> → selección curada en tres presupuestos + afiliados.</li>
+      <li><strong style="font-family:var(--display)">📚 Fuente (blanco en web / tinta en imprenta)</strong> → museos Open Access y verificación.</li>
+      <li>Fondo blanco siempre · mínimo 20 mm · leyenda al inicio del libro · en ebook, clicables.</li>
+      <li>Imprenta: QRCode Monkey · Web: esta misma librería (qrcodejs, MIT).</li>
+    </ul>
+  </div>
+</section>
+
+<script src="amictus.js"></script>
+<script src="qrs.js"></script>
+</body>
+</html>

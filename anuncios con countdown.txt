@@ -1,0 +1,3 @@
+Para anunciar otra cosa en una página puntual (por ejemplo, un capítulo nuevo por semana), poné esto antes de <script src="amictus.js">:
+
+<script>window.AMICTUS_LAUNCH={tipo:'Nuevo capítulo · cada viernes',titulo:'CALCEUS · Cap. 3 — <em>El zapato medieval</em>',detalle:'Gratis en el portal; el volumen completo, en preventa',fecha:'2026-08-21T09:00:00'};</script>

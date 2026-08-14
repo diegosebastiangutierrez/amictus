@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diego Gutiérrez · El autor de AMICTUS</title>
+<meta name="description" content="Quién está detrás de AMICTUS: Diego Gutiérrez, 47 años, argentino, capricornio. Programador, diseñador, maquetador y bartender internacional. Una voz humana, tres inteligencias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="amictus.css">
+<style>
+.bio-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:5rem;align-items:start}
+.bio p{margin-bottom:1.4rem;max-width:58ch}
+.ficha{margin-top:2.5rem;border-top:2px solid var(--negro)}
+.ficha div{display:flex;gap:1.5rem;padding:.8rem 0;border-bottom:1px solid rgba(10,10,11,.15);font-size:.88rem}
+.ficha dt{flex:0 0 130px;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--azul);padding-top:.2rem}
+.firma{margin-top:2.4rem;font-family:var(--titulos);font-size:1.7rem;color:var(--azul)}
+.firma small{display:block;font-family:var(--texto);font-style:normal;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-top:.4rem}
+.ia-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.ia{background:var(--negro-2);border:1px solid rgba(244,241,232,.16);border-top:3px solid var(--blanco);padding:2.2rem 1.9rem;display:flex;flex-direction:column;gap:1rem}
+.ia--qwen{border-top-color:var(--dorado)}
+.ia--dola{border-top-color:var(--azul)}
+.ia h3{font-family:var(--display);font-weight:normal;font-size:1.7rem;letter-spacing:.04em;text-transform:uppercase}
+.ia .rol{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase}
+.ia--qwen .rol{color:var(--dorado)}
+.ia--dola .rol{color:var(--azul-claro)}
+.ia p{font-size:.92rem;opacity:.82}
+.ia .links{margin-top:auto;padding-top:1.2rem;display:flex;flex-wrap:wrap;gap:1.2rem}
+.ia .links a{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dorado);border-bottom:1px solid var(--dorado);padding-bottom:.3rem;transition:.3s}
+.ia .links a:hover{color:var(--dorado-claro);border-color:var(--dorado-claro)}
+@media (max-width:960px){.bio-grid,.ia-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">El autor · Transparencia editorial</p>
+    <h1>Diego <span>Gutiérrez</span></h1>
+    <p class="tagline">Tecnólogo de día, bartender de noche, editor de la indumentaria siempre.</p>
+    <p class="bajada">Cuarenta y siete años, argentino, capricornio. La biografía completa, sin letra chica — y el porqué de AMICTUS.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor bio-grid">
+    <figure class="figura">
+      <div class="figura-marco">
+		<img src="img/dsg.jpg" alt="Diego Gutiérrez">
+      </div>
+      <figcaption>El autor · entre México y la Argentina</figcaption>
+    </figure>
+    <div class="bio">
+      <p class="etiqueta etiqueta--azul">El porqué</p>
+      <h2 style="font-family:var(--titulos);font-weight:500;font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.1;margin-bottom:2rem">La guía que <em style="color:var(--azul)">no tuve a los veinte.</em></h2>
+      <p>Nací en Argentina en 1979 y soy capricornio de manual: tierra, paciencia y cosas que se construyen despacio. Trabajo en tecnología desde los 15 años — programador, diseñador gráfico, maquetador, autodidacta — y hoy en telecomunicaciones.</p>
+      <p>De chico, mis padres me compraban la ropa que podían costear, no la que me gustaba. Se los agradezco siempre: ahí aprendí, sin saberlo, que el estilo no vive en el precio de la etiqueta. Cuando por fin gané mi propio dinero, salí a explorar el mundo del vestir como adulto — tarde, y con hambre.</p>
+      <p>AMICTUS nace de esa hambre: historia, oficio y método para educar en el arte de vestir. Treinta y dos libros para que nadie llegue tarde a su propio estilo, como llegué yo.</p>
+      <p>Me mueven las sutilezas: el trench con pasado, la campera de cuero motoquera, el charol, la camisa planchada, la corbata justa. Estilo, madurez, buen gusto y personalidad — la ropa como firma, no como disfraz.</p>
+      <p>Y sí, hay que decirlo: no soy gay — la suposición perezosa de siempre — ni introvertido de estereotipo tecnólogo. Soy bartender internacional, oficio de anfitrión. Un buen trago y un buen outfit se arman igual: receta, proporción, ocasión y un punto justo de teatro.</p>
+      <p>Entre México y la Argentina, buscando mi lugar en el mundo, entendí que ya tengo uno: se construye con perchas, libros y sobremesas. AMICTUS es ese lugar.</p>
+      <dl class="ficha">
+        <div><dt>Nacimiento</dt><dd>07·01·1979 · Argentina · Capricornio</dd></div>
+        <div><dt>Oficios</dt><dd>Código · diseño gráfico · maquetación · barra internacional</dd></div>
+        <div><dt>Tecnología</dt><dd>Desde los 15 · hoy telecomunicaciones</dd></div>
+        <div><dt>Base</dt><dd>México ↔ Argentina</dd></div>
+        <div><dt>Devociones</dt><dd>Trench · cuero motoquero · charol · corbata justa</dd></div>
+      </dl>
+      <p class="firma">Diego Gutiérrez<small>Autor · editor · compilador de AMICTUS</small></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="contenedor">
+    <p class="etiqueta">Herramientas del proyecto</p>
+    <h2>Tres inteligencias, <em>un solo oficio.</em></h2>
+    <div class="ia-grid">
+      <article class="ia ia--qwen">
+        <p class="rol">Research · estructura · escritura</p>
+        <h3>Qwen AI</h3>
+        <p>Familia de modelos de lenguaje y multimodales de Alibaba Cloud, publicados como modelos abiertos por su equipo Tongyi. Texto, research, traducción y código.</p>
+        <p>En AMICTUS: Plan Maestro, arquitectura de 6 series / 32 volúmenes, dossiers de los 40 capítulos de CALCEUS, research histórico y las plantillas de esta web.</p>
+        <div class="links">
+          <a href="https://qwen.ai" target="_blank" rel="noopener">qwen.ai</a>
+          <a href="https://chat.qwen.ai" target="_blank" rel="noopener">Qwen Chat</a>
+          <a href="https://huggingface.co/Qwen" target="_blank" rel="noopener">Hugging Face</a>
+        </div>
+      </article>
+      <article class="ia ia--dola">
+        <p class="rol">Imágenes de todos los volúmenes</p>
+        <h3>Dola AI</h3>
+        <p>Asistente de IA con generador de imágenes: convierte ideas o fotos en arte en segundos, con estilos variados y ajuste fino del detalle. Disponible en web y apps móviles.</p>
+        <p>En AMICTUS: imágenes generadas para todos los volúmenes escritos — infografías, diagramas y visuales de campaña de la colección.</p>
+        <div class="links">
+          <a href="https://www.dola.com" target="_blank" rel="noopener">dola.com</a>
+          <a href="https://www.dola.com/chat/create-image" target="_blank" rel="noopener">Create image</a>
+          <a href="https://play.google.com/store/apps/details?id=com.larus.wolf" target="_blank" rel="noopener">Google Play</a>
+        </div>
+      </article>
+      <article class="ia">
+        <p class="rol">Apoyo · revisión · segundas opiniones</p>
+        <h3>Gemini</h3>
+        <p>La familia de modelos multimodales de Google DeepMind: razonamiento, escritura y análisis sobre texto, imagen y código, integrada al ecosistema Google.</p>
+        <p>En AMICTUS: apoyo puntual — segundas lecturas, alternativas de redacción y contraste de criterios durante la escritura de los dossiers.</p>
+        <div class="links">
+          <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a>
+          <a href="https://deepmind.google/models/gemini/" target="_blank" rel="noopener">Google DeepMind</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <p class="etiqueta etiqueta--azul">El método de trabajo</p>
+    <h2 style="font-family:var(--titulos);font-weight:500;font-size:clamp(2.2rem,5vw,4rem);line-height:1.05">Quién hace <em style="color:var(--azul)">qué.</em></h2>
+    <ul class="linea">
+      <li><strong>01 · Research — Qwen</strong> Estructura de series, dossiers capítulo por capítulo, líneas de tiempo y referentes en cuatro capas.</li>
+      <li><strong>02 · Voz — Diego</strong> Escritura final, curaduría y toda decisión editorial. La voz de AMICTUS es humana.</li>
+      <li><strong>03 · Imágenes — Dola</strong> Infografías, diagramas y visuales de todos los volúmenes escritos.</li>
+      <li><strong>04 · Apoyo — Gemini</strong> Segundas opiniones y revisión puntual durante la escritura.</li>
+      <li><strong>05 · Oficio — Diego</strong> Tapas en vector, maquetación en Scribus, prueba impresa y verificación de fuentes con enlace exacto.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec sec--azul">
+  <div class="contenedor">
+    <p class="etiqueta">Declaración de uso de IA</p>
+    <h2>La voz es humana.</h2>
+    <p class="bajada" style="margin-top:1.4rem;max-width:56ch;color:rgba(244,241,232,.9)">Las inteligencias artificiales investigan, ilustran y revisan; no firman. La curaduría final, la voz editorial y la responsabilidad por cada dato son del autor. Toda fuente histórica se re-verifica con enlace exacto antes de imprimir.</p>
+    <div class="cta-row">
+      <a href="index.html#manifiesto" class="btn btn--oro">Leer el manifiesto</a>
+      <a href="glosario.html" class="btn btn--linea">Ver el glosario</a>
+    </div>
+  </div>
+</section>
+
+<script src="amictus.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+/* AMICTUS · capitulo.css — estilos de páginas de capítulo (se usa con amictus.css) */
+.progreso{position:fixed;top:0;left:0;height:3px;width:0;background:var(--dorado);z-index:60}
+.cab{padding:6rem 0 5rem}
+.cab-grid{display:grid;grid-template-columns:1fr auto;gap:4.5rem;align-items:end}
+.cap-numero{font-family:var(--display);font-size:clamp(5rem,15vw,12rem);line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--dorado)}
+.cap-titulo{font-family:var(--titulos);font-weight:500;font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;margin-top:1.2rem}
+.cap-bajada{margin-top:1.4rem;font-style:italic;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--dorado-claro);max-width:56ch}
+.meta-cap{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2.4rem}
+.toc{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:1.8rem}
+.toc a{font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;opacity:.65;border-bottom:1px solid transparent;padding-bottom:.3rem;transition:.3s}
+.toc a:hover{opacity:1;color:var(--dorado);border-color:var(--dorado)}
+.mini-libro{display:flex;flex-direction:column;justify-content:space-between;width:240px;aspect-ratio:2/3;background:var(--negro-2);border:1px solid rgba(244,241,232,.2);padding:1.3rem;transition:.35s}
+.mini-libro:hover{transform:translateY(-8px);border-color:var(--dorado)}
+.libro-top{display:flex;justify-content:space-between;gap:.5rem;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;opacity:.75}
+.libro-filete{width:2.5rem;height:2px;background:var(--dorado);margin-bottom:1rem}
+.libro-titulo{display:block;font-family:var(--display);font-weight:normal;text-transform:uppercase;font-size:1.9rem;line-height:.95}
+.libro-tema{display:block;font-size:.83rem;font-style:italic;opacity:.75;margin-top:.6rem}
+.prosa{width:min(76ch,92vw);margin-inline:auto}
+.prosa p{margin-bottom:1.5rem}
+.prosa>p:first-of-type::first-letter{font-family:var(--display);font-size:4.8rem;line-height:.8;float:left;padding:.4rem .9rem 0 0;color:var(--azul)}
+.prosa h2{font-family:var(--titulos);font-weight:500;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.1;margin-bottom:1.4rem}
+.prosa .etiqueta{margin-bottom:1.2rem}
+.cita{margin:2.8rem 0;padding-left:1.6rem;border-left:3px solid var(--azul);font-style:italic;font-size:1.35rem;line-height:1.55;color:var(--azul)}
+.caja--mito{border-color:#8C1F2F;background:rgba(140,31,47,.06)}
+.caja--mito h4{color:#8C1F2F}
+.glosario{width:100%;border-collapse:collapse;margin:1.6rem 0 2.5rem;font-size:.92rem;background:#fff}
+.glosario th{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;text-align:left;padding:.7rem .9rem;border-bottom:2px solid var(--negro);color:var(--azul)}
+.glosario td{padding:.7rem .9rem;border-bottom:1px solid rgba(10,10,11,.15)}
+.glosario td:first-child{font-weight:600}
+.qr-cajas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
+.qr{background:var(--negro-2);border:1px solid rgba(244,241,232,.16);border-top:3px solid var(--blanco);padding:1.7rem}
+.qr--casa{border-top-color:var(--dorado)}.qr--compra{border-top-color:var(--azul)}.qr--fuente{border-top-color:var(--blanco)}
+.qr h4{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:.8rem}
+.qr--casa h4{color:var(--dorado)}.qr--compra h4{color:var(--azul-claro)}
+.qr p{font-size:.88rem;opacity:.8}
+.qr code{display:block;margin-top:.8rem;color:var(--dorado);font-size:.75rem}
+.qr-nota{margin-top:2rem;font-size:.8rem;font-style:italic;opacity:.6}
+.pie-cap{padding:5rem 0;border-top:1px solid rgba(244,241,232,.12)}
+.pie-cap .contenedor{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.pie-link small{display:block;font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:.7rem}
+.pie-link a{font-family:var(--titulos);font-size:clamp(1.4rem,3vw,2.2rem);transition:.3s}
+.pie-link a:hover{color:var(--dorado)}
+.pie-link--sig{text-align:right}
+@media (max-width:960px){.cab-grid{grid-template-columns:1fr}.mini-libro{width:210px}.pie-cap .contenedor{grid-template-columns:1fr}.pie-link--sig{text-align:left}}
