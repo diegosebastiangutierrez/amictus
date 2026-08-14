@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CURA · Manual de cuidado de prendas · AMICTUS</title>
+<meta name="description" content="CURA: el manual gratuito de cuidado de prendas de AMICTUS. 18 capítulos en 4 partes — lavado, acabado, reparación y cuidado por material. Descargalo gratis a cambio de tu email.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="../amictus.css">
+<link rel="stylesheet" href="../libro.css">
+
+<style>
+/* ---- Diferenciadores del lead magnet ---- */
+.portada{overflow:hidden}
+.cura-cinta{position:absolute;top:0.7rem;right:-3rem;transform:rotate(35deg);background:var(--dorado);color:var(--negro);font-family:var(--display);font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;padding:.45rem 3.2rem;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.cura-form{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.cura-form input{flex:1;min-width:220px;background:rgba(244,241,232,.08);border:1px solid rgba(244,241,232,.4);color:var(--blanco);padding:.9rem 1.1rem;font-family:var(--texto);font-size:.95rem}
+.cura-form input::placeholder{color:rgba(244,241,232,.5)}
+.cura-form input:focus{outline:none;border-color:var(--dorado)}
+.cura-lista{margin-top:1.6rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem 2rem}
+.cura-lista li{padding:.5rem 0 .5rem 1.6rem;position:relative;font-size:.9rem;opacity:.9}
+.cura-lista li::before{content:"✔";position:absolute;left:0;color:var(--dorado)}
+.cura-priv{margin-top:1.4rem;font-size:.75rem;font-style:italic;opacity:.6}
+</style>
+</head>
+<body>
+<div class="progreso" id="progreso"></div>
+
+<section class="hero-libro contenedor">
+
+  <div>
+   <p class="etiqueta">EXPANSIÓN · Vol. III·01 · Cuidado de prendas</p>
+   <h1>Cu<span>ra</span></h1>
+   <p class="tagline">La prenda más sostenible es la que ya está en tu armario.</p>
+   <p class="desc">CURA convierte el cuidado en un oficio: de la historia del lavado a la química del jabón, del zurcido al almacenamiento, este manual enseña a extender la vida de cada prenda por décadas. No es un libro sobre lavar: es un libro sobre valor, memoria y durabilidad.</p>
+   <div class="chips">
+    <span class="chip chip--oro">18 capítulos</span><span class="chip">4 partes</span>
+    <span class="chip">ES · EN · IT · FR</span><span class="chip">🎁 Lead magnet gratis</span>
+   </div>
+   <div class="cta-row">
+    <a href="#descarga" class="btn btn--oro">Descargar gratis (PDF)</a>
+    <a href="cura/capitulo-01.html" class="btn btn--linea">Leer Cap. 1 en la web</a>
+   </div>
+  </div>
+  <figure class="portada-wrap">
+   <div class="portada">
+    <span class="cura-cinta">Gratis</span>
+    <div class="portada-top"><span>Amictus · Expansión</span><span>III·01</span></div>
+    <div><div class="portada-filete"></div>
+     <h2 class="portada-titulo">Cura</h2>
+     <p class="portada-tema">Manual de cuidado de prendas</p>
+    </div>
+    <p class="portada-pie">18 capítulos · MMXXVI</p>
+   </div>
+  </figure>
+
+</section>
+
+<div class="marquee" aria-hidden="true">
+ <div class="marquee-track">
+  <div class="marquee-grupo"><span>Lavado</span><span>Acabado</span><span>Reparación</span><span>Materiales</span></div>
+  <div class="marquee-grupo"><span>Lavado</span><span>Acabado</span><span>Reparación</span><span>Materiales</span></div>
+ </div>
+</div>
+
+<section class="partes">
+ <div class="contenedor">
+  <p class="etiqueta">Dentro del volumen</p>
+
+  <div class="seccion-head"><h2>Cuatro partes, <em>una vida larga.</em></h2></div>
+  
+  <div class="parte"><span class="parte-num">I</span><div><h3>Lavado: la historia y la técnica</h3><p>Del río al hogar, lavado a mano, el jabón, la lavadora y el secado.</p></div><span class="parte-rango">Caps. 1–5</span></div>
+  <div class="parte"><span class="parte-num">II</span><div><h3>Acabado y conservación</h3><p>Planchado, tintorería, cepillado, guardado y antipolillas.</p></div><span class="parte-rango">Caps. 6–10</span></div>
+  <div class="parte"><span class="parte-num">III</span><div><h3>Reparación y restauración</h3><p>Manchas, zurcido, sashiko y el re-solado del calzado.</p></div><span class="parte-rango">Caps. 11–14</span></div>
+  <div class="parte"><span class="parte-num">IV</span><div><h3>Cuidado por material y anexos</h3><p>Cuero, lana y punto, seda y el glosario de símbolos.</p></div><span class="parte-rango">Caps. 15–18</span></div>
+ </div>
+</section>
+
+<section class="indice" id="indice">
+ <div class="contenedor">
+  <p class="etiqueta etiqueta--azul">Índice completo</p>
+  <div class="seccion-head"><h2>Los dieciocho <em>capítulos.</em></h2></div>
+  <div class="indice-grid">
+   <div>
+    <a class="cap-link" href="cura/capitulo-01.html"><span class="cap-n">01</span><span class="cap-t">El cuidado de la ropa: historia (del río al hogar)</span></a>
+    <a class="cap-link" href="cura/capitulo-02.html"><span class="cap-n">02</span><span class="cap-t">El lavado a mano: técnica paso a paso</span></a>
+    <a class="cap-link" href="cura/capitulo-03.html"><span class="cap-n">03</span><span class="cap-t">El jabón y la química: cómo limpia lo que limpia</span></a>
+    <a class="cap-link" href="cura/capitulo-04.html"><span class="cap-n">04</span><span class="cap-t">La lavadora: la revolución doméstica (y cómo usarla bien)</span></a>
+    <a class="cap-link" href="cura/capitulo-05.html"><span class="cap-n">05</span><span class="cap-t">El secado y el sol: tender, rotar y preservar</span></a>
+    <a class="cap-link" href="cura/capitulo-06.html"><span class="cap-n">06</span><span class="cap-t">El planchado: vapor y forma (sin quemar nada)</span></a>
+    <a class="cap-link" href="cura/capitulo-07.html"><span class="cap-n">07</span><span class="cap-t">La tintorería: limpieza en seco, cuándo sí y cuándo no</span></a>
+    <a class="cap-link" href="cura/capitulo-08.html"><span class="cap-n">08</span><span class="cap-t">El cepillado y el aireado: el mantenimiento entre lavados</span></a>
+    <a class="cap-link" href="cura/capitulo-09.html"><span class="cap-n">09</span><span class="cap-t">El guardado y la percha: colgar y doblar sin deformar</span></a>
+   </div>
+   <div>
+    <a class="cap-link" href="cura/capitulo-10.html"><span class="cap-n">10</span><span class="cap-t">El antipolillas y la conservación: proteger sin químicos agresivos</span></a>
+    <a class="cap-link" href="cura/capitulo-11.html"><span class="cap-n">11</span><span class="cap-t">La mancha y su tratamiento: guía por tipo de mancha y tela</span></a>
+    <a class="cap-link" href="cura/capitulo-12.html"><span class="cap-n">12</span><span class="cap-t">El zurcido y la reparación: costuras, botones y dobladillos</span></a>
+    <a class="cap-link" href="cura/capitulo-13.html"><span class="cap-n">13</span><span class="cap-t">El remiendo visible: sashiko y boro como estética</span></a>
+    <a class="cap-link" href="cura/capitulo-14.html"><span class="cap-n">14</span><span class="cap-t">El re-solado y el zapatero: cuándo vale la pena reparar</span></a>
+    <a class="cap-link" href="cura/capitulo-15.html"><span class="cap-n">15</span><span class="cap-t">El cuidado del cuero: nutrición, limpieza y pátina</span></a>
+    <a class="cap-link" href="cura/capitulo-16.html"><span class="cap-n">16</span><span class="cap-t">El cuidado de la lana y el punto: bolas, encogido y polillas</span></a>
+    <a class="cap-link" href="cura/capitulo-17.html"><span class="cap-n">17</span><span class="cap-t">El cuidado de la seda y delicados: lo que el agua no debe tocar</span></a>
+    <a class="cap-link" href="cura/capitulo-18.html"><span class="cap-n">18</span><span class="cap-t">Glosario del cuidado: los símbolos de las etiquetas, explicados</span></a>
+   </div>
+  </div>
+  <p class="ver-muestra"><a href="cura/capitulo-01.html" class="link-oro">Leer el Cap. 1 gratis →</a></p>
+ </div>
+</section>
+
+<section class="lectura-sec">
+ <div class="contenedor lectura-grid">
+  <div>
+   <p class="etiqueta etiqueta--azul">El método AMICTUS</p>
+   <div class="seccion-head"><h2>Cada capítulo, <em>cinco herramientas.</em></h2></div>
+   <ul class="metodo">
+    <li>Línea de tiempo y referentes en cuatro capas.</li>
+    <li>Infografía en ES · EN · IT · FR y pirámide de materiales.</li>
+    <li>Sistema QR tricromático: Casa, Compra y Fuente.</li>
+    <li>Caja «invertir vs. ahorrar» y checklist de compra.</li>
+    <li>Glosario maestro en cuatro idiomas, desde el Cap. 1.</li>
+   </ul>
+  </div>
+  <figure class="figura">
+   <div class="figura-marco">Infografía · El triángulo del cuidado · ES / EN / IT / FR</div>
+   <figcaption>Así se ve una infografía AMICTUS en el impreso y en la web.</figcaption>
+  </figure>
+ </div>
+</section>
+
+<section class="qr-sec">
+ <div class="contenedor">
+  <p class="etiqueta">Sistema QR · leyenda al inicio del libro</p>
+  <h2>Tres códigos, <em>tres puertas.</em></h2>
+  <div class="qr-cajas">
+   <div class="qr qr--casa"><h4>🏠 Casa</h4><p>El portal: ampliaciones, vídeos y dossiers de cada capítulo.</p><code>amictus.press</code></div>
+   <div class="qr qr--compra"><h4>🛍 Compra</h4><p>Kit de cuidado en tres presupuestos con enlaces de afiliados.</p><code>amictus.press/x/kit-cura</code></div>
+   <div class="qr qr--fuente"><h4>📚 Fuente</h4><p>Museos Open Access y verificación de cada dato histórico.</p><code>amictus.press/f</code></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec sec--azul" id="descarga">
+ <div class="contenedor">
+  <p class="etiqueta" style="color:var(--dorado-claro)">Lead magnet · gratis</p>
+  <h2>Recibí CURA en tu email.</h2>
+  <p class="bajada" style="max-width:56ch">Dejame tu correo y te envío el PDF completo, con los 18 capítulos, las infografías y el glosario de símbolos. Es la puerta de entrada a AMICTUS: regalalo, compartilo, no lo vendas.</p>
+  <!-- ✏️ Conectá acá tu proveedor (Mailchimp / ConvertKit / Buttondown): reemplazá este handler por el embed real del formulario. -->
+  <form class="cura-form" id="curaForm">
+   <input type="email" id="email" placeholder="tu@email.com" required aria-label="Tu email">
+   <button type="submit" class="btn btn--oro">Enviarme el PDF gratis</button>
+  </form>
+  <ul class="cura-lista">
+   <li>PDF interactivo con QR clicables (18 capítulos).</li>
+   <li>Infografías del cuidado en ES · EN · IT · FR.</li>
+   <li>Glosario de símbolos de lavado, explicado.</li>
+   <li>Checklists imprimibles de lavado y guardado.</li>
+  </ul>
+  <p class="cura-priv">Sin spam: solo CURA y, si querés, el newsletter El Hilo. Te das de baja cuando quieras. ¿Preferís el impreso? Bajo demanda, US$14.99 aprox. (KDP Print / Bubok).</p>
+ </div>
+</section>
+
+<!-- ============ FORMATOS ============ -->
+<section class="sec sec--azul" id="formatos">
+  <div class="contenedor">
+    <p class="etiqueta" style="color:var(--dorado-claro)">Formatos y canales</p>
+    <h2>Elegí cómo leerlo.</h2>
+    <div class="formatos-grid">
+      <article class="formato formato--destacado">
+        <h3>Ebook</h3>
+        <p class="precio">US$6.99 <small>/ unidad</small></p>
+        <p>PDF interactivo con QR clicables y epub para todas las tiendas.</p>
+        <div class="canales"><span class="canal">KDP</span><span class="canal">Kobo</span><span class="canal">Google Play</span><span class="canal">Apple Books</span><span class="canal">Gumroad</span></div>
+      </article>
+      <article class="formato">
+        <h3>Impreso</h3>
+        <p class="precio">US$24.99 <small>/ aprox.</small></p>
+        <p>PDF/X-1a · 300 dpi · CMYK · sangrado 3 mm · tapa vector con dorado.</p>
+        <div class="canales"><span class="canal">KDP Print</span><span class="canal">Bubok</span></div>
+      </article>
+      <article class="formato">
+        <h3>Bundle CODEX</h3>
+        <p class="precio">US$24.99 <small>/ 7 vols.</small></p>
+        <p>La Serie I completa: calzado, marroquinería, prendas, accesorios, textiles y joyería.</p>
+        <div class="canales"><span class="canal">Gumroad</span><span class="canal">Hotmart</span><span class="canal">Payhip</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<nav class="sec">
+ <div class="contenedor libros-nav">
+  <a class="libro-prev" href="../praxis/libro-color.html" aria-label="Libro anterior: COLOR — Teoría del color">
+   <span class="nav-arrow">←</span>
+   <span class="nav-txt"><small>Vol. II·06 · anterior · Serie PRAXIS</small><strong>COLOR — Teoría del color</strong></span>
+  </a>
+  <a class="libro-next" href="libro-pallium.html" aria-label="Libro siguiente: PALLIUM — Abrigos y outerwear">
+   <span class="nav-txt"><small>Vol. III·02 · siguiente</small><strong>PALLIUM — Abrigos y outerwear</strong></span>
+   <span class="nav-arrow">→</span>
+  </a>
+ </div>
+</nav>
+
+<script src="../amictus.js"></script>
+<script>
+addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progreso').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+document.getElementById('curaForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const em=document.getElementById('email').value;
+ if(!em)return;
+ document.getElementById('curaForm').innerHTML='<p style="font-family:var(--titulos);font-size:1.2rem;color:var(--dorado-claro)">✔ Listo: CURA va en camino a '+em+'. Revisá tu bandeja (y el spam, por las dudas).</p>';
+});
+</script>
+</body>
+</html>
