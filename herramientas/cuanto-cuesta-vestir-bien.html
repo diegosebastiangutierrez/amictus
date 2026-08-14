@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Cuánto cuesta vestir bien? · Tu vestuario en 3 presupuestos · AMICTUS</title>
+<meta name="description" content="El presupuestador de outfits de AMICTUS: fondo de armario y básicos que sí combinan, regla invertir/ahorrar, total estimado y selección curada de afiliados con sponsors. Método SARTOR.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="../amictus.css">
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Herramientas AMICTUS · 09 · el presupuestador de outfits</p>
+    <h1>¿Cuánto cuesta <span>vestir bien?</span></h1>
+    <p class="tagline">Tu vestuario completo, en tres presupuestos.</p>
+    <p class="bajada">Fondo de armario y básicos que sí combinan entre sí, con la regla de la casa: invertir donde se ve y se usa, ahorrar donde se reemplaza. La pregunta del título tiene tres respuestas; elegí la tuya — y mirá abajo dónde comprarla.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div class="toolbar">
+      <select class="buscar" id="perfil" style="flex:1">
+        <option value="mixto">Estilo de vida mixto</option>
+        <option value="formal">Oficina formal</option>
+        <option value="casual">Casual</option>
+      </select>
+      <button class="filtro is-active" data-b="a">Ahorrar</button>
+      <button class="filtro" data-b="e">Equilibrado</button>
+      <button class="filtro" data-b="i">Invertir</button>
+    </div>
+    <div class="cap-lista" id="lista"></div>
+    <p class="total" id="total"></p>
+
+    <p style="margin-top:2rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;opacity:.6">Espacios de sponsor naturales de esta cápsula</p>
+    <div class="spon-row" id="spon"></div>
+
+    <!-- ✏️ VIDRIERA DE AFILIADOS: hoy placeholders; mañana script → Drupal por aff_tag -->
+    <div class="aff-sec">
+      <h3>Selección curada · afiliados & sponsors</h3>
+      <div class="aff-grid" id="affGrid"></div>
+      <p class="aff-nota">Placeholders de demostración: en Drupal, este bloque se alimenta por <code>aff_tag</code> — producto real, logo del sponsor y enlace Geniuslink. Los precios mostrados corresponden al presupuesto elegido arriba.</p>
+    </div>
+
+    <p style="margin-top:2rem;font-size:.85rem;font-style:italic;opacity:.7">Rangos orientativos en USD por unidad. «Cuánto gastar en ropa» no tiene una respuesta única: tiene tres, y dependen de dónde inviertas y dónde ahorres. El método completo: SARTOR, caps. 1 y 14–16.</p>
+    <div class="cta-row"><a href="qrs.html" class="btn btn--oro" style="border-color:var(--azul)">QR Compra · selección curada</a><a href="libro-sartor.html" class="btn" style="border-color:var(--azul);color:var(--azul)">Ir a SARTOR</a></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="contenedor">
+    <p class="etiqueta">La regla de la casa</p>
+    <h2>Invertí donde se ve, <em>ahorrá donde se reemplaza.</em></h2>
+    <ul class="linea" style="border-color:var(--dorado)">
+      <li><strong style="color:var(--dorado)">Zapatos y abrigo</strong> son la silueta: ahí va la inversión (y el precio por uso más bajo).</li>
+      <li><strong style="color:var(--dorado)">Remeras y tendencias</strong> se reemplazan: ahí va el ahorro sin culpa.</li>
+      <li><strong style="color:var(--dorado)">El medio</strong> (chinos, merino, denim) define cuántos outfits reales salen de la lista.</li>
+    </ul>
+  </div>
+</section>
+
+<script src="../amictus.js"></script>
+<script>
+/* [nombre, qty, precios{a,e,i}, flag, aff_tag, emoji, sponsor] */
+const BASE=[
+ ['Zapatos de cuero cosidos',1,{a:'80–120',e:'150–250',i:'300–450'},'inv','zapatos-cuero-cosidos','👞','Calzado'],
+ ['Blazer azul marino',1,{a:'70–110',e:'140–220',i:'280–420'},'','hombre-blazer','🧥','Sastrería'],
+ ['Chinos (beige + grafito)',2,{a:'35–50',e:'60–90',i:'110–160'},'','hombre-chino','👖','Básicos de vestuario'],
+ ['Camisas oxford',3,{a:'25–40',e:'45–70',i:'90–140'},'','hombre-camisa-oxford','👔','Básicos de vestuario'],
+ ['Remeras de algodón pesado',4,{a:'12–20',e:'25–40',i:'50–80'},'aho','hombre-remera-algodon','👕','Básicos de vestuario'],
+ ['Suéteres de merino',2,{a:'30–50',e:'60–90',i:'120–180'},'','hombre-merino','🧶','Punto'],
+ ['Denim oscuro sin roturas',1,{a:'40–60',e:'70–110',i:'150–220'},'','hombre-denim','👖','Denim'],
+ ['Abrigo de lana',1,{a:'90–140',e:'180–280',i:'350–550'},'inv','hombre-abrigo-lana','🧥','Outerwear'],
+ ['Cinturón de cuero',1,{a:'20–35',e:'40–60',i:'80–120'},'','acc-cinturon-cuero','🧵','Marroquinería'],
+ ['Bolso de cuero o lona',1,{a:'40–70',e:'80–130',i:'180–260'},'','acc-bolso','👜','Marroquinería']
+];
+const EXTRA={
+ formal:[['Traje azul marino',1,{a:'140–200',e:'300–450',i:'700–1200'},'inv','hombre-traje-azul','🤵','Sastrería'],['Camisas de vestir',2,{a:'30–45',e:'50–80',i:'100–150'},'','hombre-camisa-vistir','👔','Sastrería'],['Corbatas de seda tejida',2,{a:'15–25',e:'30–50',i:'60–90'},'','acc-corbata-seda','🎗️','Accesorios de seda'],['Oxford negros',1,{a:'90–130',e:'160–260',i:'320–480'},'inv','hombre-oxford-negro','👞','Calzado']],
+ casual:[['Sneakers de cuero limpio',1,{a:'50–80',e:'90–140',i:'180–260'},'','hombre-sneakers-cuero','👟','Calzado'],['Camisas de lino / franela',2,{a:'25–40',e:'45–70',i:'90–140'},'','hombre-camisa-lino','👔','Indumentaria'],['Chaleco o tejidos de capa',1,{a:'25–40',e:'50–80',i:'100–150'},'','hombre-chaleco','🧶','Punto']],
+ mixto:[]
+};
+let b='a';
+const $=id=>document.getElementById(id);
+const mid=r=>r.split('–').map(Number);
+function pinta(){
+ const items=[...BASE,...EXTRA[$('perfil').value]];
+ let lo=0,hi=0;
+ $('lista').innerHTML=items.map(it=>{
+  const[l,h]=mid(it[2][b]);lo+=l*it[1];hi+=h*it[1];
+  return `<div class="cap-item"><div><span class="qty">× ${it[1]}</span><h3>${it[0]}${it[3]==='inv'?'<span class="tag-inv">Invertir</span>':''}${it[3]==='aho'?'<span class="tag-aho">Ahorrar</span>':''}</h3></div><span class="precio">US$ ${it[2][b]}</span></div>`;
+ }).join('');
+ $('total').innerHTML=`US$ ${lo.toLocaleString('es')}–${hi.toLocaleString('es')}<small>Esa es la respuesta a la pregunta del título, en modo «${b==='a'?'ahorrar':b==='e'?'equilibrado':'invertir'}».</small>`;
+ /* Sponsors naturales */
+ const sponsors=new Set(items.map(it=>it[6]));
+ sponsors.add('Cuidado de calzado · Saphir/Tarrago/Kiwi');
+ $('spon').innerHTML=[...sponsors].map(s=>`<span>${s}</span>`).join('');
+ /* ✏️ Vidriera de afiliados: placeholders hoy; en Drupal, script por aff_tag */
+ $('affGrid').innerHTML=items.slice(0,8).map(it=>`
+  <article class="aff-card" data-aff="${it[4]}">
+   <p class="brand-logo">BRAND</p>
+   <div class="aff-img">${it[5]}</div>
+   <div class="aff-body"><p class="n">${it[0]}</p><p class="p">US$ ${it[2][b]} · #${it[4]} · ${it[6]}</p><a href="#">Ver opciones →</a></div>
+  </article>`).join('');
+}
+$('perfil').addEventListener('change',pinta);
+document.querySelectorAll('.filtro').forEach(x=>x.addEventListener('click',()=>{
+ document.querySelectorAll('.filtro').forEach(y=>y.classList.remove('is-active'));
+ x.classList.add('is-active');b=x.dataset.b;pinta();
+}));
+pinta();
+</script>
+</body>
+</html>

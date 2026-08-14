@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precio por uso · AMICTUS</title>
+<meta name="description" content="Calculadora de precio por uso: la regla AMICTUS para comprar mejor. El precio por uso baja cuando el cuidado sube.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="../amictus.css">
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Herramientas AMICTUS · 03</p>
+    <h1>Precio por <span>uso</span></h1>
+    <p class="tagline">Un zapato caro que usás 500 veces es barato. Uno barato que usás 5, carísimo.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor calc">
+    <div>
+      <div class="campo"><label for="precio">Precio pagado (US$)</label><input id="precio" type="number" value="180"></div>
+      <div class="campo"><label for="anios">Años de vida esperados</label><input id="anios" type="number" step="0.5" value="6"></div>
+      <div class="campo"><label for="usos">Usos por mes</label><input id="usos" type="number" value="8"></div>
+      <button class="btn btn--oro" id="btn">Calcular</button>
+    </div>
+    <div>
+      <p class="resultado" id="r">—</p>
+      <p class="veredicto" id="v"></p>
+      <p style="margin-top:1.4rem;max-width:52ch" id="f">La regla de la colección: <strong>el precio por uso baja cuando el cuidado sube.</strong> Método completo en CALCEUS cap. 36 («Invertir vs. ahorrar»).</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="contenedor">
+    <p class="etiqueta">Escala de la casa</p>
+    <h2>Cómo leer <em>el número.</em></h2>
+    <ul class="linea" style="border-color:var(--dorado)">
+      <li><strong style="color:var(--dorado)">&lt; US$0,50</strong> Inversión seria: comprá lo mejor que puedas y cuidalo como tal.</li>
+      <li><strong style="color:var(--dorado)">US$0,50–1,50</strong> Compra sana de uso frecuente.</li>
+      <li><strong style="color:var(--dorado)">US$1,50–3</strong> Capricho: asumilo como tal, sin culpa y sin mito de «inversión».</li>
+      <li><strong style="color:var(--dorado)">&gt; US$3</strong> O lo usás más, o lo devolvés al circuito: vender/donar también es cuidar.</li>
+    </ul>
+  </div>
+</section>
+
+<script src="../amictus.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+$('btn').addEventListener('click',()=>{
+  const p=+$('precio').value,a=+$('anios').value,u=+$('usos').value;
+  if(!p||!a||!u)return;
+  const total=a*12*u, cpu=p/total;
+  $('r').textContent='US$ '+cpu.toFixed(2)+' / uso';
+  $('v').textContent= cpu<0.5?'Inversión seria.':cpu<1.5?'Compra sana.':cpu<3?'Capricho confeso.':'Prenda en riesgo: usala o liberala.';
+  $('f').innerHTML=`Son <strong>${total.toLocaleString('es')} usos</strong> en ${a} años. La regla: <strong>el precio por uso baja cuando el cuidado sube</strong> — CALCEUS cap. 36.`;
+});
+$('btn').click();
+</script>
+</body>
+</html>

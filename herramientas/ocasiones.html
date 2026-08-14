@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qué me pongo · Look completo · AMICTUS</title>
+<meta name="description" content="Evento + perfil + clima → código, look completo por género, paleta, Sí/No con razón y selección curada de afiliados con sponsors.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="../amictus.css">
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Herramientas AMICTUS · 07</p>
+    <h1>Qué me <span>pongo</span></h1>
+    <p class="tagline">El look completo, con su vidriera de afiliados y sponsors.</p>
+    <p class="bajada">Evento + perfil + clima → código, outfit por categoría, paleta, Sí/No con razón y selección curada. En Drupal, cada tag trae imagen genérica y sponsor real.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div class="toolbar">
+      <select class="buscar" id="ev" style="flex:2"></select>
+      <select class="buscar" id="pf" style="flex:1"><option value="m">Masculino</option><option value="f">Femenino</option><option value="n">Niños</option></select>
+      <button class="filtro is-active" data-c="frio">❄ Frío</button>
+      <button class="filtro" data-c="calor">☀ Calor</button>
+    </div>
+    <p class="cod-out" id="cod"></p>
+    <div class="pal-row" id="pal"></div>
+    <div class="look-grid" id="look"></div>
+    <p class="sponsors--look">Espacios de sponsor naturales de este look</p>
+    <div class="spon-row" id="spon"></div>
+
+    <!-- ✏️ VIDRIERA DE AFILIADOS: hoy placeholders; mañana script → Drupal por aff_tag -->
+    <div class="aff-sec">
+      <h3>Selección curada · afiliados & sponsors</h3>
+      <div class="aff-grid" id="affGrid"></div>
+      <p class="aff-nota">Placeholders de demostración: en Drupal, este bloque se alimenta con un script que consulta nodos por <code>aff_tag</code> — imagen genérica por tipo y género, logo del sponsor real (relojería, marroquinería, joyería, cuidado del calzado) y enlace Geniuslink.</p>
+    </div>
+
+    <div class="oc-grid">
+      <div class="oc oc--si"><h3>Sí, con razón</h3><ul id="si"></ul></div>
+      <div class="oc oc--no"><h3>No, con razón</h3><ul id="no"></ul></div>
+    </div>
+    <p id="clima" class="ocasion--clima"></p>
+  </div>
+</section>
+
+<section class="sec sec--azul">
+  <div class="contenedor">
+    <p class="etiqueta">El método completo</p>
+    <h2>La elegancia es <em style="color:var(--dorado-claro)">contexto.</em></h2>
+    <div class="cta-row"><a href="libro-decorum.html" class="btn btn--oro">Ir a DECORUM</a><a href="libro-cultus.html" class="btn btn--linea">CULTUS · accesorios</a><a href="libro-corium.html" class="btn btn--linea">CORIUM · marroquinería</a></div>
+  </div>
+</section>
+
+<script src="../amictus.js"></script>
+<script>
+const OUT={
+m:{
+ ETQ:{r:[['Esmoquin con pajarita','hombre-esmoquin']],c:[['Oxford charol','hombre-oxford-charol']],a:[['Pajarita de seda','acc-pajarita'],['Faja o chaleco','acc-faja'],['Reloj de vestir','acc-reloj-vistir','Relojería']]},
+ FOR:{r:[['Traje azul marino','hombre-traje-azul'],['Camisa blanca','hombre-camisa-blanca'],['Corbata de seda','hombre-corbata-seda']],c:[['Oxford negros','hombre-oxford-negro']],a:[['Cinturón negro','acc-cinturon-negro','Marroquinería'],['Reloj de vestir','acc-reloj-vistir','Relojería'],['Pañuelo de bolsillo','acc-panuelo-bolsillo']]},
+ BUS:{r:[['Traje gris o separados','hombre-traje-gris'],['Camisa de vestir','hombre-camisa-vistir']],c:[['Derby marrón','hombre-derby-marron']],a:[['Cinturón al tono','acc-cinturon-marron','Marroquinería'],['Maletín de cuero','acc-maletin','Marroquinería'],['Reloj minimal','acc-reloj-minimal','Relojería']]},
+ SMA:{r:[['Chino + camisa oxford','hombre-chino-oxford'],['Blazer desestructurado','hombre-blazer']],c:[['Mocasines o sneakers de cuero','hombre-mocasines']],a:[['Cinturón textil','acc-cinturon-textil'],['Bolso de lona','acc-bolso-lona'],['Reloj casual','acc-reloj-casual','Relojería']]},
+ CAS:{r:[['Denim oscuro + remera','hombre-denim-remera']],c:[['Sneakers blancos','hombre-sneakers-blancos']],a:[['Mochila','acc-mochila'],['Reloj casual','acc-reloj-casual','Relojería']]}
+},
+f:{
+ ETQ:{r:[['Vestido largo de noche','mujer-vestido-largo']],c:[['Tacón negro o flat vestido','mujer-tacon-negro']],a:[['Clutch','acc-clutch','Marroquinería'],['Joyería fina','acc-joyeria-fina','Joyería']]},
+ FOR:{r:[['Vestido midi oscuro','mujer-vestido-midi'],['Traje de chaqueta','mujer-traje-chaqueta']],c:[['Tacón medio','mujer-tacon-medio']],a:[['Bolso estructurado','acc-bolso-estructurado','Marroquinería'],['Joya única / aretes','acc-joyeria-fina','Joyería'],['Cinturón fino','acc-cinturon-fino','Marroquinería']]},
+ BUS:{r:[['Falda lápiz o pinzas + blusa','mujer-falda-blusa'],['Blazer','mujer-blazer']],c:[['Tacón medio cerrado o mocasines','mujer-tacon-medio']],a:[['Tote de cuero','acc-tote','Marroquinería'],['Reloj minimal','acc-reloj-minimal','Relojería']]},
+ SMA:{r:[['Vestido de punto o chino + blusa','mujer-vestido-punto']],c:[['Botines o sneakers de cuero','mujer-botines']],a:[['Crossbody','acc-crossbody','Marroquinería'],['Pañuelo de seda','acc-panuelo-seda'],['Reloj casual','acc-reloj-casual','Relojería']]},
+ CAS:{r:[['Denim + remera o blusa','mujer-denim-remera']],c:[['Sneakers blancos','mujer-sneakers-blancos']],a:[['Mochila o bandolera','acc-mochila'],['Joyería mínima','acc-joyeria-minimal','Joyería']]}
+},
+n:{
+ ETQ:{r:[['Traje oscuro / vestido con movimiento','nino-traje-vestido']],c:[['Zapatos vestidos con velcro','ninos-zapatos-velcro']],a:[['Moño / lazo','acc-mono-lazo']]},
+ FOR:{r:[['Chino + camisa / vestido midi','nino-chino-vestido']],c:[['Mocasines / merceditas','ninos-mocasines']],a:[['Reloj (mayores)','acc-reloj-nino','Relojería']]},
+ BUS:{r:[['Chino + camisa planchada','nino-chino-camisa']],c:[['Zapatos de colegio limpios','ninos-zapatos-colegio']],a:[['Mochila prolija','acc-mochila-nino']]},
+ SMA:{r:[['Chino + remera / vestido con medias','nino-chino-remera']],c:[['Sneakers limpios','ninos-sneakers']],a:[['Mochila o riñonera','acc-mochila-nino'],['Gorra','acc-gorra-nino']]},
+ CAS:{r:[['Denim + remera','nino-denim-remera']],c:[['Sneakers','ninos-sneakers']],a:[['Gorra','acc-gorra-nino'],['Mochila','acc-mochila-nino']]}
+}};
+const EV={
+ gala:{n:'Gala / black tie',cod:'ETIQUETA',f:'ETQ',si:['Esmoquin con pajarita; faja o chaleco','Vestido largo; joya verdadera o ninguna','Charol o seda'],no:['Traje de oficina como sustituto','Midi improvisado','Reloj deportivo'],pal:[['#0A0A0B','negro'],['#C9A24B','dorado'],['#8C2F4F','frambuesa'],['#F4F1E8','marfil']]},
+ boda_noche:{n:'Boda de noche',cod:'FORMAL',f:'FOR',si:['Azul marino o grafito con corbata de seda','Vestido largo o midi oscuro con brillo','Oxford negros'],no:['Denim o sneakers','Colores claros dominantes','Reloj deportivo'],pal:[['#111C63','marino'],['#1C1B18','grafito'],['#C9A24B','dorado'],['#8C2F4F','frambuesa']]},
+ funeral:{n:'Funeral',cod:'FORMAL SOBRIO',f:'FOR',si:['Negro o grafito; corbata negra','Sin brillos ni estampados','Accesorios mínimos'],no:['Colores vivos','Denim','Joyería llamativa'],pal:[['#0A0A0B','negro'],['#1C1B18','tinta'],['#3A3A3A','gris'],['#F4F1E8','marfil']]},
+ boda_dia:{n:'Boda de día',cod:'SEMI-FORMAL DIURNO',f:'FOR',si:['Traje azul medio o claro con corbata tejida','Vestido midi o chaqueta luminosa','Cuero pulido; sombrero solo en exterior'],no:['Negro total','Esmoquin de día','Blanco que compita'],pal:[['#5B7FA6','azul medio'],['#F4F1E8','crema'],['#B08D57','camel'],['#9AA87C','salvia']]},
+ graduacion:{n:'Graduación',cod:'SEMI-FORMAL FESTIVO',f:'SMA',si:['Traje claro o vestido con movimiento','Un acento de color propio','Calzado que banca césped'],no:['Etiqueta completa','Tacones finos en pasto'],pal:[['#5B7FA6','azul claro'],['#A4552F','terracota'],['#F4F1E8','crema'],['#6B6B2F','oliva']]},
+ cocktail_verano:{n:'Cocktail de verano',cod:'COCKTAIL CÁLIDO',f:'SMA',si:['Lino o algodón estructurado','Vestido fluido + cuña fina','Gafas buenas: el accesorio del día'],no:['Sintéticos que no respiran','Charol al sol'],pal:[['#F4F1E8','lino'],['#9AA87C','salvia'],['#5B7FA6','celeste'],['#B08D57','arena']]},
+ oficina:{n:'Oficina',cod:'BUSINESS',f:'BUS',si:['Lana fría; camisa planchada','Falda lápiz o pinzas; blusa prolija','Cinturón y zapatos al tono'],no:['Escotes y largos extremos','Perfume invasivo','Sneakers salvo cultura casual'],pal:[['#1F2A44','marino'],['#8A8D93','gris'],['#F4F1E8','blanco'],['#5A4632','marrón']]},
+ entrevista:{n:'Entrevista',cod:'BUSINESS CONSERVADOR',f:'BUS',si:['Azul marino + camisa blanca','Portafolio o tote estructurada','Zapatos cerrados y pulidos'],no:['Tendencia marcada el día 1','Accesorios ruidosos','Estrenar sin prueba'],pal:[['#111C63','marino'],['#FFFFFF','blanco'],['#8A8D93','gris'],['#1C1B18','negro']]},
+ viernes:{n:'Viernes casual',cod:'SMART CASUAL',f:'SMA',si:['Chino + oxford + blazer','Vestido de punto + botines','Sneakers de cuero impecable'],no:['Denim roto','Hoodie','Sandalias de playa'],pal:[['#B08D57','camel'],['#5B7FA6','azul medio'],['#F4F1E8','crema'],['#6B6B2F','oliva']]},
+ cita:{n:'Primera cita',cod:'SMART CASUAL CUIDADO',f:'SMA',si:['La prenda impecable + un acento','Capas según plan','Perfume en dosis baja'],no:['Estrenar todo junto','Logos gigantes'],pal:[['#1F2A44','marino'],['#B08D57','camel'],['#F4F1E8','crema'],['#8C2F4F','acento']]}
+};
+const CLIMA={frio:'Clima frío: capas de lana y abrigo con estructura; el accesorio de cuello suma sin gritar.',
+ calor:'Clima cálido: lino, algodón y lana fría; accesorios de fibra natural trabajan para vos.'};
+const EMO={r:'🧥',c:'👞',a:'⌚'}, PRECIO={r:'US$ 40–140',c:'US$ 80–260',a:'US$ 25–160'};
+let c='frio';
+const $=id=>document.getElementById(id);
+$('ev').innerHTML=Object.entries(EV).map(([k,v])=>`<option value="${k}">${v.n}</option>`).join('');
+function pinta(){
+ const e=EV[$('ev').value], pf=$('pf').value;
+ let form=e.f; if(pf==='n'&&form==='BUS')form='FOR';
+ const o=OUT[pf][form];
+ $('cod').textContent=e.cod+(pf==='n'?' · NIÑOS':pf==='f'?' · FEMENINO':' · MASCULINO');
+ $('pal').innerHTML=e.pal.map(([h,n])=>`<div class="sw-wrap"><div class="sw" style="background:${h}"></div>${n}</div>`).join('');
+ const cats=[['r','Ropa','🧥'],['c','Calzado','👞'],['a','Accesorios','⌚']];
+ const sponsors=new Set();
+ $('look').innerHTML=cats.map(([k,t,em])=>`
+  <div class="look-col"><h3>${t}</h3>${o[k].map(it=>{
+    if(it[2])sponsors.add(it[2]);
+    return `<div class="look-item" data-aff="${it[1]}"><span class="look-img">${em}</span><div><p class="look-n">${it[0]}</p><span class="aff">#${it[1]}</span>${it[2]?`<span class="spon">${it[2]}</span>`:''}</div></div>`;
+  }).join('')}</div>`).join('');
+ if(o.c.length)sponsors.add('Cuidado de calzado · Saphir/Tarrago/Kiwi');
+ $('spon').innerHTML=[...sponsors].map(s=>`<span>${s}</span>`).join('');
+ /* ✏️ Vidriera de afiliados: placeholders hoy; en Drupal, script por aff_tag */
+ const flat=[...o.r.map(x=>['r',x]),...o.c.map(x=>['c',x]),...o.a.map(x=>['a',x])].slice(0,8);
+ $('affGrid').innerHTML=flat.map(([cat,it])=>`
+  <article class="aff-card" data-aff="${it[1]}">
+   <p class="brand-logo">BRAND</p>
+   <div class="aff-img">${EMO[cat]}</div>
+   <div class="aff-body"><p class="n">${it[0]}</p><p class="p">${PRECIO[cat]} · #${it[1]}${it[2]?' · '+it[2]:''}</p><a href="#">Ver opciones →</a></div>
+  </article>`).join('');
+ $('si').innerHTML=e.si.map(x=>`<li>${x}</li>`).join('');
+ $('no').innerHTML=e.no.map(x=>`<li>${x}</li>`).join('');
+ $('clima').textContent=CLIMA[c];
+}
+$('ev').addEventListener('change',pinta);
+$('pf').addEventListener('change',pinta);
+document.querySelectorAll('.filtro').forEach(b=>b.addEventListener('click',()=>{
+ document.querySelectorAll('.filtro').forEach(x=>x.classList.remove('is-active'));
+ b.classList.add('is-active');c=b.dataset.c;pinta();
+}));
+pinta();
+</script>
+</body>
+</html>

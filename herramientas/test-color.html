@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test del color · AMICTUS</title>
+<meta name="description" content="Cinco preguntas para descubrir tu perfil de color: paleta recomendada, qué evitar y dónde profundizar. Basado en VENUSTA y COLOR.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="../amictus.css">
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Herramientas AMICTUS · 04</p>
+    <h1>Test del <span>color</span></h1>
+    <p class="tagline">Cinco preguntas, un perfil: descubrí de qué lado del círculo cromático vivís.</p>
+    <p class="bajada">Versión de bolsillo del método completo de VENUSTA y COLOR. Orientativo: la prueba definitiva se hace con luz natural y sin maquillaje (VENUSTA, caps. 6–10).</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div id="quiz"></div>
+    <div id="resColor"></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="contenedor">
+    <p class="etiqueta">Para seguir</p>
+    <h2>El color es <em>un idioma.</em></h2>
+    <p class="bajada">Armonías, psicología y aplicación real al armario: la ciencia completa está en COLOR y las herramientas de aplicación en VENUSTA.</p>
+    <div class="cta-row"><a href="libro-color.html" class="btn btn--oro">Ir a COLOR</a><a href="libro-venusta.html" class="btn btn--linea">Ir a VENUSTA</a></div>
+  </div>
+</section>
+
+<script src="../amictus.js"></script>
+<script>
+const QS=[
+ {q:'Las venas de tu muñeca se ven…',o:[['Azules / violetas',-1],['Verdes',1],['No se distinguen',0]]},
+ {q:'¿Qué metal te unifica mejor la piel?',o:[['Plata',-1],['Oro',1],['Ambos',0]]},
+ {q:'Al sol, tu piel…',o:[['Se quema primero',-1],['Se broncea fácil',1],['Se quema y luego broncea',0]]},
+ {q:'Tu cabello natural tiene…',o:[['Reflejos ceniza',-1],['Reflejos cobrizos / dorados',1],['Tono neutro',0]]},
+ {q:'Con blanco roto (crema) vs. blanco óptico…',o:[['Mejor con óptico',-1],['Mejor con crema',1],['Igual',0]]}
+];
+const RES={
+ calido:{t:'Perfil cálido · primavera / otoño',d:'Tu armonía vive en el lado dorado del círculo: tierras, terracota, oliva, camel y crema. El cobre de esta web es tuyo.',
+  sw:[['#B08D57','camel'],['#A4552F','terracota'],['#6B6B2F','oliva'],['#E4C580','amarillo oro'],['#7A4A1F','cobre'],['#F4F1E8','crema']],
+  no:'Los grises lavados y los azules helados te apagan: usalos lejos de la cara.'},
+ frio:{t:'Perfil frío · verano / invierno',d:'Tu armonía vive en el lado azul: marino, cobalto, frambuesa, esmeralda y blancos ópticos. El azul AMICTUS es tuyo.',
+  sw:[['#111C63','marino'],['#2138C4','cobalto'],['#8C2F4F','frambuesa'],['#1F5C4D','esmeralda'],['#7D8FFF','pervinca'],['#FFFFFF','blanco óptico']],
+  no:'Los naranjas amarillentos y mostazas te endurecen: dosificálos en accesorios.'},
+ neutro:{t:'Perfil neutro · centro del círculo',d:'Cruzás bien de un lado a otro: casi todo te funciona. Apostá a marino, rojo, camel y blanco, y jugá el acento con el resto.',
+  sw:[['#111C63','marino'],['#8C1F2F','rojo'],['#B08D57','camel'],['#F4F1E8','blanco roto'],['#1C1B18','tinta']],
+  no:'El saturado de pies a cabeza: mejor un acento por look.'}
+};
+const resp=Array(QS.length).fill(null);
+const $=id=>document.getElementById(id);
+$('quiz').innerHTML=QS.map((q,i)=>`<div class="paso"><h3><small>0${i+1}</small>${q.q}</h3>
+ <div class="opts">${q.o.map((o,j)=>`<button class="opt" data-i="${i}" data-j="${j}">${o[0]}</button>`).join('')}</div></div>`).join('');
+document.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
+  const i=+b.dataset.i;
+  b.parentElement.querySelectorAll('.opt').forEach(x=>x.classList.remove('is-on'));
+  b.classList.add('is-on');
+  resp[i]=QS[i].o[+b.dataset.j][1];
+  if(resp.every(r=>r!==null))pinta();
+}));
+function pinta(){
+  const s=resp.reduce((a,b)=>a+b,0);
+  const r=s>1?RES.calido:s<-1?RES.frio:RES.neutro;
+  $('resColor').classList.add('is-on');
+  $('resColor').innerHTML=`<h3>${r.t}</h3><p>${r.d}</p>
+   <div class="sw-row">${r.sw.map(([c,n])=>`<div class="sw-wrap"><div class="sw" style="background:${c}"></div>${n}</div>`).join('')}</div>
+   <p><strong>Evitá cerca del rostro:</strong> ${r.no}</p>
+   <p style="margin-top:1.4rem;font-size:.85rem;opacity:.7">Fuente: VENUSTA caps. 6–10 · COLOR caps. 11–14 — <a href="glosario.html" style="border-bottom:1px solid currentColor">glosario</a></p>`;
+  $('resColor').scrollIntoView({behavior:'smooth',block:'center'});
+}
+</script>
+</body>
+</html>

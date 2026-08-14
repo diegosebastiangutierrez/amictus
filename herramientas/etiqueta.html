@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decodificador de etiquetas · AMICTUS</title>
+<meta name="description" content="Armá la composición de tu prenda y AMICTUS te dice calidad esperada, comportamiento, cuidado y red flags. Basado en TEXTUM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="../amictus.css">
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Herramientas AMICTUS · 06</p>
+    <h1>Decodificador de <span>etiquetas</span></h1>
+    <p class="tagline">Decime de qué está hecha; te digo qué esperar.</p>
+    <p class="bajada">Composición en mano, esta herramienta lee la prenda como un editor de TEXTUM: calidad esperada, comportamiento, cuidado y red flags.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div id="rows"></div>
+    <div class="cta-row" style="margin-top:1rem">
+      <button class="btn btn--oro" id="add" style="border-color:var(--azul);color:var(--azul)">+ Fibra</button>
+      <button class="btn btn--oro" id="analizar">Analizar composición</button>
+    </div>
+    <div class="ver-grid" id="ver"></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="contenedor">
+    <p class="etiqueta">Para leer solo</p>
+    <h2>Tres preguntas <em>antes de pagar.</em></h2>
+    <ul class="linea" style="border-color:var(--dorado)">
+      <li><strong style="color:var(--dorado)">¿Qué fibra domina?</strong> La primera de la lista es la personalidad de la prenda.</li>
+      <li><strong style="color:var(--dorado)">¿Cuánto sintético?</strong> ≤20 % aporta resistencia; ≥50 % en prenda de diario, retiene olor y sudor.</li>
+      <li><strong style="color:var(--dorado)">¿Cierra en 100?</strong> Una etiqueta que no suma 100 % es una red flag legal y de calidad.</li>
+    </ul>
+    <div class="cta-row"><a href="libro-textum.html" class="btn btn--oro">Ir a TEXTUM</a></div>
+  </div>
+</section>
+
+<script src="../amictus.js"></script>
+<script>
+const F={
+ algodon:{n:'Algodón',cat:'nat',c:'Lavado tibio, secado a la sombra; plancha con vapor.',b:'Fresco y absorbente; arruga y encoge si no está prelavado.'},
+ lino:{n:'Lino',cat:'nat',c:'Lavado suave, secado tendido; plancha húmeda.',b:'Fresquísimo y noble; la arruga es parte del lenguaje.'},
+ lana:{n:'Lana',cat:'nat',c:'Lavado frío o en seco; secado plano; horma o doblado.',b:'Termorregula y respira; se recupera sola entre usos.'},
+ seda:{n:'Seda',cat:'nat',c:'En seco o mano con pH neutro; sombra; plancha tibia del revés.',b:'Brillo y caída; sensible al sol, al sudor y al cloro.'},
+ viscosa:{n:'Viscosa / Rayón',cat:'art',c:'Lavado frío suave; no retorcer; plancha tibia.',b:'Caída sedosa; encoge y pierde fuerza mojada.'},
+ lyocell:{n:'Lyocell / Tencel',cat:'art',c:'Lavado suave; secado colgado.',b:'Sostenible, suave, buena caída; pilling moderado.'},
+ poliester:{n:'Poliéster',cat:'syn',c:'Lavado normal; seca rápido; cuidado con la plancha caliente.',b:'Resistente e indestructible; retiene olor y no respira.'},
+ poliamida:{n:'Poliamida / Nylon',cat:'syn',c:'Lavado normal; sin plancha.',b:'Fuerte y liviana; la fibra técnica por excelencia.'},
+ acrilico:{n:'Acrílico',cat:'syn',c:'Lavado suave; sin secadora.',b:'Imita a la lana en precio; pilling alto y abriga poco.'},
+ elastano:{n:'Elastano',cat:'syn',c:'Lavado suave; sin cloro ni secadora.',b:'Elasticidad; en ≤5 % es virtud, en más, deformación.'}
+};
+const $=id=>document.getElementById(id);
+function fila(){
+ const d=document.createElement('div');d.className='fib-row';
+ d.innerHTML=`<select>${Object.entries(F).map(([k,v])=>`<option value="${k}">${v.n}</option>`).join('')}</select>
+ <input type="number" min="1" max="100" placeholder="%" aria-label="Porcentaje">
+ <button class="quitar" aria-label="Quitar">✕</button>`;
+ d.querySelector('.quitar').addEventListener('click',()=>{if(document.querySelectorAll('.fib-row').length>1)d.remove();});
+ $('rows').append(d);
+}
+fila();fila();
+$('add').addEventListener('click',fila);
+$('analizar').addEventListener('click',()=>{
+ const rows=[...document.querySelectorAll('.fib-row')].map(r=>({k:r.querySelector('select').value,p:+r.querySelector('input').value||0}));
+ const total=rows.reduce((a,r)=>a+r.p,0);
+ const share=c=>rows.filter(r=>F[r.k].cat===c).reduce((a,r)=>a+r.p,0);
+ const nat=share('nat'),art=share('art'),syn=share('syn');
+ const dom=rows.slice().sort((a,b)=>b.p-a.p)[0];
+ const flags=[];
+ if(Math.abs(total-100)>1)flags.push('La suma no da 100 %: etiqueta sospechosa (legal y cualitativamente).');
+ rows.forEach(r=>{
+  if(r.k==='acrilico'&&r.p>=30)flags.push('Acrílico ≥30 %: pilling rápido y abrigo pobre.');
+  if(r.k==='poliester'&&r.p>=50)flags.push('Poliéster ≥50 % en prenda de diario: retiene olor y sudor.');
+  if(r.k==='elastano'&&r.p>10)flags.push('Elastano >10 %: la prenda se deformará con el uso.');
+  if(r.k==='viscosa'&&r.p>=50)flags.push('Viscosa dominante: encoge; lavado frío y sin retorcer.');
+ });
+ const calidad=nat>=70?'Alta: composición de prenda que dura.':nat>=40?'Media: mezcla razonable; el cuidado define la vida.':'Baja/funcional: válida si es prenda técnica o de batalla.';
+ $('ver').innerHTML=`
+  <div class="ver"><h3>Calidad esperada</h3><p>${calidad}</p><p style="margin-top:.8rem;font-size:.85rem;opacity:.7">Natural ${nat} % · Artificial ${art} % · Sintético ${syn} %.</p></div>
+  <div class="ver"><h3>Comportamiento</h3><ul>${rows.map(r=>`<li><strong>${F[r.k].n} ${r.p} %:</strong> ${F[r.k].b}</li>`).join('')}</ul></div>
+  <div class="ver"><h3>Cuidado (fibra dominante: ${F[dom.k].n})</h3><p>${F[dom.k].c}</p></div>
+  <div class="ver ver--flag"><h3>Red flags</h3>${flags.length?`<ul>${flags.map(f=>`<li>${f}</li>`).join('')}</ul>`:'<p>Sin red flags: composición limpia. Guardá la prenda y cuidala como corresponde.</p>'}</div>`;
+});
+</script>
+</body>
+</html>

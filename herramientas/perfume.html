@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pirámide de perfume · AMICTUS</title>
+<meta name="description" content="Elegí notas de salida, corazón y fondo: familia olfativa, cómo usarla y selección curada de afiliados con sponsors. Basado en ESSENTIA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="../amictus.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Herramientas AMICTUS · 11 · v2</p>
+    <h1>Pirámide de <span>perfume</span></h1>
+    <p class="tagline">Tres capas, una firma — y su vidriera de compra.</p>
+    <p class="bajada">Elegí salida, corazón y fondo: te devuelvo tu familia olfativa, cómo usarla y una selección curada de artículos con afiliados y sponsors. En Drupal, cada tag trae producto real vía <code>aff_tag</code>.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div class="toolbar">
+      <select class="buscar" id="sal"><option>Cítrica</option><option>Aromática</option><option>Verde</option><option>Frutal</option></select>
+      <select class="buscar" id="cor"><option>Floral</option><option>Especiada</option><option>Herbal</option><option>Frutal</option></select>
+      <select class="buscar" id="fon"><option>Amaderado</option><option>Ambarado</option><option>Almizclado</option><option>Vainilla</option><option>Cuero</option></select>
+    </div>
+    <div class="pir">
+      <div class="p1" id="v1"></div><div class="p2" id="v2"></div><div class="p3" id="v3"></div>
+    </div>
+    <p class="fam" id="fam"></p>
+    <p id="desc" style="margin-top:1rem;max-width:60ch"></p>
+
+    <p style="margin-top:2rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;opacity:.6">Espacios de sponsor naturales de este perfil</p>
+    <div class="spon-row" id="spon"></div>
+
+    <div class="aff-sec">
+      <h3>Selección curada · afiliados & sponsors</h3>
+      <div class="aff-grid" id="affGrid"></div>
+      <p class="aff-nota">Placeholders de demostración: en Drupal, este bloque se alimenta por <code>aff_tag</code> — producto real, logo del sponsor y enlace Geniuslink. La tarjeta 📖 es cross-sell de la casa: ESSENTIA.</p>
+    </div>
+
+    <ul class="linea" style="margin-top:3rem">
+      <li><strong>Probá en piel, no en papel de otro:</strong> el pH cambia la firma.</li>
+      <li><strong>Esperá 20 minutos:</strong> el corazón es el perfume real; la salida es la vidriera.</li>
+      <li><strong>Dosis:</strong> se descubre, no anuncia. Dos pulsos si el fondo es ambarado o cuero.</li>
+    </ul>
+    <div class="cta-row"><a href="libro-essentia.html" class="btn btn--oro" style="border-color:var(--azul)">Ir a ESSENTIA</a></div>
+  </div>
+</section>
+
+<section class="sec sec--azul">
+  <div class="contenedor">
+    <p class="etiqueta">El libro del perfume</p>
+    <h2>ESSENTIA: 20 capítulos, <em style="color:var(--dorado-claro)">una nariz educada.</em></h2>
+    <p class="bajada">Historia, anatomía de la pirámide, familias, casas, nicho, uso y compra: todo lo que esta herramienta resume, desarrollado en la Serie III.</p>
+    <div class="cta-row"><a href="libro-essentia.html" class="btn btn--oro">Comprar ESSENTIA · US$6.99</a></div>
+  </div>
+</section>
+
+<script src="../amictus.js"></script>
+<script>
+const slug=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const FON={
+ Amaderado:{e:'🌲',d:'secos y verticales: firma diaria y oficina; cuatro estaciones.'},
+ Ambarado:{e:'🔥',d:'cálidos y envolventes: noche y clima frío; abrigo invisible.'},
+ Almizclado:{e:'🤍',d:'limpios y cercanos: piel, oficina y verano.'},
+ Vainilla:{e:'🍦',d:'amables y gourmand: otoño e informalidad cálida.'},
+ Cuero:{e:'🐂',d:'carácter vintage: otoño-invierno y personalidad declarada.'}
+};
+const TOPP={
+ 'Cítrica':['🍋','Colonia fresca para layering','layering-citrica','Perfumería'],
+ 'Aromática':['🌿','Aftershave aromático','layering-aromatica','Perfumería'],
+ 'Verde':['🍃','Eau fraîche verde','layering-verde','Perfumería'],
+ 'Frutal':['🍑','Body mist frutal','layering-frutal','Perfumería']
+};
+const CORD={
+ 'Floral':['💐','Loción corporal floral','cuerpo-floral','Cosmética'],
+ 'Especiada':['🌶️','Gel de ducha especiado','cuerpo-especiada','Cosmética'],
+ 'Herbal':['🌿','Jabón herbal artesanal','cuerpo-herbal','Cosmética'],
+ 'Frutal':['🍓','Bruma corporal frutal','cuerpo-frutal','Cosmética']
+};
+const $=id=>document.getElementById(id);
+function pinta(){
+ const s=$('sal').value,c=$('cor').value,f=$('fon').value;
+ $('v1').textContent='Salida · '+s;
+ $('v2').textContent='Corazón · '+c;
+ $('v3').textContent='Fondo · '+f;
+ $('fam').textContent=`${c} ${f.toLowerCase()}`;
+ $('desc').textContent=`Familia ${c.toLowerCase()}-${f.toLowerCase()}: ${FON[f].d} La salida ${s.toLowerCase()} define el primer minuto; el corazón ${c.toLowerCase()}, la primera hora; el fondo ${f.toLowerCase()}, todo lo demás.`;
+
+ /* ✏️ Vidriera: hoy placeholders; mañana script → Drupal por aff_tag */
+ const P=[
+  ['🧴',`Eau de parfum · ${c.toLowerCase()} ${f.toLowerCase()}`,'perfume-'+slug(f),'US$ 60–140','Perfumería'],
+  ['🎁',`Set descubrimiento · familia ${f.toLowerCase()}`,'set-'+slug(f),'US$ 25–45','Perfumería'],
+  TOPP[s],
+  CORD[c],
+  ['🧼',`Perfume sólido · ${c.toLowerCase()}`,'solido-'+slug(c),'US$ 12–25','Cosmética'],
+  ['🧳','Atomizador de viaje + estuche','atomizador-viaje','US$ 15–35','Accesorios de viaje'],
+  ['🕯️',`Vela o difusor · nota ${f.toLowerCase()}`,'hogar-'+slug(f),'US$ 20–50','Hogar & lifestyle'],
+  ['📖','ESSENTIA · el libro del perfume','libro-essentia','US$ 6.99','AMICTUS']
+ ];
+ $('affGrid').innerHTML=P.map(it=>`
+  <article class="aff-card" data-aff="${it[2]}">
+   <p class="brand-logo">BRAND</p>
+   <div class="aff-img">${it[0]}</div>
+   <div class="aff-body"><p class="n">${it[1]}</p><p class="p">${it[3]} · #${it[2]} · ${it[4]}</p><a href="#">Ver opciones →</a></div>
+  </article>`).join('');
+ const sponsors=new Set(['Perfumería nicho & selectiva']);
+ P.forEach(it=>sponsors.add(it[4]));
+ $('spon').innerHTML=[...sponsors].map(x=>`<span>${x}</span>`).join('');
+}
+['sal','cor','fon'].forEach(i=>$(i).addEventListener('change',pinta));
+pinta();
+</script>
+</body>
+</html>

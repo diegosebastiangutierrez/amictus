@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprar libros de moda · armá tu pack con descuento · AMICTUS</title>
+<meta name="description" content="Comprá libros de moda de la colección AMICTUS: 6 series, 32 volúmenes, 4 idiomas. Armá tu pack con descuentos por serie y cantidad, y mirá tu biblioteca antes de pagar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="../amictus.css">
+<style>
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Bibliotheca · la tienda de la colección</p>
+    <h1>Comprar <span>Libros de moda</span></h1>
+    <p class="tagline">Armá tu pack con descuento de biblioteca.</p>
+    <p class="bajada">Tildá volúmenes de las seis series —publicados o en escritura (los reservás y se entregan al publicar)—. Serie completa tiene precio de serie; sueltos, descuento por cantidad. Y abajo mirás tu biblioteca antes de pagar.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div class="grid2">
+      <div id="grupos"></div>
+      <aside class="resumen" id="resumen"></aside>
+    </div>
+
+    <div class="shelf-sec">
+      <h3>Tu biblioteca, antes de pagar</h3>
+      <div id="shelf"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--azul">
+  <div class="contenedor">
+    <p class="etiqueta">Pricing de la casa</p>
+    <h2>Libro US$6.99 · <br/>Volúmen US$12.99–24.99 · <br/><em style="color:var(--dorado-claro)">CURA gratis.</em></h2>
+    <p class="bajada">Ebook en KDP, Kobo, Google Play, Apple Books y Gumroad; impreso bajo demanda con tapa vector y dorado. Los títulos «en escritura» se reservan hoy y se entregan al publicar.</p>
+  </div>
+</section>
+
+<script src="../amictus.js"></script>
+<script>
+const SERIES=[
+ {nom:'CODEX',rom:'I',bundle:24.99,libros:[
+  {n:'CALCEUS',t:'Calzado',c:40,e:'imp',p:6.99},{n:'CORIUM',t:'Marroquinería',c:22,e:'ok',p:6.99},
+  {n:'STOLA',t:'Prendas femeninas',c:24,e:'ok',p:6.99},{n:'TOGA',t:'Prendas masculinas',c:24,e:'ok',p:6.99},
+  {n:'CULTUS',t:'Accesorios',c:22,e:'ok',p:6.99},{n:'TEXTUM',t:'Textiles',c:24,e:'ok',p:6.99},
+  {n:'AURUM',t:'Joyería y relojería',c:24,e:'ok',p:6.99}]},
+ {nom:'PRAXIS',rom:'II',bundle:19.99,libros:[
+  {n:'SARTOR',t:'Estilo masculino',c:17,e:'ok',p:6.99},{n:'VENUSTA',t:'Colorimetría y cuerpo',c:20,e:'ok',p:6.99},
+  {n:'DECORUM',t:'Protocolo y etiqueta',c:20,e:'ok',p:6.99},{n:'FORMA',t:'Patronaje y sastrería',c:20,e:'ok',p:6.99},
+  {n:'MODUS',t:'Historia transversal',c:22,e:'ok',p:6.99},{n:'COLOR',t:'Teoría del color',c:20,e:'ok',p:6.99}]},
+ {nom:'EXPANSIÓN',rom:'III',bundle:19.99,libros:[
+  {n:'CURA',t:'Cuidado · lead magnet',c:18,e:'free',p:0},{n:'PALLIUM',t:'Abrigos y outerwear',c:20,e:'ok',p:6.99},
+  {n:'INTIMA',t:'Lencería',c:17,e:'ok',p:6.99},{n:'INDICUM',t:'Denim',c:20,e:'ok',p:6.99},
+  {n:'ATHLETA',t:'Sportswear y athleisure',c:20,e:'ok',p:6.99},{n:'ESSENTIA',t:'Perfume',c:20,e:'ok',p:6.99}]},
+ {nom:'MUNDUS',rom:'IV',bundle:19.99,libros:[
+  {n:'ASIA',t:'Moda asiática',c:25,e:'ok',p:6.99},{n:'AFRICA',t:'Moda africana',c:null,e:'w',p:6.99},
+  {n:'AMÉRICA',t:'Moda americana',c:null,e:'w',p:6.99},{n:'ISLAM',t:'Moda islámica',c:null,e:'w',p:6.99},
+  {n:'OCEANÍA',t:'Moda de Oceanía',c:null,e:'w',p:6.99},{n:'BOREALIS',t:'Moda nórdica',c:null,e:'w',p:6.99}]},
+ {nom:'MERCATUS',rom:'V',bundle:14.99,libros:[
+  {n:'AURUM INVEST',t:'Inversión en moda',c:null,e:'w',p:6.99},{n:'SUPPLY',t:'Cadena de suministro',c:null,e:'w',p:6.99},
+  {n:'MERCATOR',t:'Comercio y retail',c:null,e:'w',p:6.99},{n:'DIGITALIS',t:'Moda digital',c:null,e:'w',p:6.99}]},
+ {nom:'OPUS',rom:'VI',bundle:12.99,libros:[
+  {n:'ARTIFEX',t:'Los oficios',c:null,e:'w',p:6.99},{n:'INSTRUMENTUM',t:'Herramientas',c:null,e:'w',p:6.99},
+  {n:'TECHNICA',t:'Técnicas',c:null,e:'w',p:6.99}]}
+];
+const TAG={ok:'Listo',imp:'En imprenta',free:'Gratis',w:'En escritura'};
+const PIELES=['tapa--negro','tapa--azul','tapa--vivo'];
+const sel=new Set();
+const $=id=>document.getElementById(id);
+const r2=n=>Math.round(n*100)/100;
+const slug=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+
+$('grupos').innerHTML=SERIES.map(s=>`
+ <div class="bk-grupo"><h3>Serie ${s.rom} · ${s.nom} <small>COMPLETA US$ ${s.bundle}</small></h3>
+ <div class="chips">${s.libros.map(l=>`<span class="chip bk ${l.e==='w'?'bk--w':''}" data-l="${l.n}" title="${TAG[l.e]}">${l.n}</span>`).join('')}</div></div>`).join('');
+
+document.querySelectorAll('.bk').forEach(c=>c.addEventListener('click',()=>{
+ const l=c.dataset.l;
+ sel.has(l)?sel.delete(l):sel.add(l);
+ c.classList.toggle('is-on');
+ update();
+}));
+
+function miniTapa(s,l,i){
+ return `<div class="tapa tapa--mini ${l.e==='w'?'tapa--pronto':PIELES[i%3]}" data-img="img/tapas/${slug(l.n)}.jpg">
+  <span class="tapa-top"><span>Amictus·${s.nom}</span><span>${s.rom}${String(s.libros.indexOf(l)+1).padStart(2,'0')}</span></span>
+  <span class="tapa-mid"><span class="tapa-filete"></span><span class="tapa-titulo">${l.n}</span><span class="tapa-tema">${l.t}</span></span>
+  <span class="tapa-pie"><span>${l.c?l.c+' caps':'Próx.'}</span><em class="tag">${TAG[l.e]}</em></span>
+ </div>`;
+}
+function volTapa(s){
+ return `<div class="vol-cover" data-img="img/tapas/serie-${slug(s.nom)}.jpg">
+  <span class="tapa-top"><span>Amictus</span><span>Serie ${s.rom}</span></span>
+  <span class="tapa-mid"><span class="tapa-filete"></span><span class="tapa-titulo">${s.nom}</span><span class="tapa-tema">serie completa · ${s.libros.length} libros</span></span>
+  <span class="tapa-pie"><span>Bundle</span><em class="tag">US$ ${s.bundle}</em></span>
+ </div>`;
+}
+
+function update(){
+ let total=0,sin=0,sueltosPagos=0,lines=[];
+ SERIES.forEach(s=>{
+  const selB=s.libros.filter(l=>sel.has(l.n));
+  if(!selB.length)return;
+  const ind=r2(selB.reduce((a,l)=>a+l.p,0));
+  sin=r2(sin+ind);
+  if(selB.length===s.libros.length){total=r2(total+s.bundle);lines.push([`Serie ${s.nom} completa (${s.libros.length})`,s.bundle]);}
+  else{selB.forEach(l=>{if(l.p>0)sueltosPagos++;});total=r2(total+ind);lines.push([`${selB.length} libro${selB.length>1?'s':''} de ${s.nom}`,ind]);}
+ });
+ let desc=0;
+ if(sueltosPagos>=6)desc=r2(sueltosPagos*6.99*0.15);
+ else if(sueltosPagos>=3)desc=r2(sueltosPagos*6.99*0.10);
+ total=Math.max(0,r2(total-desc));
+ const ahorro=r2(Math.max(0,sin-total));
+
+ $('resumen').innerHTML=`
+  ${lines.map(l=>`<div class="lin"><span>${l[0]}</span><span>US$ ${l[1].toFixed(2)}</span></div>`).join('')||'<div class="lin"><span>Tildá volúmenes para armar tu pack.</span></div>'}
+  ${desc?`<div class="lin"><span>Descuento cantidad (${sueltosPagos} sueltos)</span><span>− US$ ${desc.toFixed(2)}</span></div>`:''}
+  <p class="tot">US$ ${total.toFixed(2)}</p>
+  ${sel.size?`<p class="ahorro">Ahorrás US$ ${ahorro.toFixed(2)} vs. compra individual.</p>`:''}
+  <div class="cta-row"><a href="#" class="btn btn--oro" style="border-color:var(--azul)">Ir a checkout</a></div>
+  <p class="nota">Los títulos «en escritura» se reservan hoy y se entregan al publicar. CURA es gratis: no suma al total.</p>`;
+
+ let shelf='';
+ SERIES.forEach(s=>{
+  const selB=s.libros.filter(l=>sel.has(l.n));
+  if(!selB.length)return;
+  const full=selB.length===s.libros.length;
+  shelf+=`<div class="shelf-block"><h4>Serie ${s.rom} · ${s.nom}${full?' — serie completa':''}</h4><div class="shelf-grid">`;
+  if(full)shelf+=volTapa(s);
+  shelf+=selB.map((l,i)=>miniTapa(s,l,i)).join('');
+  shelf+=`</div></div>`;
+ });
+ $('shelf').innerHTML=shelf||'<p class="shelf-vacio">Todavía no hay libros en tu perchero: tildá arriba y mirá cómo queda tu biblioteca.</p>';
+}
+update();
+</script>
+</body>
+</html>

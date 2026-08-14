@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conversor de talles · AMICTUS</title>
+<meta name="description" content="Conversor de talles de calzado (EU/UK/US/Mondopoint) y ropa (ES/IT/FR/UK/US). Una herramienta de AMICTUS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../amictus.css">
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Herramientas AMICTUS · 01</p>
+    <h1>Conversor de <span>talles</span></h1>
+    <p class="tagline">Porque «mi talle» no existe: existe tu horma, tu pie y una etiqueta que hay que saber leer.</p>
+    <p class="bajada">Calzado en cinco sistemas y ropa en tablas internacionales. Referencia orientativa: la verdad está en la etiqueta (CALCEUS, cap. 16).</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div class="tabs">
+      <button class="filtro is-active" data-p="calzado">👞 Calzado</button>
+      <button class="filtro" data-p="ropa">🧥 Ropa</button>
+    </div>
+    <div class="tool">
+      <div>
+        <div class="panel is-on" id="p-calzado">			
+          <div class="campo"><label for="sexo">Tabla</label><select id="sexo"><option value="h">Hombre</option><option value="m">Mujer</option><option value="n">Niños</option></select></div>
+          <div class="campo"><label for="sistema">Vengo del sistema</label><select id="sistema"><option value="0">EU</option><option value="1">UK</option><option value="2">US</option><option value="3">Mondopoint (mm)</option></select></div>
+          <div class="campo"><label for="valor">Mi talle</label><input id="valor" type="text" inputmode="decimal" value="42" autocomplete="off"></div>
+          <button class="btn btn--oro" id="btnCalc">Convertir</button>
+        </div>
+        <div class="panel" id="p-ropa">
+          <div class="campo"><label for="sexoR">Tabla</label><select id="sexoR"><option value="m">Mujer</option><option value="h">Hombre</option><option value="n">Niños</option></select></div>
+          <div class="campo"><label for="letra" id="letraLabel">Talle internacional</label><select id="letra"><option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>XXL</option></select></div>
+          <button class="btn btn--oro" id="btnR">Ver equivalencias</button>
+        </div>
+      </div>
+      <div>
+        <div class="res-grid" id="res"></div>
+        <p class="nota-tool" id="nota"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="contenedor">
+    <p class="etiqueta">La regla de la casa</p>
+    <h2>El talle es una <em>hipótesis.</em></h2>
+    <p class="bajada">Hormas, marcas y países no se ponen de acuerdo. Convertí, probá al final del día y leé la etiqueta: tres gestos que evitan el 90 % de las devoluciones. El método completo, en CALCEUS caps. 13 y 16.</p>
+    <div class="cta-row"><a href="libro-calceus.html" class="btn btn--oro">Ir a CALCEUS</a><a href="cuidado.html" class="btn btn--linea">Diagnóstico de cuidado</a></div>
+  </div>
+</section>
+
+<script src="../amictus.js"></script>
+<script>
+/* [EU, UK, US, Mondopoint mm] — referencia orientativa */
+const CAL={
+ h:[[39,6,7,245],[40,6.5,7.5,250],[41,7.5,8,255],[42,8,9,260],[43,9,9.5,265],[44,9.5,10.5,270],[45,10.5,11,275],[46,11,12,280],[47,12,12.5,285],[48,12.5,13.5,290]],
+ m:[[35,2.5,5,220],[36,3.5,6,225],[37,4,6.5,230],[38,5,7.5,235],[39,6,8.5,240],[40,6.5,9,245],[41,7.5,10,250],[42,8,11,255]],
+ n:[[19,3,3.5,115],[20,4,4.5,122],[21,5,5,128],[22,6,6,135],[23,7,7,140],[24,7.5,8,147],[25,8,8.5,153],[26,9,9.5,160],[27,10,10.5,165],[28,11,11,172],[29,11.5,12,178],[30,12,12.5,185],[31,13,13.5,190],[32,13.5,1,197],[33,1,2,205],[34,2,3,210],[35,2.5,3.5,220]]
+};
+const ROPA={
+ m:[['XS','34-36','38-40','32-34','6-8','0-2'],['S','36-38','40-42','34-36','8-10','2-4'],['M','38-40','42-44','36-38','10-12','4-6'],['L','40-42','44-46','38-40','12-14','6-8'],['XL','42-44','46-48','40-42','14-16','8-10'],['XXL','44-46','48-50','42-44','16-18','10-12']],
+ h:[['XS','44','44','44','34','34'],['S','46-48','46-48','46-48','36-38','36-38'],['M','48-50','48-50','48-50','38-40','38-40'],['L','50-52','50-52','50-52','40-42','40-42'],['XL','52-54','52-54','52-54','42-44','42-44'],['XXL','54-56','54-56','54-56','44-46','44-46']],
+ n:[['92','2 años','2T','18–24 m'],['98','3 años','3T','3'],['104','4 años','4T','4'],['110','5 años','5','5'],['116','6 años','6','6'],['122','7 años','7','7'],['128','8 años','8','8'],['134','9 años','10','9–10'],['140','10 años','12','10–11'],['146','11 años','14','11–12'],['152','12 años','16','12–13'],['158','13 años','XS','13–14'],['164','14 años','XS–S','14–15']]
+};
+const SYS=['EU','UK','US','Mondopoint'];
+const NOMBRES={h:'hombre',m:'mujer',n:'niños'};
+const $=id=>document.getElementById(id);
+const num=v=>parseFloat(String(v).trim().replace(',','.'));
+const fmt=n=>String(n).replace('.',',');
+
+$('valor').closest('.campo').insertAdjacentHTML('beforeend',
+ '<p id="rango" style="margin-top:.5rem;font-size:.72rem;letter-spacing:.14em;opacity:.6"></p>');
+
+function pinta(arr){
+  $('res').innerHTML=arr.map(r=>`<div class="res"><strong>${r[0]}</strong><span>${r[1]}</span></div>`).join('');
+}
+
+function calcCalzado(){
+  const sexo=$('sexo').value, tabla=CAL[sexo], s=+$('sistema').value, v=num($('valor').value);
+  const vals=tabla.map(r=>r[s]), mn=Math.min(...vals), mx=Math.max(...vals);
+  $('rango').textContent=`Rango ${NOMBRES[sexo]} en ${SYS[s]}: ${fmt(mn)} – ${fmt(mx)}`;
+
+  if(isNaN(v)){
+    $('res').innerHTML='';
+    $('nota').textContent='Ingresá un número para convertir (ej.: 42 o 26,5).';
+    $('valor').classList.add('is-error');return;
+  }
+  if(v<mn||v>mx){
+    $('res').innerHTML='';
+    $('nota').textContent=`${SYS[s]} ${fmt(v)} no existe en la tabla ${NOMBRES[sexo]}: el rango válido va de ${fmt(mn)} a ${fmt(mx)}. Revisá el número o el sistema elegido.`;
+    $('valor').classList.add('is-error');return;
+  }
+
+  $('valor').classList.remove('is-error');
+  const row=tabla.reduce((a,b)=>Math.abs(b[s]-v)<Math.abs(a[s]-v)?b:a);
+  const exacto=Math.abs(row[s]-v)<0.26;
+  pinta(row.map((n,i)=>[fmt(n),SYS[i]]));
+  $('nota').textContent=
+    (exacto?'':`No existe equivalencia exacta para ${fmt(v)}: mostramos el más cercano (${fmt(row[s])} ${SYS[s]}). `)+
+    (sexo==='n'
+      ?'En niños, el sistema que menos miente es el mondopoint: medí el pie apoyado, al final del día, y dejá ~1 cm de holgura de crecimiento.'
+      :'Orientativo: cada marca calibra su horma. Ante la duda entre dos talles, probá ambos con el calcetín de uso real (CALCEUS, cap. 39).');
+}
+
+function poblarLetras(){
+  const g=$('sexoR').value;
+  $('letra').innerHTML=(g==='n'?ROPA.n.map(r=>`<option>${r[0]}</option>`):['XS','S','M','L','XL','XXL'].map(o=>`<option>${o}</option>`)).join('');
+  if(g==='m')$('letra').value='M';
+  $('letraLabel').textContent=g==='n'?'Altura (cm)':'Talle internacional';
+}
+
+function calcRopa(){
+  const g=$('sexoR').value;
+  if(g==='n'){
+    const row=ROPA.n.find(r=>r[0]===$('letra').value);
+    pinta([[row[0],'Altura cm'],[row[1],'Edad aprox.'],[row[2],'US'],[row[3],'UK']]);
+    $('nota').textContent='En niños manda la altura: la edad es orientativa y cada marca estira o encoge su curva. Ante la duda entre dos alturas, la mayor.';
+  }else{
+    const row=ROPA[g].find(r=>r[0]===$('letra').value);
+    pinta([[row[1],'ES'],[row[2],'IT'],[row[3],'FR'],[row[4],'UK'],[row[5],'US']]);
+    $('nota').textContent='Las tablas cambian por marca y por corte (slim, regular, oversize): usá la letra como punto de partida, no como verdad.';
+  }
+}
+
+$('btnCalc').addEventListener('click',calcCalzado);
+$('valor').addEventListener('input',calcCalzado);
+$('sexo').addEventListener('change',calcCalzado);
+$('sistema').addEventListener('change',calcCalzado);
+$('btnR').addEventListener('click',calcRopa);
+$('sexoR').addEventListener('change',()=>{poblarLetras();calcRopa();});
+$('letra').addEventListener('change',calcRopa);
+
+document.querySelectorAll('.tabs .filtro').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tabs .filtro').forEach(x=>x.classList.remove('is-active'));
+  b.classList.add('is-active');
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('is-on'));
+  $('p-'+b.dataset.p).classList.add('is-on');
+  $('res').innerHTML='';$('nota').textContent='';
+  if(b.dataset.p==='calzado'){calcCalzado();}else{poblarLetras();calcRopa();}
+}));
+
+poblarLetras();
+calcCalzado();
+</script>
+</body>
+</html>

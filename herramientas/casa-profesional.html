@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Casa o profesional? · AMICTUS</title>
+<meta name="description" content="Elegí prenda, problema y país: AMICTUS te dice si lo resolvés en casa o lo llevás al profesional, con kit de cuidado de afiliados o servicios recomendados por país. Basado en CURA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="../amictus.css">
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Herramientas AMICTUS · 12 · v2</p>
+    <h1>¿Casa o <span>profesional?</span></h1>
+    <p class="tagline">El cuidado correcto, en las manos correctas — y con quién comprarlo o contratarlo.</p>
+    <p class="bajada">Prenda + problema + país → veredicto, y según el caso: kit de cuidado con afiliados o servicios recomendados por país. En Drupal, los servicios se vuelven un directorio de talleres y casas por país.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div class="toolbar">
+      <select class="buscar" id="pre" style="flex:1"></select>
+      <select class="buscar" id="pro" style="flex:1"></select>
+      <select class="buscar" id="pais" style="flex:1"></select>
+    </div>
+    <div id="out"></div>
+
+    <p style="margin-top:2rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;opacity:.6">Espacios de sponsor naturales de este veredicto</p>
+    <div class="spon-row" id="spon"></div>
+
+    <div class="aff-sec">
+      <h3 id="affTitle">Selección curada · afiliados & sponsors</h3>
+      <div class="aff-grid" id="affGrid"></div>
+      <p class="aff-nota">Placeholders de demostración: en Drupal, los productos se alimentan por <code>aff_tag</code> (Geniuslink) y los servicios por un <strong>directorio de casas y talleres por país</strong> con logo real y pedido de presupuesto.</p>
+      <p class="gancho">🏆 ¿Tenés una tintorería, zapatero, sastre o cadena de cuidado en <strong id="ganchoPais"></strong>? <a href="prensa.html">Sumate al directorio de AMICTUS →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--azul">
+  <div class="contenedor">
+    <p class="etiqueta">El manual que lo resuelve todo</p>
+    <h2>CURA: 18 capítulos, <em style="color:var(--dorado-claro)">gratis.</em></h2>
+    <div class="cta-row"><a href="index.html#cura" class="btn btn--oro">Recibir CURA</a></div>
+  </div>
+</section>
+
+<script src="../amictus.js"></script>
+<script>
+const slug=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const PRE=['Zapatos de cuero','Gamuza / nobuck','Traje de lana','Vestido de seda','Abrigo de pluma','Suéter de cashmere','Denim'];
+const PRO=['Mancha','Descosido / rotura','Suela / tapas','Olor','Pérdida de forma','Limpieza general'];
+const PAIS=['Argentina','España','México','Estados Unidos','Italia','Francia'];
+const C={casa:'HACELO EN CASA',pro:'LLEVALO AL PROFESIONAL'};
+const D={
+ 'Zapatos de cuero':{Mancha:['casa','Cepillo en seco + crema neutra; mancha grasa: talco 12 h y cepillo.','US$0 con el kit'],'Suela / tapas':['pro','Zapatero: tapas y suela cosida antes del agujero. No esperes.','US$25–45'],Olor:['casa','Hormas + 24 h de aire; papel de diario una noche.','—'],'Descosido / rotura':['pro','Costura de vira: máquina de zapatero, no aguja de casa.','US$15–30'],'Pérdida de forma':['casa','Hormas de madera 48 h; nunca calor directo.','—'],'Limpieza general':['casa','Rutina completa: cepillo, crema, crin.','—']},
+ 'Gamuza / nobuck':{Mancha:['casa','Goma de gamuza en seco, una dirección; nunca crema grasa.','US$0 con el kit'],'Limpieza general':['casa','Cepillo de gamuza + spray impermeabilizante al final.','—'],Olor:['casa','Aireado a la sombra; bicarbonato 12 h.','—'],'Descosido / rotura':['pro','Costura en gamuza se nota: taller.','US$15–30'],'Suela / tapas':['pro','Zapatero.','US$25–45'],'Pérdida de forma':['casa','Hormas.','—']},
+ 'Traje de lana':{Mancha:['pro','Tintorería: el spot casero en lana fina deja aureola.','US$8–15'],'Limpieza general':['pro','Tintorería espaciada; vapor de baño entre usos.','US$8–15'],Olor:['casa','Aireado 24 h en percha ancha; vapor de baño.','—'],'Descosido / rotura':['pro','Sastre: costura interior y refuerzo.','US$20–40'],'Pérdida de forma':['pro','Prensado profesional con horma de plancha.','US$10–20'],'Suela / tapas':['casa','No aplica: pasá a limpieza general.','—']},
+ 'Vestido de seda':{Mancha:['pro','Tintorería con aviso de fibra: la seda marca el agua.','US$10–18'],'Limpieza general':['pro','En seco o húmedo pro; nunca lavadora.','US$10–18'],Olor:['casa','Aireado a la sombra; nunca sol directo.','—'],'Descosido / rotura':['pro','Sastre con aguja fina; la seda corre.','US$15–30'],'Pérdida de forma':['pro','Prensado con paño.','US$8–12'],'Suela / tapas':['casa','No aplica.','—']},
+ 'Abrigo de pluma':{Mancha:['casa','Jabón neutro puntual; enjuague sin retorcer.','—'],'Limpieza general':['casa','Lavadora suave + secadora con pelotas (devuelven el loft).','—'],Olor:['casa','Secado completo: el olor es humedad retenida.','—'],'Descosido / rotura':['pro','Reparación de baffles con fuga de pluma.','US$20–35'],'Pérdida de forma':['casa','Secadora tibia con pelotas; guardado sin comprimir.','—'],'Suela / tapas':['casa','No aplica.','—']},
+ 'Suéter de cashmere':{Mancha:['casa','Agua fría + shampoo neutro, sin frotar; secado plano.','—'],'Limpieza general':['casa','Lavado frío a mano; doblado, nunca percha.','—'],Olor:['casa','Aireado; el cashmere se lava poco.','—'],'Descosido / rotura':['casa','Zurcido invisible o sashiko declarado.','—'],'Pérdida de forma':['casa','Reformar mojado y secar plano.','—'],'Suela / tapas':['casa','No aplica.','—']},
+ 'Denim':{Mancha:['casa','Agua fría puntual; lavado entero, raro y del revés.','—'],'Descosido / rotura':['casa','Sashiko: la rotura como ornamento (INDICUM, 14–16).','—'],Olor:['casa','Aireado; el freezer no mata olor, sol suave sí ayuda.','—'],'Limpieza general':['casa','Frío, del revés, sin suavizante.','—'],'Pérdida de forma':['casa','Lavado tibio y secado colgado.','—'],'Suela / tapas':['casa','No aplica.','—']}
+};
+/* Kits de cuidado (afiliados) por prenda */
+const CARE={
+ 'Zapatos de cuero':[['🖌️','Cepillo de crin','care-cepillo-crin','US$ 12–25'],['🧴','Crema neutra de calidad','care-crema-neutra','US$ 10–30'],['💨','Impermeabilizante','care-impermeabilizante','US$ 12–22'],['🌲','Hormas de madera','care-hormas-madera','US$ 20–45']],
+ 'Gamuza / nobuck':[['🖌️','Cepillo de gamuza','care-cepillo-gamuza','US$ 8–18'],['🧽','Goma limpiadora','care-goma-gamuza','US$ 6–12'],['💨','Spray impermeabilizante','care-spray-gamuza','US$ 12–22']],
+ 'Traje de lana':[['🖌️','Cepillo de ropa','care-cepillo-ropa','US$ 15–35'],['🪝','Perchas anchas','care-perchas-anchas','US$ 15–30'],['♨️','Steamer de mano','care-steamer','US$ 30–70']],
+ 'Vestido de seda':[['🧼','Jabón pH neutro','care-jabon-ph','US$ 8–16'],['🧺','Tendedero plano','care-tendedero','US$ 15–30']],
+ 'Abrigo de pluma':[['🧴','Detergente para pluma','care-jabon-pluma','US$ 10–20'],['⚪','Bolas de secado','care-bolas-secado','US$ 10–18']],
+ 'Suéter de cashmere':[['🧴','Shampoo para cashmere','care-shampoo-cashmere','US$ 10–22'],['🪒','Quitapilling','care-quita-pilling','US$ 8–18'],['🌿','Lavanda de guardado','care-lavanda','US$ 8–15']],
+ 'Denim':[['🧼','Jabón neutro','care-jabon-neutro','US$ 6–12'],['🪡','Kit sashiko','care-kit-sashiko','US$ 12–25']]
+};
+const ADD={'Mancha':[['🧴','Quitamanchas delicados','care-quitamanchas','US$ 8–16']],'Olor':[['🌿','Absorbe-olores','care-absorbe-olor','US$ 6–12']],'Descosido / rotura':[['🪡','Kit de costura','care-kit-costura','US$ 10–20']],'Suela / tapas':[['🕯️','Cera de cantos','care-cera-cantos','US$ 8–14']]};
+const SERV={'Mancha':'Tintorería','Descosido / rotura':'Sastrería','Suela / tapas':'Zapatero','Olor':'Tintorería','Pérdida de forma':'Prensado / sastrería','Limpieza general':'Tintorería'};
+const $=id=>document.getElementById(id);
+$('pre').innerHTML=PRE.map(p=>`<option>${p}</option>`).join('');
+$('pro').innerHTML=PRO.map(p=>`<option>${p}</option>`).join('');
+$('pais').innerHTML=PAIS.map(p=>`<option>${p}</option>`).join('');
+function card(it){return `<article class="aff-card" data-aff="${it[2]}"><p class="brand-logo">BRAND</p><div class="aff-img">${it[0]}</div><div class="aff-body"><p class="n">${it[1]}</p><p class="p">${it[3]} · #${it[2]} · ${it[4]}</p><a href="#">Ver opciones →</a></div></article>`}
+function pinta(){
+ const pre=$('pre').value, prob=$('pro').value, pais=$('pais').value;
+ const r=D[pre][prob]||['casa','Sin dato específico: ante la duda, menos es más.','—'];
+ $('out').innerHTML=`<div class="veredicto veredicto--${r[0]}"><h3>${r[0]==='casa'?'🏠':'🏆'} ${C[r[0]]}</h3><p style="margin-top:1rem;max-width:60ch;color:var(--negro)">${r[1]}</p><p class="costo">${r[0]==='pro'?'Costo estimado: '+r[2]:'Costo: '+r[2]}</p></div>`;
+ const sponsors=new Set(); let items=[];
+ if(r[0]==='casa'){
+  $('affTitle').textContent='Kit para hacerlo en casa · afiliados & sponsors';
+  items=[...CARE[pre],...(ADD[prob]||[])];
+  items=items.map(it=>[it[0],it[1],it[2],it[3],'Cuidado · Saphir/Tarrago/Kiwi']);
+  sponsors.add('Cuidado de calzado · Saphir/Tarrago/Kiwi');sponsors.add('Cuidado textil · marcas de casa');
+ }else{
+  $('affTitle').textContent=`Servicios recomendados en ${pais} + mantenimiento en casa`;
+  const svc=SERV[prob]||'Tintorería';
+  items=[
+   ['🧺',`${svc} de confianza · ${pais}`,'servicio-'+slug(svc),'US$ 8–45',svc+' · '+pais],
+   ['🚚','Retiro y entrega a domicilio','servicio-pickup','US$ 5–10','Servicio pro · '+pais],
+   ['⚡','Servicio express 48 h','servicio-express','+US$ 6','Servicio pro · '+pais],
+   ...CARE[pre].slice(0,2).map(it=>[it[0],'Mientras tanto: '+it[1].toLowerCase(),it[2],it[3],'Cuidado · Saphir/Tarrago/Kiwi'])
+  ];
+  sponsors.add(svc+'s y talleres · '+pais);sponsors.add('Cuidado de calzado · Saphir/Tarrago/Kiwi');
+ }
+ $('affGrid').innerHTML=items.slice(0,8).map(card).join('');
+ $('spon').innerHTML=[...sponsors].map(s=>`<span>${s}</span>`).join('');
+ $('ganchoPais').textContent=pais;
+}
+['pre','pro','pais'].forEach(i=>$(i).addEventListener('change',pinta));
+pinta();
+</script>
+</body>
+</html>

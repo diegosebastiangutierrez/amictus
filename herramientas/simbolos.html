@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Símbolos de lavado · AMICTUS</title>
+<meta name="description" content="Decodificador de símbolos de lavado: qué significa cada icono de la etiqueta y qué rutina aplicar. Una herramienta de AMICTUS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../amictus.css">
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Herramientas AMICTUS · 05</p>
+    <h1>Símbolos de <span>lavado</span></h1>
+    <p class="tagline">La etiqueta es un contrato: acá se lee en un segundo.</p>
+    <p class="bajada">Los 20 símbolos que aparecen en tu ropa, con su significado y su rutina. El método completo de cuidado vive en CURA.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div class="toolbar"><input class="buscar" id="buscar" type="search" placeholder="Buscar símbolo o significado…" aria-label="Buscar símbolos"></div>
+    <div class="sim-grid" id="grid"></div>
+    <div class="orden">
+      <span>1 · Lavado</span><span>2 · Blanqueado</span><span>3 · Secado</span><span>4 · Plancha</span><span>5 · Profesional</span>
+    </div>
+    <p style="margin-top:1.4rem;font-size:.85rem;font-style:italic;opacity:.7">El orden de los símbolos en la etiqueta siempre es el de arriba: leela de izquierda a derecha y ya sabés el ritual completo (CURA, cap. 3).</p>
+  </div>
+</section>
+
+<section class="sec sec--azul">
+  <div class="contenedor">
+    <p class="etiqueta">Del símbolo a la rutina</p>
+    <h2>Saber leer es <em style="color:var(--dorado-claro)">saber cuidar.</em></h2>
+    <p class="bajada">Cada símbolo tiene su rutina exacta por material en CURA, el manual gratuito de 18 capítulos.</p>
+    <div class="cta-row"><a href="index.html#cura" class="btn btn--oro">Recibir CURA gratis</a><a href="cuidado.html" class="btn btn--linea">Diagnóstico de cuidado</a></div>
+  </div>
+</section>
+
+<script src="../amictus.js"></script>
+<script>
+const dot=(x,y)=>`<circle cx="${x}" cy="${y}" r="3.6" fill="#1C1B18" stroke="none"/>`;
+const dots=(n,y)=>(n===1?[32]:n===2?[26,38]:[20,32,44]).map(x=>dot(x,y)).join('');
+const SH={
+ bucket:'<path d="M8 20 Q32 30 56 20 L48 48 H16 Z"/>',
+ hand:'<path d="M26 8 v9 M31 6 v11 M36 8 v9 M41 10 v7 M26 17 q8 7 15 0"/>',
+ tri:'<path d="M32 12 L55 50 H9 Z"/>',
+ trilines:'<path d="M28 28 L21 42 M36 28 L29 42"/>',
+ sq:'<rect x="12" y="12" width="40" height="40"/>',
+ hline:'<path d="M12 32 H52"/>',
+ sqcirc:'<rect x="12" y="12" width="40" height="40"/><circle cx="32" cy="32" r="13"/>',
+ iron:'<path d="M10 46 H54 C54 30 42 24 30 24 H22 C16 30 12 38 10 46 Z"/>',
+ circ:'<circle cx="32" cy="32" r="20"/>'
+};
+const cross='<path d="M12 12 L52 52 M52 12 L12 52"/>';
+const under=n=>(n>=1?'<path d="M14 55 H50"/>':'')+(n>=2?'<path d="M20 60 H44"/>':'');
+function svg(o){let s='';
+ if(o.bucket)s+=SH.bucket+(o.hand?SH.hand:'')+(o.dots?dots(o.dots,34):'');
+ if(o.tri)s+=SH.tri+(o.trilines?SH.trilines:'');
+ if(o.sq)s+=SH.sq+(o.hline?SH.hline:'');
+ if(o.sqcirc)s+=SH.sqcirc+(o.dots?dots(o.dots,32):'');
+ if(o.iron)s+=SH.iron+(o.dots?dots(o.dots,36):'');
+ if(o.circ)s+=SH.circ+(o.letter?`<text x="32" y="39" text-anchor="middle" font-size="18" font-family="sans-serif" fill="#1C1B18" stroke="none">${o.letter}</text>`:'');
+ if(o.lines)s+=under(o.lines);
+ if(o.cross)s+=cross;
+ return `<svg viewBox="0 0 64 64" fill="none" stroke="#1C1B18" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">${s}</svg>`;
+}
+const SIM=[
+ [{bucket:1,hand:1},'Lavado a mano','≤30°, jabón neutro, sin frotar ni retorcer. Seda y lana entran acá.'],
+ [{bucket:1,dots:1},'Lavado 30°','Ciclo normal para colores y delicados.'],
+ [{bucket:1,dots:2},'Lavado 40°','El diario de algodones y mezclas resistentes.'],
+ [{bucket:1,dots:1,lines:1},'Lavado suave 30°','Ciclo delicado, centrifugado corto.'],
+ [{bucket:1,cross:1},'No lavar','Solo limpieza profesional: mirá el círculo de la etiqueta.'],
+ [{tri:1},'Blanqueador permitido','Cualquier lejía, si el blanco lo pide.'],
+ [{tri:1,cross:1},'No blanquear','Ni cloro ni oxígeno: mancha y quema fibras.'],
+ [{tri:1,trilines:1},'Solo oxigenado','Blanqueador sin cloro.'],
+ [{sq:1,hline:1},'Secado tendido','Colgado o en horizontal, a la sombra.'],
+ [{sqcirc:1,dots:1},'Secadora suave','Temperatura baja; sacá apenas seca.'],
+ [{sqcirc:1,dots:2},'Secadora alta','Temperatura plena solo en algodón fuerte.'],
+ [{sqcirc:1,cross:1},'No secadora','Encoge, apelmaza y mata fibras: secado natural.'],
+ [{iron:1,dots:1},'Plancha suave ≤110°','Seda y sintéticos, del revés y sin vapor directo.'],
+ [{iron:1,dots:2},'Plancha media ≤150°','Lana y mezclas, con paño entre medio.'],
+ [{iron:1,dots:3},'Plancha alta ≤200°','Algodón y lino, con vapor.'],
+ [{iron:1,cross:1},'No planchar','Colgar bien escurrido; el vapor del baño termina el trabajo.'],
+ [{circ:1,letter:'P'},'Tintorería (P)','Limpieza en seco con percloroetileno: el estándar.'],
+ [{circ:1,letter:'F'},'Tintorería suave (F)','Solventes de hidrocarburo para delicadas.'],
+ [{circ:1,letter:'W'},'Limpieza húmeda pro','Agua + procesos controlados: no es lavar en casa.'],
+ [{circ:1,cross:1},'No limpieza en seco','Evitar solventes; lavar según el balde.']
+];
+const $=id=>document.getElementById(id);
+function render(q=''){
+ $('grid').innerHTML=SIM.filter(s=>(s[1]+s[2]).toLowerCase().includes(q)).map(s=>`
+  <article class="sim">${svg(s[0])}<h3>${s[1]}</h3><p>${s[2]}</p></article>`).join('')||'<p style="font-style:italic;opacity:.6">Sin resultados.</p>';
+}
+$('buscar').addEventListener('input',e=>render(e.target.value.toLowerCase()));
+render();
+</script>
+</body>
+</html>

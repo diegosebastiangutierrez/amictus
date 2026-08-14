@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico de cuidado · AMICTUS</title>
+<meta name="description" content="Elegí material y momento: AMICTUS te devuelve la rutina de cuidado y el kit recomendado. Basado en CURA, el manual gratuito.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="../amictus.css">
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="contenedor">
+    <p class="etiqueta">Herramientas AMICTUS · 02</p>
+    <h1>Diagnóstico de <span>cuidado</span></h1>
+    <p class="tagline">Decime qué tenés y cómo está; te digo qué hacer y con qué.</p>
+    <p class="bajada">La rutina exacta por material y el kit en tres presupuestos, con enlaces de afiliados. Basado en CURA — el manual de 18 capítulos que regalamos.</p>
+  </div>
+</section>
+
+<section class="sec sec--blanco">
+  <div class="contenedor">
+    <div class="paso"><h3>1 · El material</h3><div class="opts" id="mats"></div></div>
+    <div class="paso"><h3>2 · El momento</h3><div class="opts" id="conds"></div></div>
+    <div id="dx"></div>
+  </div>
+</section>
+
+<section class="sec sec--azul">
+  <div class="contenedor">
+    <p class="etiqueta">El manual completo</p>
+    <h2>CURA: 18 capítulos, <em style="color:var(--dorado-claro)">gratis.</em></h2>
+    <p class="bajada">Este diagnóstico es la punta del ovillo. El manual entero —rutinas por material y por prenda, kit de herramientas, los 10 errores fatales— es tuyo por suscribirte.</p>
+    <div class="cta-row"><a href="index.html#cura" class="btn btn--oro">Recibir CURA gratis</a></div>
+  </div>
+</section>
+
+<script src="../amictus.js"></script>
+<script>
+const MATS={
+ 'cuero':{n:'Cuero liso',r:['Cepillá el polvo en seco antes de cualquier crema.','Crema neutra cada 4–6 usos; con color, solo para renovar.','Cepillo de crin para el brillo final, siempre en círculos.','Horma de madera al guardar: absorbe humedad y guarda la forma.'],k:['Cepillo de crin','Crema neutra de calidad','Hormas de madera'],l:'CALCEUS',c:'27–28'},
+ 'gamuza':{n:'Gamuza / nobuck',r:['Cepillo de gamuza en seco, siempre en una dirección.','Goma de gamuza para marcas; nunca crema grasa.','Impermeabilizante en spray antes del primer uso y cada temporada.','Mancha húmeda = secado lento, lejos de fuente de calor.'],k:['Cepillo de gamuza','Goma limpiadora','Spray impermeabilizante'],l:'CALCEUS',c:'27'},
+ 'lana':{n:'Lana',r:['Aireá entre usos: la lana se recupera sola.','Lavado frío, jabón específico, sin frotar; secado plano.','Cepillo de ropa después de cada uso; quitapelusas ocasional.','Guardá doblado, nunca colgado.'],k:['Jabón para lana','Cepillo de ropa','Bolsas de algodón + lavanda'],l:'CURA',c:'5–8'},
+ 'algodon':{n:'Algodón / denim',r:['Lavá poco y del revés, agua fría.','El denim no se lava: se airea; mancha puntual, lavado puntual.','Secado a la sombra, nunca secadora para evitar encogimiento.'],k:['Jabón neutro','Tenderal de sombra'],l:'INDICUM',c:'14–16'},
+ 'seda':{n:'Seda',r:['Lavado en frío con jabón de pH neutro o tintorería.','Sin exprimidor: enrollá en toalla y secá plano a la sombra.','Plancha tibia del revés, con paño entre medio.'],k:['Jabón pH neutro','Perchas acolchadas'],l:'STOLA',c:'19–20'},
+ 'tecnicas':{n:'Fibras técnicas',r:['Lavá con jabón sin suavizante (el suavizante mata el DWR).','Reactivá el repelente con calor suave según etiqueta.','No planches membranas; secado en colgador.'],k:['Jabón técnico','Spray DWR'],l:'ATHLETA',c:'14–16'}
+};
+const CONDS={
+ 'diario':{n:'Uso diario',t:'Sumá: rotá al menos dos pares/prendas similares; 24 h de descanso entre usos duplican la vida.'},
+ 'mancha':{n:'Mancha reciente',t:'Sumá: actuá en minutos, no en días. Absorbé sin frotar; probá primero en zona oculta.'},
+ 'guardado':{n:'Cambio de temporada',t:'Sumá: limpiá ANTES de guardar — la suciedad fija y atrae polillas. Fundas transpirables, nunca plástico.'},
+ 'revivir':{n:'Pieza olvidada',t:'Sumá: inspección en tres pasos (suela/costuras, superficie, olor) y recién después rutina completa.'}
+};
+let mat=null,cond=null;
+const $=id=>document.getElementById(id);
+$('mats').innerHTML=Object.entries(MATS).map(([k,v])=>`<button class="opt" data-k="${k}">${v.n}</button>`).join('');
+$('conds').innerHTML=Object.entries(CONDS).map(([k,v])=>`<button class="opt" data-k="${k}">${v.n}</button>`).join('');
+function pinta(){
+  if(!mat||!cond)return;
+  const m=MATS[mat],c=CONDS[cond];
+  $('dx').classList.add('is-on');
+  $('dx').innerHTML=`<h3>Rutina para ${m.n.toLowerCase()} · ${c.n.toLowerCase()}</h3>
+   <h4>Rutina base</h4><ul class="checklist">${m.r.map(x=>`<li>${x}</li>`).join('')}</ul>
+   <h4>Para este momento</h4><p>${c.t}</p>
+   <h4>Kit en tres presupuestos (QR Compra)</h4><ul class="kit">${m.k.map(x=>`<li>${x} — <a href="qrs.html">ver selección amictus.press/x</a></li>`).join('')}</ul>
+   <p style="margin-top:1.6rem;font-size:.85rem;opacity:.7">Fuente: ${m.l} · caps. ${m.c} — <a href="glosario.html" style="border-bottom:1px solid currentColor">glosario</a></p>`;
+}
+$('mats').addEventListener('click',e=>{if(!e.target.classList.contains('opt'))return;
+  $('mats').querySelectorAll('.opt').forEach(x=>x.classList.remove('is-on'));e.target.classList.add('is-on');mat=e.target.dataset.k;pinta();});
+$('conds').addEventListener('click',e=>{if(!e.target.classList.contains('opt'))return;
+  $('conds').querySelectorAll('.opt').forEach(x=>x.classList.remove('is-on'));e.target.classList.add('is-on');cond=e.target.dataset.k;pinta();});
+</script>
+</body>
+</html>
