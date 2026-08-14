@@ -6,31 +6,6 @@
    Linkear desde codex/:  <link rel="stylesheet" href="../libro.css">
    ============================================================ */
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--negro);color:var(--blanco);font-family:var(--texto);font-size:1.05rem;line-height:1.7;-webkit-font-smoothing:antialiased}
-::selection{background:var(--dorado);color:var(--negro)}
-a{color:inherit;text-decoration:none}
-ul{list-style:none}
-.contenedor{width:min(1200px,92vw);margin-inline:auto}
-.etiqueta{display:flex;align-items:center;gap:1rem;font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;color:var(--dorado);margin-bottom:2rem}
-.etiqueta::before{content:"";width:3rem;height:1px;background:currentColor}
-.etiqueta--azul{color:var(--azul)}
-.btn{display:inline-block;font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.3rem;border:1px solid var(--dorado);transition:.35s}
-.btn--oro{background:var(--dorado);color:var(--negro)}
-.btn--oro:hover{background:var(--dorado-claro)}
-.btn--linea{background:none;color:var(--blanco)}
-.btn--linea:hover{background:rgba(201,162,75,.14)}
-
-.topbar{position:sticky;top:0;z-index:50;background:rgba(10,10,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(244,241,232,.12)}
-.topbar .contenedor{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
-.logo{display:flex;align-items:center;gap:.85rem}
-.logo-svg{width:38px;height:38px;color:var(--blanco)}
-.logo-nombre{font-family:var(--display);font-size:.95rem;letter-spacing:.42em;text-transform:uppercase}
-.topbar nav{display:flex;gap:1.9rem;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase}
-.topbar nav a{opacity:.8;transition:.3s}
-.topbar nav a:hover{opacity:1;color:var(--dorado)}
-
 /* ---------- Hero del libro ---------- */
 .hero-libro{padding:6.5rem 0 6rem;display:grid;grid-template-columns:1.05fr .95fr;gap:5rem;align-items:center}
 .hero-libro h1{font-family:var(--display);font-weight:normal;text-transform:uppercase;font-size:clamp(3.6rem,10vw,9.5rem);line-height:.9;margin:0 0 1rem}
