@@ -10,31 +10,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="amictus.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--negro);color:var(--blanco);font-family:var(--texto);font-size:1.05rem;line-height:1.7;-webkit-font-smoothing:antialiased}
-::selection{background:var(--dorado);color:var(--negro)}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-ul{list-style:none}
+
 button{font-family:inherit}
-.contenedor{width:min(1280px,92vw);margin-inline:auto}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-
-.etiqueta{display:flex;align-items:center;gap:1rem;font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;color:var(--dorado);margin-bottom:2.8rem}
-.etiqueta::before{content:"";width:3rem;height:1px;background:currentColor}
-.etiqueta--azul{color:var(--azul)}
-.etiqueta--clara{color:var(--dorado-claro)}
-
-/* ---------- Navegación + logo ---------- */
-.nav{position:absolute;top:0;left:0;right:0;z-index:10}
-.nav .contenedor{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 0}
-.logo{display:flex;align-items:center;gap:.9rem}
-.logo-svg{width:44px;height:44px;color:var(--blanco)}
-.logo-nombre{font-family:var(--display);font-size:1rem;letter-spacing:.42em;text-transform:uppercase}
-.nav-links{display:flex;gap:2.4rem}
-.nav-links a{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;opacity:.8;transition:.3s}
-.nav-links a:hover{opacity:1;color:var(--dorado)}
 
 /* ---------- Hero ---------- */
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:8rem 0 5rem;overflow:hidden}
@@ -153,7 +131,6 @@ button{font-family:inherit}
 /* ---------- Responsive ---------- */
 @media (max-width:1080px){.metodo-grid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:960px){
-  .nav-links{display:none}
   .hero-grid{grid-template-columns:1fr;gap:3.5rem}
   .series-grid{grid-template-columns:repeat(2,1fr)}
   .estanteria{grid-template-columns:repeat(2,1fr)}

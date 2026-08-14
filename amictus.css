@@ -77,16 +77,18 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .contenedor{width:min(1200px,92vw);margin-inline:auto}
 .topbar{position:sticky;top:0;z-index:50;background:rgba(10,10,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(244,241,232,.12)}
 .topbar .contenedor{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
-.logo{display:flex;align-items:center;gap:.85rem}
+.logo{display:flex;align-items:center;gap:.9rem}
 .logo-svg{width:38px;height:38px;color:var(--blanco)}
-.logo-nombre{font-family:var(--display);font-size:.95rem;letter-spacing:.42em;text-transform:uppercase}
+.logo-nombre{font-family:var(--display);font-size:1rem;letter-spacing:.42em;text-transform:uppercase}
 /* ---- Logo tipográfico: la aguja es la I ---- */
 .logo-tipo{font-family:var(--display);font-size:1.05rem;letter-spacing:.3em;text-transform:uppercase;color:var(--blanco);white-space:nowrap}
 .logo-aguja{height:.88em;width:auto;vertical-align:baseline;transform:translateY(.14em);margin:0 .04em;color:inherit}
 .topbar nav{display:flex;gap:1.7rem;flex-wrap:wrap;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase}
 .topbar nav a{opacity:.8;transition:.3s}.topbar nav a:hover{opacity:1;color:var(--dorado)}
-.etiqueta{display:flex;align-items:center;gap:1rem;font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;color:var(--dorado);margin-bottom:2rem}
+.etiqueta{display:flex;align-items:center;gap:1rem;font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;color:var(--dorado);margin-bottom:2.8rem}
 .etiqueta::before{content:"";width:3rem;height:1px;background:currentColor}
+.etiqueta--azul{color:var(--azul)}
+.etiqueta--clara{color:var(--dorado-claro)}
 .btn{display:inline-block;font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.3rem;border:1px solid var(--dorado);transition:.35s;cursor:pointer;background:none;color:var(--blanco)}
 .btn--oro{background:var(--dorado);color:var(--negro)}
 .btn--oro:hover{background:var(--dorado-claro)}
