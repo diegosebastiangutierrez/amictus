@@ -16,9 +16,8 @@ document.addEventListener('DOMContentLoaded',()=>{
    '<a class="btn btn--oro nav-cta" href="index.html#cura">CURA gratis</a>'+
    '<button class="burger" id="burger" aria-label="Abrir menú"><svg width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2"/></svg></button>'+
    '<div class="movil-panel" id="movilPanel">'+
-    '<div><h4>Portal</h4><a href="index.html">Inicio</a><a href="index.html#manifiesto">Manifiesto</a><a href="autor.html">El autor</a><a href="prensa.html">Prensa</a><a href="el-hilo.html">El Hilo</a></div>'+
-    '<div><h4>Colección</h4><a href="index.html#catalogo">Catálogo</a><a href="libro-calceus.html">CALCEUS</a><a href="index.html#series">Series</a><a href="herramientas/libros-de-moda.html">Libros de moda</a><a href="index.html#cura">CURA gratis</a></div>'+
-    '<div><h4>Recursos</h4><a href="herramientas.html">Herramientas</a><a href="glosario.html">Glosario</a><a href="qrs.html">Índice QR</a><a href="fuentes.html">Fuentes</a><a href="museos.html">Museos</a><a href="laminas.html">Láminas</a><a href="sitemap.html">Mapa del sitio</a></div>'+
+   '<div><h4>Portal</h4><a href="index.html#manifiesto">Manifiesto</a><a href="autor.html">El autor</a><a href="prensa.html">Prensa & sponsors</a><a href="el-hilo.html">El Hilo</a><a href="sitemap.html">Mapa del sitio</a></div>'+'<div><h4>Colección</h4><a href="index.html#catalogo">Catálogo</a><a href="index.html#series">Series</a><a href="herramientas/libros-de-moda.html">Libros de moda</a><a href="index.html#cura">CURA gratis</a></div>'+
+    '<div><h4>Recursos</h4><a href="herramientas.html">Herramientas</a><a href="glosario.html">Glosario</a><a href="qrs.html">Índice QR</a><a href="fuentes.html">Fuentes</a><a href="museos.html">Museos</a><a href="laminas.html">Láminas</a><a href="sitemap.html">Mapa del sitio</a></div>'+'</div>'+  
    '</div></div>';
   document.body.prepend(t);
   t.querySelector('#burger').addEventListener('click',()=>t.querySelector('#movilPanel').classList.toggle('is-on'));
