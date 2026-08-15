@@ -5,13 +5,13 @@
 const LOGO='<svg class="logo-svg" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M63 24 C 90 28, 98 46, 79 58 C 58 71, 30 63, 26 79 C 22 95, 45 102, 63 97" stroke="currentColor" stroke-width="1.6"/><path d="M67 21 C 85 19, 97 14, 106 7" stroke="currentColor" stroke-width="1.6"/><path d="M60 15 L34 99" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><ellipse cx="61.5" cy="18" rx="4.5" ry="9.5" transform="rotate(17 61.5 18)" stroke="currentColor" stroke-width="3"/><path d="M62 15 L70 15 L90 96 Q91.5 100 99 100 L81 100 Z" fill="currentColor"/><path d="M46 79 L74 74.5 L75 80 L47.5 84 Z" fill="currentColor"/><path d="M28 101 L58 101 M64 101 L98 101" stroke="currentColor" stroke-width="1.4"/></svg>';
 const LAUNCH=window.AMICTUS_LAUNCH||{tipo:'Próxima publicación · volumen completo',titulo:'CALCEUS — <em>el libro del calzado</em>',detalle:'Serie I · CODEX · 40 capítulos · ebook, impreso y capítulos gratis en el portal',fecha:'2026-11-20T10:00:00'};
 const CHROME=Object.assign({topbar:true,countdown:true,footer:true},window.AMICTUS_CHROME||{});
-const AGUJA='<svg class="logo-aguja" viewBox="0 0 32 120" fill="none" aria-hidden="true"><ellipse cx="16" cy="16" rx="6" ry="12" stroke="currentColor" stroke-width="5"/><path d="M13 30 L19 30 L16.8 110 L16 118 L15.2 110 Z" fill="currentColor"/><path d="M21 8 C 42 16, 42 40, 23 47" stroke="currentColor" stroke-width="3"/></svg>';
+
 document.addEventListener('DOMContentLoaded',()=>{
 
  if(CHROME.topbar){
   const t=document.createElement('header');t.className='topbar';
   t.innerHTML='<div class="contenedor">'+
-   '<a href="index.html" class="logo" aria-label="AMICTUS — inicio"><span class="logo-tipo">AM'+AGUJA+'CTUS</span></a>'+
+   '<a href="index.html" class="logo" aria-label="AMICTUS — inicio"><span class="logo-tipo">AMICTUS</span></a>'+
    '<nav><a href="index.html#catalogo">Catálogo</a><a href="herramientas.html">Herramientas</a><a href="glosario.html">Glosario</a><a href="qrs.html">QR</a><a href="autor.html">Autor</a></nav>'+
    '<a class="btn btn--oro nav-cta" href="index.html#cura">CURA gratis</a>'+
    '<button class="burger" id="burger" aria-label="Abrir menú"><svg width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2"/></svg></button>'+
