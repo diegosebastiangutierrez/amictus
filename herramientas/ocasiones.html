@@ -15,7 +15,7 @@
 
 <section class="hero">
   <div class="contenedor">
-    <p class="etiqueta">Herramientas AMICTUS · 07</p>
+    <p class="etiqueta">Herramientas · 07</p>
     <h1>Qué me <span>pongo</span></h1>
     <p class="tagline">El look completo, con su vidriera de afiliados y sponsors.</p>
     <p class="bajada">Evento + perfil + clima → código, outfit por categoría, paleta, Sí/No con razón y selección curada. En Drupal, cada tag trae imagen genérica y sponsor real.</p>
@@ -31,7 +31,15 @@
       <button class="filtro" data-c="calor">☀ Calor</button>
     </div>
     <p class="cod-out" id="cod"></p>
+    
     <div class="pal-row" id="pal"></div>
+    
+    <div class="oc-grid">
+      <div class="oc oc--si"><h3>Sí, con razón</h3><ul id="si"></ul></div>
+      <div class="oc oc--no"><h3>No, con razón</h3><ul id="no"></ul></div>
+    </div>
+    <p id="clima" class="ocasion--clima"></p>
+    
     <div class="look-grid" id="look"></div>
     <p class="sponsors--look">Espacios de sponsor naturales de este look</p>
     <div class="spon-row" id="spon"></div>
@@ -42,12 +50,7 @@
       <div class="aff-grid" id="affGrid"></div>
       <p class="aff-nota">Placeholders de demostración: en Drupal, este bloque se alimenta con un script que consulta nodos por <code>aff_tag</code> — imagen genérica por tipo y género, logo del sponsor real (relojería, marroquinería, joyería, cuidado del calzado) y enlace Geniuslink.</p>
     </div>
-
-    <div class="oc-grid">
-      <div class="oc oc--si"><h3>Sí, con razón</h3><ul id="si"></ul></div>
-      <div class="oc oc--no"><h3>No, con razón</h3><ul id="no"></ul></div>
-    </div>
-    <p id="clima" class="ocasion--clima"></p>
+    
   </div>
 </section>
 
