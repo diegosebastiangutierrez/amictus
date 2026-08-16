@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   const t=document.createElement('header');t.className='topbar';
   t.innerHTML='<div class="contenedor">'+
    '<a href="index.html" class="logo" aria-label="AMICTUS — inicio"><span class="logo-tipo">AMICTUS</span></a>'+
-   '<nav><a href="index.html#catalogo">Catálogo</a><a href="herramientas.html">Herramientas</a><a href="glosario.html">Glosario</a><a href="qrs.html">QR</a><a href="autor.html">Autor</a></nav>'+
+   '<nav><a href="index.html#catalogo">Catálogo</a><a href="volumen-01-codex.html">VOL I · CODEX</a><a href="volumen-02-praxis.html">VOL II · PRAXIS</a><a href="volumen-03-expansion.html">VOL III · EXPANSION</a><a href="volumen-04-mundus.html">VOL IV · MUNDUS</a><a href="volumen-05-mercatus.html">VOL V · MERCATUS</a><a href="volumen-06-opus.html">VOL VI · OPUS</a><a href="herramientas.html">Herramientas</a><a href="glosario.html">Glosario</a><a href="qrs.html">QR</a><a href="autor.html">Autor</a></nav>'+
    '<a class="btn btn--oro nav-cta" href="index.html#cura">CURA gratis</a>'+
    '<button class="burger" id="burger" aria-label="Abrir menú"><svg width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2"/></svg></button>'+
    '<div class="movil-panel" id="movilPanel">'+
