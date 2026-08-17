@@ -187,9 +187,8 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .prov-libro{border-color:currentColor}
 .prov-cap{background:var(--dorado);border-color:var(--dorado);color:var(--negro)}
 .figura{position:relative}
-.figura::before{content:"";position:absolute;inset:1.2rem -1.2rem -1.2rem 1.2rem;border:1px solid var(--azul)}
 .figura-marco{position:relative;aspect-ratio:16/10;background:#fff;border:1px dashed rgba(10,10,11,.4);display:flex;align-items:center;justify-content:center;text-align:center;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;padding:1rem;color:var(--negro)}
-.figura figcaption{position:relative;margin-top:1.8rem;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--azul)}
+.figura figcaption{position:relative;margin-top:1rem;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--azul)}
 .ver-muestra{margin-top:3.2rem;text-align:center}
 .link-oro{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dorado);border-bottom:1px solid var(--dorado);padding-bottom:.45rem;transition:.3s}
 .link-oro:hover{color:var(--dorado-claro);border-color:var(--dorado-claro)}

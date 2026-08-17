@@ -64,7 +64,6 @@
 .herramientas li::before{content:"";position:absolute;left:0;top:1.35rem;width:12px;height:12px;border:1.5px solid var(--azul)}
 .figura{position:relative}
 .figura-marco{position:relative;aspect-ratio:4/5;background:#fff;border:1px solid rgba(10,10,11,.25);display:flex;align-items:center;justify-content:center;text-align:center;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;padding:1rem}
-.figura figcaption{position:relative;margin-top:1.8rem;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--azul)}
 
 /* ---------- QR (negro) ---------- */
 .qr-sec{padding:7rem 0}
