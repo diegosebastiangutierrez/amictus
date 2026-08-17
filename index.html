@@ -15,9 +15,8 @@ button{font-family:inherit}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* ---------- Hero ---------- */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:8rem 0 5rem;overflow:hidden}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
 .hero h1{
-	line-height:.92;
 	letter-spacing:.05em;
 	margin-bottom:3.2rem;
 }
@@ -26,8 +25,7 @@ button{font-family:inherit}
 .hero-texto .tagline{font-family:var(--titulos);font-style:italic;font-size:clamp(1.3rem,2vw,1.8rem);color:var(--dorado-claro);margin-bottom:1.2rem}
 .hero-texto p.bajada{font-size:clamp(1.05rem,1.5vw,1.35rem);line-height:1.55;max-width:34ch}
 .hero-datos{display:flex;gap:2.2rem;flex-wrap:wrap;margin-top:2.2rem;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;opacity:.75}
-.hero-figure{position:relative}
-.hero-figure::before{content:"";position:absolute;inset:1.4rem -1.4rem -1.4rem 1.4rem;border:1px solid var(--azul)}
+.hero-figure{position:relative;border:1px solid rgba(201,162,75,.55)}
 .hero-figure img{position:relative;width:100%;aspect-ratio:3/4;object-fit:cover}
 .hero-figure figcaption{margin-top:1rem;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dorado)}
 
@@ -118,7 +116,6 @@ button{font-family:inherit}
 .form-nota{margin-top:1.2rem;font-size:.8rem;font-style:italic;opacity:.75}
 
 /* ---------- Footer ---------- */
-.footer{padding:6rem 0 2.5rem;overflow:hidden}
 .footer-simbolo{display:flex;justify-content:center;margin-bottom:1.5rem}
 .footer-simbolo .logo-svg{width:90px;height:90px;color:var(--dorado)}
 .footer-barra{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(244,241,232,.15);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;opacity:.65}
@@ -154,9 +151,10 @@ button{font-family:inherit}
 <section class="hero">
   <div class="contenedor">
     <p class="etiqueta">Portal de moda · Colección editorial</p>
-    <h1>Amic<span>tus</span></h1>
+    
     <div class="hero-grid">
       <div class="hero-texto">
+		<h1>Amic<span>tus</span></h1>
         <p class="tagline">Historia, oficio y estilo de lo que vistes.</p>
         <p class="bajada">Una biblioteca completa de la indumentaria: seis series que recorren cada prenda, cada fibra y cada gesto de vestir.</p>
         <div class="hero-datos">
@@ -203,17 +201,17 @@ button{font-family:inherit}
     <div class="seccion-head">
       <div>
         <p class="etiqueta">02 · Arquitectura</p>
-        <h2>Seis series, <em>una sola lengua.</em></h2>
+        <h2>Seis volúmenes, <em>una sola lengua.</em></h2>
       </div>
-      <p class="seccion-bajada">De la enciclopedia al oficio: cada serie aborda la indumentaria desde un ángulo distinto y todas se leen en cualquier orden.</p>
+      <p class="seccion-bajada">De la enciclopedia al oficio: cada volúmen aborda la indumentaria desde un ángulo distinto y todas se leen en cualquier orden.</p>
     </div>
     <div class="series-grid">
-      <article class="serie-card"><span class="serie-num">Serie I</span><h3>CODEX</h3><p class="serie-con">La enciclopedia: prendas, textiles, joyería y calzado, volumen a volumen.</p><p class="serie-meta">7 volúmenes · 180 caps</p></article>
-      <article class="serie-card"><span class="serie-num">Serie II</span><h3>PRAXIS</h3><p class="serie-con">Guías prácticas: estilo, color, protocolo, patronaje e historia aplicada.</p><p class="serie-meta">6 volúmenes · 119 caps</p></article>
-      <article class="serie-card"><span class="serie-num">Serie III</span><h3>EXPANSION</h3><p class="serie-con">Categorías profundas: cuidado, outerwear, lencería, denim, sport y perfume.</p><p class="serie-meta">6 volúmenes · 115 caps</p></article>
-      <article class="serie-card"><span class="serie-num">Serie IV</span><h3>MUNDUS</h3><p class="serie-con">Moda global: Asia, África, América, mundo islámico, Oceanía y nórdicos.</p><p class="serie-meta">6 volúmenes · ASIA listo</p></article>
-      <article class="serie-card"><span class="serie-num">Serie V</span><h3>MERCATUS</h3><p class="serie-con">El negocio de la moda: inversión, supply, retail y universo digital.</p><p class="serie-meta">4 volúmenes · en escritura</p></article>
-      <article class="serie-card"><span class="serie-num">Serie VI</span><h3>OPUS</h3><p class="serie-con">Los oficios: artesanos, herramientas y técnicas detrás de cada prenda.</p><p class="serie-meta">3 volúmenes · en escritura</p></article>
+      <a href="volumen-01-codex.html"><article class="serie-card"><span class="serie-num">Volúmen I</span><h3>CODEX</h3><p class="serie-con">La enciclopedia: prendas, textiles, joyería y calzado, volumen a volumen.</p><p class="serie-meta">7 volúmenes · 180 caps</p></article></a>
+      <a href="volumen-02-praxis.html"><article class="serie-card"><span class="serie-num">Volúmen II</span><h3>PRAXIS</h3><p class="serie-con">Guías prácticas: estilo, color, protocolo, patronaje e historia aplicada.</p><p class="serie-meta">6 volúmenes · 119 caps</p></article></a>
+      <a href="volumen-03-expansion.html"><article class="serie-card"><span class="serie-num">Volúmen III</span><h3>EXPANSION</h3><p class="serie-con">Categorías profundas: cuidado, outerwear, lencería, denim, sport y perfume.</p><p class="serie-meta">6 volúmenes · 115 caps</p></article></a>
+      <a href="volumen-04-mundus.html"><article class="serie-card"><span class="serie-num">Volúmen IV</span><h3>MUNDUS</h3><p class="serie-con">Moda global: Asia, África, América, mundo islámico, Oceanía y nórdicos.</p><p class="serie-meta">6 volúmenes · ASIA listo</p></article></a>
+      <a href="volumen-05-mercatus.html"><article class="serie-card"><span class="serie-num">Volúmen V</span><h3>MERCATUS</h3><p class="serie-con">El negocio de la moda: inversión, supply, retail y universo digital.</p><p class="serie-meta">4 volúmenes · en escritura</p></article></a>
+      <a href="volumen-06-opus.html"><article class="serie-card"><span class="serie-num">Volúmen VI</span><h3>OPUS</h3><p class="serie-con">Los oficios: artesanos, herramientas y técnicas detrás de cada prenda.</p><p class="serie-meta">3 volúmenes · en escritura</p></article></a>
     </div>
   </div>
 </section>
@@ -311,15 +309,15 @@ document.getElementById('termRot').innerHTML=`<em style="color:var(--dorado)">${
 <script>
 /* ============ Catálogo dinámico (datos del Plan Maestro v3.0) ============ */
 const ROM = ['I','II','III','IV','V','VI'];
-const SERIES = {
+const VOLUMENES = {
   1:{nom:'CODEX',con:'Enciclopédica'},
   2:{nom:'PRAXIS',con:'Guías prácticas'},
   3:{nom:'EXPANSION',con:'Categorías'},
   4:{nom:'MUNDUS',con:'Moda global'},
   5:{nom:'MERCATUS',con:'Negocios'},
   6:{nom:'OPUS',con:'Oficios'}
-};
-const VOLUMENES = [
+};	
+const LIBROS = [
   {s:1,n:'CALCEUS',t:'Calzado',c:40,e:'imprenta'},
   {s:1,n:'CORIUM',t:'Marroquinería',c:22,e:'listo'},
   {s:1,n:'STOLA',t:'Prendas femeninas',c:24,e:'listo'},
@@ -341,11 +339,11 @@ const VOLUMENES = [
   {s:3,n:'ESSENTIA',t:'Perfume',c:20,e:'listo'},
   {s:4,n:'ASIA',t:'Moda asiática',c:25,e:'listo'},
   {s:4,n:'AFRICA',t:'Moda africana',c:null,e:'pronto'},
-  {s:4,n:'AMÉRICA',t:'Moda americana',c:null,e:'pronto'},
+  {s:4,n:'AMERICA',t:'Moda americana',c:null,e:'pronto'},
   {s:4,n:'ISLAM',t:'Moda islámica',c:null,e:'pronto'},
-  {s:4,n:'OCEANÍA',t:'Moda de Oceanía',c:null,e:'pronto'},
+  {s:4,n:'OCEANIA',t:'Moda de Oceanía',c:null,e:'pronto'},
   {s:4,n:'BOREALIS',t:'Moda nórdica',c:null,e:'pronto'},
-  {s:5,n:'AURUM INVEST',t:'Inversión en moda',c:null,e:'pronto'},
+  {s:5,n:'INVEST',t:'Inversión en moda',c:null,e:'pronto'},
   {s:5,n:'SUPPLY',t:'Cadena de suministro',c:null,e:'pronto'},
   {s:5,n:'MERCATOR',t:'Comercio y retail',c:null,e:'pronto'},
   {s:5,n:'DIGITALIS',t:'Moda digital',c:null,e:'pronto'},
@@ -359,9 +357,9 @@ const TAGS = {imprenta:'En imprenta', listo:'Manuscrito listo', gratis:'Gratis',
 function renderFiltros(){
   const cont = document.getElementById('filtros');
   const botones = [`<button class="btn-filtro is-active" data-s="">Todas · 32</button>`];
-  for(const k in SERIES){
-    const n = VOLUMENES.filter(v=>v.s==k).length;
-    botones.push(`<button class="btn-filtro" data-s="${k}">${SERIES[k].nom} · ${n}</button>`);
+  for(const k in VOLUMENES){
+    const n = LIBROS.filter(v=>v.s==k).length;
+    botones.push(`<button class="btn-filtro" data-s="${k}">${VOLUMENES[k].nom} · ${n}</button>`);
   }
   cont.innerHTML = botones.join('');
   cont.querySelectorAll('.btn-filtro').forEach(b=>{
@@ -376,21 +374,25 @@ function renderFiltros(){
 function renderEstanteria(s){
   const grid = document.getElementById('estanteria');
   const contadores = {};
-  const vols = VOLUMENES.filter(v=>!s || v.s==s);
+  const vols = LIBROS.filter(v=>!s || v.s==s);
   grid.innerHTML = vols.map((v,i)=>{
     contadores[v.s] = (contadores[v.s]||0)+1;
     const num = ROM[v.s-1]+'·'+String(contadores[v.s]).padStart(2,'0');
+    const num_padded = String(contadores[v.s]).padStart(2,'0');
     const piel = v.e==='pronto' ? 'libro--negro' : PIELES[i%3];
     return `
-    <article class="libro ${piel} ${v.e==='pronto'?'libro--pronto':''}">
-      <div class="libro-top"><span>Amictus · ${SERIES[v.s].nom}</span><span>${num}</span></div>
-      <div>
-        <div class="libro-filete"></div>
-        <h3 class="libro-titulo">${v.n}</h3>
-        <p class="libro-tema">${v.t}</p>
-      </div>
-      <div class="libro-pie"><span>${v.c ? v.c+' capítulos' : 'Próximamente'}</span><em class="tag">${TAGS[v.e]}</em></div>
-    </article>`;
+	<a href="${VOLUMENES[v.s].nom.toLowerCase()}/libro-${v.n.toLowerCase()}.html" alt="Amictus · ${v.s} · ${v.n.toLowerCase()}" title="Amictus · ${v.s} · ${v.n}">
+		<article class="libro ${piel} ${v.e==='pronto'?'libro--pronto':''}">
+		  <div class="libro-top"><span>Amictus · ${VOLUMENES[v.s].nom}</span><span>${num}</span></div>
+		  <div>
+			<div class="libro-filete"></div>
+			<h3 class="libro-titulo">${v.n}</h3>
+			<p class="libro-tema">${v.t}</p>
+		  </div>
+		  <div class="libro-pie"><span>${v.c ? v.c+' capítulos' : 'Próximamente'}</span><em class="tag">${TAGS[v.e]}</em></div>
+		</article>
+    </a>
+    `;
   }).join('');
 }
 

@@ -1,8 +1,8 @@
 /* ---------- Hero de la serie ---------- */
-.hero-serie{padding:7rem 0 6rem}
-.hero-serie h1{font-family:var(--display);font-weight:normal;text-transform:uppercase;font-size:clamp(4rem,13vw,12rem);line-height:.9;margin:.5rem 0 2.2rem}
+.hero-serie{padding:8rem 0 5rem;min-height:100svh;}
+.hero-serie h1{font-family:var(--display);max-width:28ch;font-weight:normal;text-transform:uppercase;text-fit:grow;line-height:1.25;letter-spacing:.05em;margin:.5rem 0 2.8rem;animation:aparecer .9s .1s ease both}
 .hero-serie h1 span{color:var(--dorado)}
-.tagline{font-family:var(--titulos);font-style:italic;font-size:clamp(1.25rem,2vw,1.75rem);color:var(--dorado-claro);margin-bottom:1.2rem}
+.tagline{font-family:var(--titulos);font-size:clamp(1.3rem,3vw,2.1rem);color:var(--dorado-claro);margin-bottom:1.2rem}
 .hero-serie .desc{max-width:56ch;opacity:.85}
 .chips{display:flex;gap:.7rem;flex-wrap:wrap;margin:2.2rem 0 2.6rem}
 .chip{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;border:1px solid rgba(244,241,232,.3);padding:.45rem .8rem}

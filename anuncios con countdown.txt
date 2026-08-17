@@ -1,3 +1,24 @@
 Para anunciar otra cosa en una página puntual (por ejemplo, un capítulo nuevo por semana), poné esto antes de <script src="amictus.js">:
 
 <script>window.AMICTUS_LAUNCH={tipo:'Nuevo capítulo · cada viernes',titulo:'CALCEUS · Cap. 3 — <em>El zapato medieval</em>',detalle:'Gratis en el portal; el volumen completo, en preventa',fecha:'2026-08-21T09:00:00'};</script>
+
+
+
+#### MOGILTE POR BUTLER - geoform
+
+### CHEOPS ELEGANT
+
+cheops elegant is a font. The typeface contains 2 files and supports 34 languages. The font can be used in non-commercial use.
+
+- IR A 177Studio.com PARA COMPRAR
+
+
+CAMBIAR POR CATALINA O ROUSSEAU DECO
+
+#### LORA FONT
+
+These fonts are licensed under the Open Font License.
+
+You can use them in your products & projects – print or digital, commercial or otherwise.
+
+This isn't legal advice, please consider consulting a lawyer and see the full license for all details.
