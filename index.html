@@ -66,16 +66,16 @@ button{font-family:inherit}
 .btn-filtro:hover{border-color:var(--dorado);color:var(--dorado)}
 .btn-filtro.is-active{background:var(--dorado);border-color:var(--dorado);color:var(--negro)}
 .estanteria{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.libro{aspect-ratio:2/3;padding:1.4rem;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(244,241,232,.18);transition:transform .4s,border-color .4s}
+.libro{aspect-ratio:2/3;padding:1.4rem;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(244,241,232,.18);transition:transform .4s,border-color .4s;background-size:cover;background-position:center;}
 .libro:hover{transform:translateY(-8px);border-color:var(--dorado)}
-.libro--negro{background:var(--negro-2)}
-.libro--azul{background:var(--azul-noche)}
-.libro--vivo{background:var(--azul)}
+.libro--negro{background-color:var(--negro-2)}
+.libro--azul{background-color:var(--azul-noche)}
+.libro--vivo{background-color:var(--azul)}
 .libro--pronto{opacity:.5;border-style:dashed}
 .libro-top{display:flex;justify-content:space-between;gap:.5rem;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;opacity:.75}
-.libro-filete{width:2.5rem;height:2px;background:var(--dorado);margin:1rem auto;}
-.libro-titulo{font-family:var(--display);font-weight:normal;text-align:center;text-transform:uppercase;font-size:clamp(1.5rem,2.1vw,2.2rem);line-height:.95}
-.libro-tema{font-size:.85rem;font-style:italic;opacity:.78;margin-top:.6rem;text-align:center;}
+.libro-filete{width:2.5rem;height:2px;background:var(--dorado);margin:1rem auto;box-shadow:0 0 5px var(--negro)}
+.libro-titulo{font-family:var(--display);font-weight:normal;text-align:center;text-transform:uppercase;font-size:clamp(1.5rem,2.1vw,2.2rem);line-height:1;text-shadow:0 0 10px var(--negro)}
+.libro-tema{font-size:.85rem;font-style:italic;opacity:1;margin-top:.6rem;text-align:center;text-shadow:0 0 10px var(--negro)}
 .libro-pie{display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
 .tag{font-style:normal;color:var(--dorado-claro);border:1px solid currentColor;padding:.25rem .5rem;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
 .cifras{display:flex;justify-content:space-between;gap:2.5rem;flex-wrap:wrap;margin-top:6rem;padding-top:3.5rem;border-top:1px solid rgba(244,241,232,.15)}
@@ -382,7 +382,7 @@ function renderEstanteria(s){
     const piel = v.e==='pronto' ? 'libro--negro' : PIELES[i%3];
     return `
 	<a href="${VOLUMENES[v.s].nom.toLowerCase()}/libro-${v.n.toLowerCase()}.html" alt="Amictus · ${v.s} · ${v.n.toLowerCase()}" title="Amictus · ${v.s} · ${v.n}">
-		<article class="libro ${piel} ${v.e==='pronto'?'libro--pronto':''}">
+		<article class="libro ${piel} ${v.e==='pronto'?'libro--pronto':''}" style="background-image:url(img/tapas/${v.n.toLowerCase()}.jpg)">
 		  <div class="libro-top"><span>Amictus · ${VOLUMENES[v.s].nom}</span><span>${num}</span></div>
 		  <div>
 			<div class="libro-filete"></div>
