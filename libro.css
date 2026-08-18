@@ -38,9 +38,9 @@
 .partes{background:var(--blanco);color:var(--negro);padding:7rem 0}
 .seccion-head h2{font-family:var(--titulos);font-weight:500;font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;margin-bottom:3.5rem}
 .partes .seccion-head h2 em{color:var(--azul)}
-.parte{display:grid;grid-template-columns:5.5rem 1fr auto;gap:2rem;align-items:baseline;padding:1.7rem 0;border-top:1px solid rgba(10,10,11,.2)}
+.parte{display:grid;grid-template-columns:2rem 1fr auto;gap:2rem;align-items:baseline;padding:1.7rem 0;border-top:1px solid rgba(10,10,11,.2)}
 .parte:last-of-type{border-bottom:1px solid rgba(10,10,11,.2)}
-.parte-num{font-family:var(--titulos);color:var(--azul);font-size:1.5rem}
+.parte-num{font-family:var(--titulos);color:var(--azul);font-size:1.5rem;text-align:center;}
 .parte h3{font-family:var(--titulos);font-weight:500;font-size:1.5rem;letter-spacing:.08em}
 .parte p{opacity:.72;font-size:.95rem}
 .parte-rango{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;opacity:.6;white-space:nowrap}
