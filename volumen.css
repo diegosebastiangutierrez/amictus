@@ -20,7 +20,7 @@
 
 /* ---------- Libros de la serie ---------- */
 .libros-sec{padding:7rem 0}
-.seccion-head h2{font-family:var(--titulos);font-weight:500;font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;margin-bottom:3.5rem}
+
 .libros-sec h2 em{color:var(--dorado)}
 .tapa-pie{display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
 
