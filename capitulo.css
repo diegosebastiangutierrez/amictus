@@ -1,4 +1,3 @@
-/* AMICTUS · capitulo.css — estilos de páginas de capítulo (se usa con amictus.css) */
 .progreso{position:fixed;top:0;left:0;height:3px;width:0;background:var(--dorado);z-index:60}
 .cab{padding:6rem 0 5rem}
 .cab-grid{display:grid;grid-template-columns:1fr auto;gap:4.5rem;align-items:end}
