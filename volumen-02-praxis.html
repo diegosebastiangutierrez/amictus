@@ -44,7 +44,7 @@
   <div class="contenedor">
     <p class="etiqueta">Los libros de esta serie</p>
     <div class="seccion-head"><h2 id="h2libros"></h2></div>
-    <div class="libros-grid" id="librosGrid"></div>
+    <div class="estanteria" id="librosGrid"></div>
     <div class="cifras" id="cifras"></div>
   </div>
 </section>
@@ -154,14 +154,21 @@ document.getElementById('h2libros').innerHTML = `Los ${S.libros.length} libros d
 document.getElementById('librosGrid').innerHTML = S.libros.map((l,i)=>{
   const href = l[3]==='pronto' ? '#' : `${S.folder}/libro-${slug(l[0])}.html`;
   return `
-  <a class="libro-card" href="${href}" ${l[3]==='pronto'?'aria-disabled="true"':''}>
-    <span class="tapa ${l[3]==='pronto'?'tapa--pronto':PIELES[i%3]}">
-      <span class="tapa-top"><span>Amictus · ${S.nom}</span><span>${ROM[ACTIVA-1]}·${String(i+1).padStart(2,'1')}</span></span>
-      <span><div class="tapa-filete"></div><div class="tapa-titulo">${l[0]}</div><div class="tapa-tema">${l[1]}</div></span>
-      <span class="tapa-pie"><span>${l[2]?l[2]+' capítulos':'Próximamente'}</span><em class="tag">${TAGS[l[3]]}</em></span>
-    </span>
-    <span class="libro-cta">${l[3]==='pronto'?'En escritura':'Ver libro →'}</span>
-  </a>`;
+  <a href="${href}" alt="Amictus · ${S.nom}" title="Amictus · ${S.nom}">
+		<article class="libro ${l[3]==='pronto'?'libro--pronto':PIELES[i%3]}" style="background-image:url(img/tapas/${l[0].toLowerCase()}.jpg)">
+		  <div class="libro-top"><span>Amictus · ${S.nom}</span><span>${ROM[ACTIVA-1]}·${String(i+1).padStart(2,'1')}</span></div>
+			<div class="theme-container">
+				<div class="libro-filete"></div>
+				<h3 class="libro-titulo">${l[0]}</h3>
+				<p class="tapa-tema">${l[1]}</p>
+			</div>
+			<div class="libro-pie">
+				<span>${l[2]?l[2]+' capítulos':'Próximamente'}</span>
+				<em class="tag">${TAGS[l[3]]}</em>
+			</div>
+		</article>
+		<span class="libro-cta">${l[3]==='pronto'?'En escritura':'Ver libro →'}</span>
+    </a>`;
 }).join('');
 
 /* Cifras */
