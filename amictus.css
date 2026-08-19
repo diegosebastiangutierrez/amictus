@@ -195,7 +195,7 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .linea{border-left:2px solid var(--azul);padding-left:1.9rem;margin-top:2.5rem}
 .linea li{position:relative;padding:.8rem 0}
 .linea li::before{content:"";position:absolute;left:-2.27rem;top:1.3rem;width:9px;height:9px;border-radius:50%;background:var(--dorado)}
-.linea strong{font-family:var(--display);font-weight:normal;color:var(--azul);display:block;font-size:.95rem}
+.linea strong{font-family:var(--titulos);font-weight:normal;color:var(--azul);display:block;font-size:.95rem}
 .cifras{display:flex;justify-content:space-between;gap:2.5rem;flex-wrap:wrap;margin-top:5rem;padding-top:3.5rem;border-top:1px solid rgba(244,241,232,.15)}
 .cifra strong{display:block;font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,5vw,4rem);line-height:1;color:var(--dorado)}
 .cifra span{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.7}
@@ -247,7 +247,7 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .pir .p1{width:55%;background:var(--azul)}
 .pir .p2{width:72%;background:var(--azul-noche)}
 .pir .p3{width:90%;background:var(--negro-2);border:1px solid rgba(244,241,232,.2)}
-.fam{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.6rem);color:var(--azul)}
+.fam{font-family:var(--titulos);font-size:clamp(1.6rem,4vw,2.6rem);color:var(--azul)}
 .spon-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.2rem}
 .spon-row span{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--dorado);color:#8F6F2C;padding:.4rem .8rem}
 /* ---- Vidriera de afiliados (misma lógica que «Qué me pongo») ---- */
