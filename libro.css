@@ -121,11 +121,8 @@ border-color:var(--dorado);
 /* ---- Formatos: hover elegante ---- */
 .formato{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s,border-color .35s,background .35s}
 .formato::before{content:"";position:absolute;top:0;left:0;height:3px;width:0;background:var(--dorado);transition:width .5s cubic-bezier(.2,.7,.3,1)}
-.formato::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(105deg,transparent,rgba(244,241,232,.14),transparent);transform:skewX(-18deg);transition:left .65s ease;pointer-events:none}
 .formato:hover{transform:translateY(-8px);box-shadow:0 22px 45px rgba(0,0,0,.4);border-color:rgba(201,162,75,.65);background:rgba(10,10,11,.4)}
 .formato:hover::before{width:100%}
-.formato:hover::after{left:135%}
-.formato .precio{transition:color .3s}
 .formato:hover .precio{color:var(--dorado-claro)}
 .formato .canal{transition:border-color .3s,color .3s}
 .formato:hover .canal{border-color:var(--dorado);color:var(--dorado-claro)}
@@ -133,8 +130,6 @@ border-color:var(--dorado);
 .formato:hover .canal:nth-child(3){transition-delay:100ms}
 .formato:hover .canal:nth-child(4){transition-delay:150ms}
 .formato:hover .canal:nth-child(5){transition-delay:200ms}
-/* El destacado ya vive con el filete puesto */
-.formato--destacado::before{width:100%}
 /* Accesibilidad: sin movimiento para quien lo pide */
 @media (prefers-reduced-motion:reduce){
  .formato,.formato::before,.formato::after,.formato .canal{transition:none}
