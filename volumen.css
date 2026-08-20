@@ -23,9 +23,6 @@
 
 .libros-sec h2 em{color:var(--dorado)}
 .tapa-pie{display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
-
-.libro-cta{display:block;margin-top:1rem;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dorado);opacity:0;transform:translateY(4px);transition:.3s}
-
 .cifras{display:flex;justify-content:space-between;gap:2.5rem;flex-wrap:wrap;margin-top:5.5rem;padding-top:3.5rem;border-top:1px solid rgba(244,241,232,.15)}
 .cifra strong{display:block;font-family:var(--display);font-weight:normal;font-size:clamp(2.2rem,5vw,4rem);line-height:1;color:var(--dorado)}
 .cifra span{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.7}
