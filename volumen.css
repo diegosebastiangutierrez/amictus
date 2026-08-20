@@ -20,7 +20,6 @@
 
 /* ---------- Libros de la serie ---------- */
 .libros-sec{padding:7rem 0}
-
 .libros-sec h2 em{color:var(--dorado)}
 .tapa-pie{display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
 
@@ -43,13 +42,9 @@
 /* ---------- Prev / siguiente serie ---------- */
 .pie-serie{padding:5rem 0;border-top:1px solid rgba(244,241,232,.12)}
 .pie-serie .	contenedor{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-.pie-link small{display:block;font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:.7rem}
-.pie-link a{font-family:var(--titulos);font-size:clamp(1.4rem,3vw,2.2rem);transition:.3s}
-.pie-link a:hover{color:var(--dorado)}
-.pie-link--sig{text-align:right}
 
 @media (max-width:960px){
   .caracter-grid{grid-template-columns:1fr;gap:3.5rem}
   .pie-serie .contenedor{grid-template-columns:1fr}
-  .pie-link--sig{text-align:left}
+
 }

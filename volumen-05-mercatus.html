@@ -75,12 +75,12 @@
 </section>
 
 <!-- ============ PREV / SIGUIENTE ============ -->
-<nav class="pie-serie">
-  <div class="contenedor">
-    <div class="pie-link" id="pieAnt"></div>
-    <div class="pie-link pie-link--sig" id="pieSig"></div>
-  </div>
-</nav>
+<section class="sec pie-serie">
+	<nav class="contenedor libros-nav">
+		<div class="libro-prev" id="pieAnt"></div>
+		<div class="libro-next" id="pieSig"></div>
+	</nav>
+</section>
 
 <script>
 /* ✏️ ACTIVA: 1=CODEX 2=PRAXIS 3=EXPANSION 4=MUNDUS 5=MERCATUS 6=OPUS.
@@ -188,9 +188,10 @@ document.getElementById('descBundle').textContent = `Los ${S.libros.length} libr
 
 /* Prev / siguiente */
 const ant = ACTIVA===1?6:ACTIVA-1, sig = ACTIVA===6?1:ACTIVA+1;
-document.getElementById('pieAnt').innerHTML = `<small>← VOLÚMEN ${ROM[ant-1]}</small><a href="volumen-${String(ant).padStart(2,0)}-${SERIES[ant].nom.toLowerCase()}.html">${SERIES[ant].nom}</a>`;
-document.getElementById('pieSig').innerHTML = `<small>VOLÚMEN ${ROM[sig-1]} →</small><a href="volumen-${String(sig).padStart(2,0)}-${SERIES[sig].nom.toLowerCase()}.html">${SERIES[sig].nom}</a>`;
-document.getElementById('pieMarca').textContent = `Serie ${ROM[ACTIVA-1]} · ${S.nom}`;
+document.getElementById('pieAnt').innerHTML = `<a class="libro-prev" href="volumen-${String(ant).padStart(2,0)}-${SERIES[ant].nom.toLowerCase()}.html" aria-label="Anterior: ${SERIES[ant].nom}"><span class="nav-arrow">←</span><span class="nav-txt"><small>VOLÚMEN ${ROM[ant-1]}</small><strong>${SERIES[ant].nom}</strong></span></a>`;
+document.getElementById('pieSig').innerHTML = `<a class="libro-next" href="volumen-${String(sig).padStart(2,0)}-${SERIES[sig].nom.toLowerCase()}.html" aria-label="Siguiente: ${SERIES[sig].nom}"><span class="nav-txt"><small>VOLÚMEN ${ROM[sig-1]}</small><strong>${SERIES[sig].nom}</strong></span><span class="nav-arrow">→</span></a>`;
+
+//document.getElementById('pieMarca').textContent = `Serie ${ROM[ACTIVA-1]} · ${S.nom}`;
 </script>
 
 </body>

@@ -236,6 +236,22 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .libro-pie{display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
 .tag{font-style:normal;color:var(--dorado-claro);border:1px solid currentColor;padding:.25rem .5rem;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
 
+/* ---------- Navegación entre libros (unificada) ---------- */
+.libros-nav{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.libros-nav a{display:flex;align-items:center;gap:.9rem;min-width:0;padding:1.1rem 1.3rem;transition:border-color .3s,color .3s}
+.libros-nav a:hover{color:var(--dorado)}
+.libros-nav .libro-next{justify-content:flex-end;text-align:right}
+.libros-nav .libro-prev{justify-content:flex-start;text-align:left}
+.nav-arrow{font-family:var(--display);font-size:1.25rem;color:var(--dorado);flex:none;line-height:1}
+.nav-txt{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+.nav-txt small{font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;opacity:.6}
+.nav-txt strong{font-family:var(--titulos);font-weight:500;font-size:clamp(1.4rem,3vw,2.2rem);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:760px){
+ .nav-txt{display:none}
+ .libros-nav{gap:1rem}
+ .libros-nav a,.libros-nav .libro-next{justify-content:center;padding:1rem}
+}
+
 /* HERRAMIENTAS*/
 
 /* HERRAMIENTAS - PIRAMIDE PERFUMES */

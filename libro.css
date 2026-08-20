@@ -108,20 +108,6 @@ border-color:var(--dorado);
 .siguiente a:hover{color:var(--dorado);padding-left:1rem}
 .siguiente small{display:block;font-family:var(--texto);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:.6rem}
 
-/* ---------- Navegación entre libros (unificada) ---------- */
-.libros-nav{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.libros-nav a{display:flex;align-items:center;gap:.9rem;min-width:0;padding:1.1rem 1.3rem;transition:border-color .3s,color .3s}
-.libros-nav a:hover{color:var(--dorado)}
-.libros-nav .libro-next{justify-content:flex-end;text-align:right}
-.nav-arrow{font-family:var(--display);font-size:1.25rem;color:var(--dorado);flex:none;line-height:1}
-.nav-txt{display:flex;flex-direction:column;gap:.3rem;min-width:0}
-.nav-txt small{font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;opacity:.6}
-.nav-txt strong{font-family:var(--titulos);font-weight:500;font-size:1.5rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-@media (max-width:760px){
- .nav-txt{display:none}
- .libros-nav{gap:1rem}
- .libros-nav a,.libros-nav .libro-next{justify-content:center;padding:1rem}
-}
 
 @media (max-width:960px){
   .hero-libro{grid-template-columns:1fr;gap:4rem}
