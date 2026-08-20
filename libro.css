@@ -134,7 +134,6 @@ border-color:var(--dorado);
 .formato:hover .canal:nth-child(4){transition-delay:150ms}
 .formato:hover .canal:nth-child(5){transition-delay:200ms}
 /* El destacado ya vive con el filete puesto */
-.formato--destacado{border-color:rgba(201,162,75,.55)}
 .formato--destacado::before{width:100%}
 /* Accesibilidad: sin movimiento para quien lo pide */
 @media (prefers-reduced-motion:reduce){
