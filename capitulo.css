@@ -1,14 +1,14 @@
 .progreso{position:fixed;top:0;left:0;height:3px;width:0;background:var(--dorado);z-index:60}
 .cab{padding:6rem 0 5rem}
 .cab-grid{display:grid;grid-template-columns:1fr auto;gap:4.5rem;align-items:end}
-.cap-numero{font-family:var(--display);font-size:clamp(2rem,8vw,6rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--dorado)}
+.cap-numero{font-family:var(--display);font-size:clamp(2rem,6vw,4rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--dorado)}
 .cap-titulo{font-family:var(--titulos);font-weight:500;font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;margin-top:1.2rem}
 .cap-bajada{margin-top:1.4rem;font-style:italic;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--dorado-claro);max-width:56ch}
-.meta-cap{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2.4rem}
-.toc{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:1.8rem}
+.meta-cap{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2.5rem}
+.toc{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:2.5rem}
 .toc a{font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;opacity:.65;border-bottom:1px solid transparent;padding-bottom:.3rem;transition:.3s}
 .toc a:hover{opacity:1;color:var(--dorado);border-color:var(--dorado)}
-.mini-libro{display:flex;flex-direction:column;justify-content:space-between;width:240px;aspect-ratio:2/3;background:var(--negro-2);border:1px solid rgba(244,241,232,.2);padding:1.3rem;transition:.35s}
+.mini-libro{display:flex;flex-direction:column;justify-content:space-between;width:350px;aspect-ratio:2/3;background-color:var(--negro-2);border:1px solid rgba(244,241,232,.2);padding:1.3rem;transition:.35s}
 .mini-libro:hover{transform:translateY(-8px);border-color:var(--dorado)}
 .libro-top{display:flex;justify-content:space-between;gap:.5rem;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;opacity:.75}
 .libro-filete{width:2.5rem;height:2px;background:var(--dorado);margin-bottom:1rem}
@@ -19,6 +19,7 @@
 .prosa>p:first-of-type::first-letter{font-family:var(--display);font-size:4.8rem;line-height:.8;float:left;padding:.4rem .9rem 0 0;color:var(--azul)}
 .prosa h2{font-family:var(--titulos);font-weight:500;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.1;margin-bottom:1.4rem}
 .prosa .etiqueta{margin-bottom:1.2rem}
+.prosa ul{margin:2.8rem 0}
 .cita{margin:2.8rem 0;padding-left:1.6rem;border-left:3px solid var(--azul);font-style:italic;font-size:1.35rem;line-height:1.55;color:var(--azul)}
 .caja--mito{border-color:#8C1F2F;background:rgba(140,31,47,.06)}
 .caja--mito h4{color:#8C1F2F}
@@ -26,8 +27,8 @@
 .glosario th{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;text-align:left;padding:.7rem .9rem;border-bottom:2px solid var(--negro);color:var(--azul)}
 .glosario td{padding:.7rem .9rem;border-bottom:1px solid rgba(10,10,11,.15)}
 .glosario td:first-child{font-weight:600}
-.qr-cajas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
-.qr{background:var(--negro-2);border:1px solid rgba(244,241,232,.16);border-top:3px solid var(--blanco);padding:1.7rem}
+.qr-cajas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin:2.5rem 0;}
+.qr{background:var(--negro-2);border-top:3px solid var(--blanco);padding:1.7rem}
 .qr--casa{border-top-color:var(--dorado)}.qr--compra{border-top-color:var(--azul)}.qr--fuente{border-top-color:var(--blanco)}
 .qr h4{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:.8rem}
 .qr--casa h4{color:var(--dorado)}.qr--compra h4{color:var(--azul-claro)}

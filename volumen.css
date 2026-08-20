@@ -1,22 +1,9 @@
 /* ---------- Hero de la serie ---------- */
-.hero-serie{padding:8rem 0 5rem;min-height:100svh;}
-.hero-serie h1{font-family:var(--display);max-width:28ch;font-weight:normal;text-transform:uppercase;text-fit:grow;line-height:1.25;letter-spacing:.05em;margin:.5rem 0 2.8rem;animation:aparecer .9s .1s ease both}
+.hero-serie{min-height:100svh;}
+.hero-serie h1{max-width:28ch;}
 .hero-serie h1 span{color:var(--dorado)}
-.tagline{font-family:var(--titulos);font-size:clamp(1.3rem,3vw,2.1rem);color:var(--dorado-claro);margin-bottom:1.2rem}
-.hero-serie .desc{max-width:56ch;opacity:.85}
-.chips{display:flex;gap:.7rem;flex-wrap:wrap;margin:2.2rem 0 2.6rem}
-.chip{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;border:1px solid rgba(244,241,232,.3);padding:.45rem .8rem}
-.chip--oro{border-color:var(--dorado);color:var(--dorado)}
-.cta-row{display:flex;gap:1.3rem;flex-wrap:wrap}
+.hero-serie .desc{max-width:60ch;opacity:.85}
 
-/* ---------- Cinta con los libros ---------- */
-.marquee{background:var(--azul);overflow:hidden;padding:1.1rem 0}
-.marquee-track{display:flex;width:max-content;animation:desfile 32s linear infinite}
-.marquee-grupo{display:flex;flex-shrink:0}
-.marquee-grupo span{position:relative;padding-right:3.4rem;white-space:nowrap;font-family:var(--titulos);font-size:.9rem;letter-spacing:.45em;text-transform:uppercase;color:var(--blanco)}
-.marquee-grupo span::after{content:"·";position:absolute;right:1.3rem;color:var(--dorado-claro)}
-@keyframes desfile{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
 
 /* ---------- Libros de la serie ---------- */
 .libros-sec{padding:7rem 0}
@@ -40,8 +27,7 @@
 .bundle .cta-row{margin-top:2.6rem}
 
 /* ---------- Prev / siguiente serie ---------- */
-.pie-serie{padding:5rem 0;border-top:1px solid rgba(244,241,232,.12)}
-.pie-serie .	contenedor{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.pie-serie .contenedor{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
 
 @media (max-width:960px){
   .caracter-grid{grid-template-columns:1fr;gap:3.5rem}
