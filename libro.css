@@ -72,7 +72,7 @@
 .qr-sec h2 em{color:var(--dorado)}
 .qr-cajas{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .qr-cajas .qr, .formatos-grid .formato{
-transition:transform .4s,border-color .4s;
+transition:transform .4s, all .4s;
 }
 .qr-cajas .qr:hover, .formatos-grid .formato:hover{
 transform:translateY(-8px);
