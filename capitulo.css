@@ -8,7 +8,7 @@
 .toc{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:2.5rem}
 .toc a{font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;opacity:.65;border-bottom:1px solid transparent;padding-bottom:.3rem;transition:.3s}
 .toc a:hover{opacity:1;color:var(--dorado);border-color:var(--dorado)}
-.mini-libro{display:flex;flex-direction:column;justify-content:space-between;width:350px;aspect-ratio:2/3;background-color:var(--negro-2);border:1px solid rgba(244,241,232,.2);padding:1.3rem;transition:.35s}
+.mini-libro{display:flex;flex-direction:column;justify-content:space-between;width:384px;aspect-ratio:2/3;background-color:var(--negro-2);border:1px solid rgba(244,241,232,.2);padding:1.3rem;transition:.35s}
 .mini-libro:hover{transform:translateY(-8px);border-color:var(--dorado)}
 .libro-top{display:flex;justify-content:space-between;gap:.5rem;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;opacity:.75}
 .libro-filete{width:2.5rem;height:2px;background:var(--dorado);margin-bottom:1rem}
