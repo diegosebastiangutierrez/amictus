@@ -111,7 +111,7 @@ border-color:var(--dorado);
   .hero-libro{grid-template-columns:1fr;gap:4rem}
   .indice-grid{grid-template-columns:1fr}
   .lectura-grid{grid-template-columns:1fr;gap:3.5rem}
-  .formatos-grid{grid-template-columns:1fr}
+  .qr-cajas, .formatos-grid{grid-template-columns:1fr}
   .parte{grid-template-columns:3.5rem 1fr;gap:1.2rem}
   .parte-rango{grid-column:2}
 }
