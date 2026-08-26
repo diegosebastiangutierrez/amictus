@@ -18,6 +18,13 @@
 /* ---------- Glosario (banda blanca) ---------- */
 .glo{background:var(--blanco);color:var(--negro);padding:6.5rem 0}
 .buscar:focus{border-color:var(--azul)}
+
+.glosario{
+display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;	
+}
+
 .filtro-g{background:none;border:1px solid rgba(10,10,11,.3);color:var(--negro);font-size:1rem;letter-spacing:.24em;text-transform:uppercase;padding:1rem 1.3rem;cursor:pointer;transition:.3s}
 .filtro-g:hover{border-color:var(--azul);color:var(--azul)}
 .filtro-g.is-active{background:var(--azul);border-color:var(--azul);color:#fff}
