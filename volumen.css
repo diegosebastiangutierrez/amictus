@@ -27,8 +27,6 @@
 .bundle .cta-row{margin-top:2.6rem}
 
 /* ---------- Prev / siguiente serie ---------- */
-.pie-serie .contenedor{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-
 @media (max-width:960px){
   .caracter-grid{grid-template-columns:1fr;gap:3.5rem}
 }
