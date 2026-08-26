@@ -250,8 +250,8 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 @media (max-width:760px){
  .nav-txt{display:none}
  .libros-nav{gap:1rem}
- .libros-nav a,.libros-nav .libro-prev{justify-content:flex-start;padding:1rem}
- .libros-nav a,.libros-nav .libro-next{justify-content:flex-end;padding:1rem}
+ .libros-nav a,.libros-nav .libro-prev{display:flex;justify-content:flex-start;padding:1rem}
+ .libros-nav a,.libros-nav .libro-next{display:flex;justify-content:flex-end;padding:1rem}
 }
 
 /* HERRAMIENTAS*/
