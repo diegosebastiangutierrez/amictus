@@ -56,14 +56,12 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.body.append(f);
  }
 });
-})();
 
 /* ============================================================
    LINKS RELATIVOS · los menues no se rompen en subcarpetas
    Detecta la raíz desde el propio src de amictus.js y prefija
    los links internos de topbar/footer con los ../ necesarios.
    ============================================================ */
-(function(){
   function raiz(){
     var sc=document.currentScript;
     if(!sc){var all=document.getElementsByTagName('script');
@@ -93,4 +91,5 @@ document.addEventListener('DOMContentLoaded',()=>{
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',arreglar);
   else arreglar();
+
 })();
