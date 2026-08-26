@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     a.setAttribute('href',B+h);
   }
   function arreglar(){
-    var sel=document.querySelectorAll('.topbar a, footer a, .footer a');
+    var sel=document.querySelectorAll('.topbar a, footer a, .footer a, section.countdown');
     for(var i=0;i<sel.length;i++)fix(sel[i]);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',arreglar);
