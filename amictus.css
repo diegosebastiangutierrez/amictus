@@ -200,7 +200,7 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .linea li{position:relative;padding:.8rem 0}
 .linea li::before{content:"";position:absolute;left:-2.27rem;top:1.3rem;width:9px;height:9px;border-radius:50%;background:var(--dorado)}
 .linea strong{font-family:var(--titulos);font-weight:normal;color:var(--azul);display:block;font-size:.95rem}
-.cifras{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem;padding-top:3rem}
+.cifras{display:flex;justify-content:space-evenly;gap:1rem;flex-wrap:wrap;margin-top:3rem;padding-top:3rem}
 .cifra{text-align:center}
 .cifra strong{display:block;font-family:var(--display);font-size:clamp(2.2rem,5vw,4rem);line-height:1.5;color:var(--dorado)}
 .cifra span{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.7}
