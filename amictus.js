@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   const cd=document.createElement('section');cd.className='countdown';
   cd.innerHTML='<div class="contenedor cd-inner"><div class="cd-txt"><p class="tipo">'+LAUNCH.tipo+'</p><h3>'+LAUNCH.titulo+'</h3><p>'+LAUNCH.detalle+'</p></div>'+
    '<div class="cd-num"><div><strong id="cdD">--</strong><span>días</span></div><div><strong id="cdH">--</strong><span>horas</span></div><div><strong id="cdM">--</strong><span>min</span></div><div><strong id="cdS">--</strong><span>seg</span></div></div>'+
-   '<a class="btn btn--oro" href="index.html#cura">Avisame al lanzamiento</a></div>';
+   '<a class="btn btn--oro glass" href="index.html#cura">Avisame al lanzamiento</a></div>';
   document.body.append(cd);
   const target=new Date(LAUNCH.fecha).getTime(),pad=n=>String(n).padStart(2,'0');
   (function tick(){
