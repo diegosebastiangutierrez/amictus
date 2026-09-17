@@ -3,7 +3,7 @@ button{font-family:inherit}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* ---------- Hero ---------- */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background-image:url(img/home-hero.png);background-size: cover; background-attachment:fixed;}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background-image:url(img/home-hero.png);background-size: cover; background-attachment:fixed;background-position:center;}
 .hero h1{
 	letter-spacing:.05em;
 	margin-bottom:3.2rem;
@@ -35,7 +35,7 @@ button{font-family:inherit}
 .nota-lateral::before{content:"";width:3rem;height:1px;background:currentColor}
 
 /* ---------- Series ---------- */
-.series{padding:6rem 0 3rem;background-image:url(img/series-bg.jpg);background-size:cover;}
+.series{background-image:url(img/series-bg.jpg);background-size:cover;}
 .series-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .serie-card{border:1px solid rgba(244,241,232,.16);padding:2.2rem;transition:transform .35s,border-color .35s}
 .serie-card:hover{transform:translateY(-6px);border-color:var(--dorado)}
@@ -45,14 +45,13 @@ button{font-family:inherit}
 .serie-meta{margin-top:1.7rem;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--dorado)}
 
 /* ---------- Catálogo ---------- */
-.catalogo{padding:3rem 0 6rem}
 .filtros{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}
 .btn-filtro{background:none;border:1px solid rgba(244,241,232,.25);color:var(--blanco);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;padding:.7rem 1.2rem;cursor:pointer;transition:.3s}
 .btn-filtro:hover{border-color:var(--dorado);color:var(--dorado)}
 .btn-filtro.is-active{background:var(--dorado);border-color:var(--dorado);color:var(--negro)}
 
 /* ---------- Método ---------- */
-.metodo{background:var(--blanco);color:var(--negro);padding:6rem 0}
+.metodo{background:var(--blanco);color:var(--negro)}
 .metodo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2.2rem}
 .adn-item{border-top:2px solid var(--negro);padding-top:1.4rem}
 .adn-item strong{font-family:var(--titulos);font-weight:600;display:block;font-size:1.35rem;letter-spacing:.06em;margin-bottom:.5rem}
@@ -64,6 +63,15 @@ button{font-family:inherit}
 .qr-dot--azul{background:var(--azul)}
 .qr-dot--tinta{background:#1C1B18}
 .qr-item small{display:block;letter-spacing:.05em;text-transform:none;font-size:.8rem;opacity:.7}
+/* ----------- Término rotativo de glosario ---------- */
+.glossary-term{
+border-top:1px solid rgba(244,241,232,.12)
+}
+.glossary-term #termRot{
+font-family:var(--titulos);
+font-size:clamp(1.8rem,4vw,3rem);
+line-height:1.2;
+}
 
 /* ---------- Editorial ---------- */
 .editorial{padding:9rem 0}
