@@ -6,12 +6,11 @@
 
 
 /* ---------- Libros de la serie ---------- */
-.libros-sec{padding:7rem 0}
 .libros-sec h2 em{color:var(--dorado)}
 .tapa-pie{display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
 
 /* ---------- Carácter (banda blanca) ---------- */
-.caracter{background:var(--blanco);color:var(--negro);padding:7rem 0}
+.caracter{background:var(--blanco);color:var(--negro)}
 .caracter-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:5rem;align-items:start}
 .caracter h2 em{color:var(--azul)}
 .caracter p{max-width:52ch}
@@ -21,7 +20,7 @@
 .ejes li strong{font-family:var(--titulos);font-weight:600;letter-spacing:.06em}
 
 /* ---------- Bundle (banda azul) ---------- */
-.bundle{background:var(--azul);padding:7rem 0}
+.bundle{background:var(--azul)}
 .bundle h2{font-family:var(--titulos);font-weight:500;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;max-width:20ch}
 .bundle .bajada{margin-top:1.4rem;max-width:52ch;color:rgba(244,241,232,.88)}
 .bundle .cta-row{margin-top:2.6rem}
