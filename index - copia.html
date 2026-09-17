@@ -14,42 +14,11 @@
 </head>
 
 <script src="amictus.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const video = document.getElementById("explicativoVideo");
-    const ctaContainer = document.getElementById("ctaContainer");
-
-    if (video && ctaContainer) {
-        // Escuchamos el evento nativo de HTML5 que detecta cuando el video finaliza
-        video.onended = function() {
-            // Añadimos la clase CSS para hacer visible el botón con una transición suave
-            ctaContainer.classList.add("is-visible");
-        };
-    }
-});
-
-</script>
 <body>
 <main>
-<!-- INTRO CINEMÁTICA CON VIDEO EXPLICATIVO -->
-<section class="intro-cinema-section">
-    
-    <!-- Contenedor del reproductor a pantalla completa -->
-    <div class="intro-video-container">
-        <video id="explicativoVideo" autoplay muted playsinline class="intro-video">
-            <!-- Desktop -->
-            <source src="videos/home.mp4" type="video/mp4" media="(min-width: 1025px)">
-            <!-- Tablet -->
-            <source src="videos/home.mp4" type="video/mp4" media="(min-width: 768px) and (max-width: 1024px)">
-            <!-- Mobile -->
-            <source src="videos/home.mp4" type="video/mp4" media="(max-width: 767px)">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <!-- Contenedor del Botón (Nace oculto) -->
-    <section id="ctaContainer" class="hero intro-cta-wrapper">
-<div class="contenedor"> 
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="contenedor"> 
     <div class="hero-grid">
       <div class="hero-texto">
 		<p class="etiqueta">Portal de moda · Colección editorial</p>
@@ -70,10 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
       </figure>
 -->
     </div>
-  </section>
-    </div>
+  </div>
 </section>
-
 
 <!-- ============ CINTA ============ -->
 <div class="marquee" aria-hidden="true">
