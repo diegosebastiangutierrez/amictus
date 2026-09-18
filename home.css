@@ -3,13 +3,7 @@ button{font-family:inherit}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* ---------- Hero ---------- */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background-image:url(img/home-hero.png);background-size: cover; background-attachment:fixed;background-position:center;}
-.hero h1{
-	letter-spacing:.05em;
-	margin-bottom:3.2rem;
-	text-shadow: 0 0 20px black;
-}
-
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4.5rem;align-items:end;animation:aparecer .5s .1s ease both}
 .hero-texto .tagline{font-family:var(--titulos);font-style:italic;font-size:clamp(1.3rem,2vw,1.8rem);color:var(--dorado);margin-bottom:1.2rem;text-shadow: 0 0 10px black;}
 .hero-texto p.bajada{font-size:clamp(1.05rem,1.5vw,1.35rem);line-height:1.55;max-width:34ch;text-shadow: 0 0 20px black;}
@@ -27,9 +21,6 @@ button{font-family:inherit}
     width: 100%;
     min-height: 100vh;
     background-color: #000000; /* Fondo negro absoluto de tu paleta */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     overflow: hidden;
     box-sizing: border-box;
@@ -63,10 +54,6 @@ button{font-family:inherit}
     padding: 3rem;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Clase activa que inyectará JavaScript al terminar el video */
@@ -75,48 +62,6 @@ button{font-family:inherit}
     transform: translateY(0);
     pointer-events: auto; /* Se vuelve clickeable */
 }
-
-.intro-fade-text {
-    font-family: monospace;
-    color: #ffffff;
-    letter-spacing: 6px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-}
-
-.btn-discover {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: monospace;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #D4AF37; /* Tus tipografías con toques dorados */
-    text-decoration: none;
-    border: 1px solid #D4AF37;
-    padding: 14px 32px;
-    transition: all 0.4s ease;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.btn-discover .arrow {
-    margin-top: 0.5rem;
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-}
-
-/* Efecto hover premium */
-.btn-discover:hover {
-    background-color: #D4AF37;
-    color: #000000;
-}
-
-.btn-discover:hover .arrow {
-    transform: translateY(5px);
-}
-
 
 /* ---------- Cinta ---------- */
 .marquee{background:var(--azul);overflow:hidden;padding:1.1rem 0}
@@ -135,10 +80,10 @@ button{font-family:inherit}
 .nota-lateral::before{content:"";width:3rem;height:1px;background:currentColor}
 
 /* ---------- Series ---------- */
-.series{background-image:url(img/series-bg.jpg);background-size:cover;}
+.series{background-image:url(img/series-bg.jpg);background-size:cover;background-position:center;}
 .series-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .serie-card{border:1px solid rgba(244,241,232,.16);padding:2.2rem;transition:transform .35s,border-color .35s}
-.serie-card:hover{transform:translateY(-6px);border-color:var(--dorado)}
+.serie-card:hover {transform:translateY(-6px);border-color:var(--dorado)}
 .serie-num{font-family:var(--titulos);color:var(--dorado);letter-spacing:.3em;font-size:.95rem}
 .serie-card h3{font-family:var(--titulos);font-weight:500;font-size:1.9rem;letter-spacing:.14em;margin:.8rem 0 .3rem}
 .serie-card .serie-con{font-size:.92rem;opacity:.72}
