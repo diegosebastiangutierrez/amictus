@@ -16,6 +16,7 @@
 <script src="amictus.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+	
     const video = document.getElementById("explicativoVideo");
     const ctaContainer = document.getElementById("ctaContainer");
 
@@ -26,8 +27,27 @@ document.addEventListener("DOMContentLoaded", function() {
             ctaContainer.classList.add("is-visible");
         };
     }
-});
+    
+      // 3. Create the observer
+	const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // If the video is in view, play it. Otherwise, pause it.
+      if (entry.isIntersecting) {
+        video.play().catch(error => console.log("Playback prevented:", error));
+      } else {
+        video.pause();
+        console.log("Paused")
+      }
+    });
+  }, { 
+    threshold: 0.25 // Triggers when 25% of the video is visible
+  });
 
+  // 4. Start observing the video
+  observer.observe(video);
+    
+    
+});
 </script>
 <body>
 <main>
