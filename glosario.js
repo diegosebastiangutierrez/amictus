@@ -252,7 +252,7 @@ function render(){
  if(!items.length){cont.innerHTML='<p class="vacio">Sin resultados para esa búsqueda.</p>';return;}
  const letras={};
  items.forEach(g=>{const L=norm(g.t)[0].toUpperCase();(letras[L]=letras[L]||[]).push(g);});
- cont.innerHTML=Object.keys(letras).sort().map(L=>`<section class="letra-sec"><h2 class="letra-mark">${L}</h2>${letras[L].map(g=>`<article class="entrada"><div><div class="ent-head"><h3>${g.t}</h3></div><span class="trad">EN ${g.en} · IT ${g.it} · FR ${g.fr}</span><p class="def">${g.d}</p></div><div class="prov"><span class="prov-serie">${SERIES[g.s]}</span><span class="prov-libro">${g.l}</span><span class="prov-cap ${g.c?'':'prov-cap--np'}">${g.c?'Cap. '+g.c:'Por publicar'}</span></div></article>`).join('')}</section>`).join('');
+ cont.innerHTML=Object.keys(letras).sort().map(L=>`<section class="letra-sec"><h2 class="letra-mark">${L}</h2>${letras[L].map(g=>`<article class="entrada glass"><div><div class="ent-head"><h3>${g.t}</h3></div><span class="trad">EN ${g.en} · IT ${g.it} · FR ${g.fr}</span><p class="def">${g.d}</p></div><div class="prov"><span class="prov-serie">${SERIES[g.s]}</span><span class="prov-libro">${g.l}</span><span class="prov-cap ${g.c?'':'prov-cap--np'}">${g.c?'Cap. '+g.c:'Por publicar'}</span></div></article>`).join('')}</section>`).join('');
 }
 const fCont=document.getElementById('filtros');
 const seriesPresentes=[...new Set(G.map(g=>g.s))].sort();

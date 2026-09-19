@@ -5,7 +5,7 @@
 .buscar:focus{border-color:var(--azul)}
 #glosario{
 display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 2rem;	
 }
 .filtro-g{background:none;border:1px solid rgba(10,10,11,.3);color:var(--negro);font-size:1rem;letter-spacing:.24em;text-transform:uppercase;padding:1rem 1.3rem;cursor:pointer;transition:.3s}
@@ -14,8 +14,8 @@ display: grid;
 .nota-origen{font-size:.8rem;font-style:italic;opacity:.65;width:100%}
 
 .letra-sec{margin-bottom:3.5rem}
-.letra-mark{font-family:var(--display);font-size:3.2rem;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--azul);margin-bottom:1.2rem}
-.entrada{border-top:1px solid rgba(10,10,11,.18);padding:1.5rem 0;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start}
+.letra-mark{font-family:var(--display);font-size:3.2rem;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--azul);margin-bottom:1.2rem;}
+.entrada{border-top:1px solid rgba(10,10,11,.18);padding:1.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;animation:aparecer .3s .1s ease both;animation-timeline:view();animation-range:cover 1% cover 30vh;margin-bottom:1rem;}
 .entrada:last-child{border-bottom:1px solid rgba(10,10,11,.18)}
 .ent-head h3{font-family:var(--titulos);font-weight:600;font-size:1.5rem;letter-spacing:.04em}
 .trad{display:block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--azul);margin:.35rem 0 .7rem}

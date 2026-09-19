@@ -9,9 +9,22 @@
 
 <link rel="stylesheet" href="amictus.css">
 <style>
+body{
+background-image:url(img/pexels-eva-bronzini-7641151.jpg);
+background-position:top center;
+background-size:contain;
+}
 .hub{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:1.5rem}
-.hub a{display:block;background:var(--negro-2);border:1px solid rgba(244,241,232,.16);border-top:3px solid var(--dorado);padding:1.8rem;transition:.3s}
-.hub a:hover{transform:translateY(-6px);border-top-color:var(--azul)}
+
+.hub article {
+    border: 1px solid rgba(244, 241, 232, .16);
+    padding: 2.2rem;
+    transition: transform .35s, border-color .35s;
+    animation:aparecer .3s .1s ease both;
+    animation-timeline:view();
+    animation-range:cover 1vh cover 20vh;
+}
+.hub article:hover {transform:translateY(-6px);border-color:var(--dorado)}
 .hub h3{font-family:var(--titulos);font-weight:500;font-size:1.4rem;margin-bottom:.5rem}
 .hub p{font-size:.88rem;opacity:.75}
 .hub .num{font-family:var(--display);color:var(--dorado);font-size:.8rem;letter-spacing:.2em}
@@ -29,18 +42,30 @@
 
 <section class="sec" style="padding-top:0">
   <div class="contenedor hub">
-    <a href="herramientas/tallas.html"><span class="num">01</span><h3>Conversor de talles</h3><p>Calzado y ropa en cinco sistemas, con niños.</p></a>
-    <a href="herramientas/cuidado.html"><span class="num">02</span><h3>Diagnóstico de cuidado</h3><p>Material + momento → rutina y kit.</p></a>
-    <a href="herramientas/precio-uso.html"><span class="num">03</span><h3>Precio por uso</h3><p>La regla que ordena toda compra.</p></a>
-    <a href="herramientas/test-color.html"><span class="num">04</span><h3>Test del color</h3><p>Tu perfil cálido, frío o neutro.</p></a>
-    <a href="herramientas/simbolos.html"><span class="num">05</span><h3>Símbolos de lavado</h3><p>El diccionario de la etiqueta.</p></a>
-    <a href="herramientas/etiqueta.html"><span class="num">06</span><h3>Decodificador de etiquetas</h3><p>Composición → calidad y red flags.</p></a>
-    <a href="herramientas/ocasiones.html"><span class="num">07</span><h3>Qué me pongo</h3><p>Look completo por género + accesorios con tags de afiliado.</p></a>
-    <a href="herramientas/mitos.html"><span class="num">08</span><h3>Quiz de mitos</h3><p>Diez verdades incómodas del vestir.</p></a>
-	<a href="herramientas/cuanto-cuesta-vestir-bien.html"><span class="num">09</span><h3>¿Cuánto cuesta vestir bien?</h3><p>El presupuestador de outfits, en tres presupuestos.</p></a>
-	<a href="herramientas/libros-de-moda.html"><span class="num">10</span><h3>Libros de moda</h3><p>Tu pack con descuento de biblioteca.</p></a>
-    <a href="herramientas/perfume.html"><span class="num">11</span><h3>Pirámide de perfume</h3><p>Tu familia olfativa en tres capas.</p></a>
-    <a href="herramientas/casa-profesional.html"><span class="num">12</span><h3>¿Casa o profesional?</h3><p>El cuidado en las manos correctas.</p></a>
+    <a href="herramientas/tallas.html">
+      <article class="glass">
+        <span class="num">01</span><h3>Conversor de talles</h3><p>Calzado y ropa en cinco sistemas, con niños.</p>
+      </article>
+    </a>
+    <a href="herramientas/cuidado.html">
+      <article class="glass">
+        <span class="num">02</span><h3>Diagnóstico de cuidado</h3><p>Material + momento → rutina y kit.</p>
+      </article>
+    </a>
+    <a href="herramientas/precio-uso.html">
+      <article class="glass">
+        <span class="num">03</span><h3>Precio por uso</h3><p>La regla que ordena toda compra.</p>
+      </article>
+    </a>
+    <a href="herramientas/test-color.html"><article class="glass"><span class="num">04</span><h3>Test del color</h3><p>Tu perfil cálido, frío o neutro.</p></article></a>
+    <a href="herramientas/simbolos.html"><article class="glass"><span class="num">05</span><h3>Símbolos de lavado</h3><p>El diccionario de la etiqueta.</p></article></a>
+    <a href="herramientas/etiqueta.html"><article class="glass"><span class="num">06</span><h3>Decodificador de etiquetas</h3><p>Composición → calidad y red flags.</p></article></a>
+    <a href="herramientas/ocasiones.html"><article class="glass"><span class="num">07</span><h3>Qué me pongo</h3><p>Look completo por género + accesorios.</p></article></a>
+    <a href="herramientas/mitos.html"><article class="glass"><span class="num">08</span><h3>Quiz de mitos</h3><p>Diez verdades incómodas del vestir.</p></article></a>
+	<a href="herramientas/cuanto-cuesta-vestir-bien.html"><article class="glass"><span class="num">09</span><h3>¿Cuánto cuesta vestir bien?</h3><p>Presupuestador de outfits.</p></article></a>
+	<a href="herramientas/libros-de-moda.html"><article class="glass"><span class="num">10</span><h3>Libros de moda</h3><p>Tu pack con descuento de biblioteca.</p></article></a>
+    <a href="herramientas/perfume.html"><article class="glass"><span class="num">11</span><h3>Pirámide de perfume</h3><p>Tu familia olfativa en tres capas.</p></article></a>
+    <a href="herramientas/casa-profesional.html"><article class="glass"><span class="num">12</span><h3>¿Casa o profesional?</h3><p>El cuidado en las manos correctas.</p></article></a>
   </div>
 </section>
 
