@@ -1,0 +1,16 @@
+.form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.form-grid h3{font-family:var(--titulos);font-weight:500;font-size:1.4rem;margin-bottom:.8rem;color:var(--azul)}
+.form-grid p{font-size:.92rem;opacity:.85}
+.form-grid .card {
+    background:#fff;
+    border-color:rgba(10,10,11,.2);
+    border-top-color:var(--azul)
+    padding-top: 1.4rem;
+    animation: aparecer-right .3s .1s ease both;
+    animation-timeline: view();
+    animation-range: cover 1vh cover 50vh;
+}
+
+.socios li{padding:.8rem 0 .8rem 2.1rem;position:relative;border-top:1px solid rgba(244,241,232,.12);animation:aparecer-down .3s .1s ease-in both;animation-timeline:view();animation-range:cover 1vh cover 20vh}
+.socios li::before{content:"";position:absolute;left:0;top:1.3rem;width:12px;height:12px;border:1.5px solid var(--dorado)}
+.socios li strong{font-family:var(--display);color:var(--dorado)}

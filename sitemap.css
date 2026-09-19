@@ -1,0 +1,4 @@
+.grupo{margin-bottom:3.5rem}
+.grupo h3{font-family:var(--titulos);font-weight:500;font-size:1.6rem;margin-bottom:1.2rem;color:var(--azul)}
+.grupo .chips{margin:0}
+.nota{margin-top:2rem;font-size:.8rem;font-style:italic;opacity:.65}
