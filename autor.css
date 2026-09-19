@@ -1,0 +1,24 @@
+.figura{animation:aparecer-up .3s .1s ease both;animation-timeline:view();animation-range:entry 1% contain 70%}
+.bio-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:5rem;align-items:start}
+.bio-grid h2{font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.1;margin-bottom:2rem}
+.bio p{margin-bottom:1.4rem;max-width:58ch;animation:aparecer-right .3s .1s ease both;animation-timeline:view();animation-range:cover 1vh cover 50vh}
+.ficha{margin-top:2.5rem;border-top:2px solid var(--negro);animation:aparecer-down .3s .1s ease both;animation-timeline:view();animation-range:cover 1vh cover 50vh}
+.ficha div{display:flex;gap:1.5rem;padding:.8rem 0;border-bottom:1px solid rgba(10,10,11,.15);font-size:.88rem}
+.ficha dt{flex:0 0 130px;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--azul);padding-top:.2rem}
+.firma{margin-top:2.4rem;font-family:var(--titulos);font-size:1.7rem;color:var(--azul)}
+.firma small{display:block;font-family:var(--texto);font-style:normal;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-top:.4rem}
+.ia-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.ia{background:var(--negro-2);border:1px solid rgba(244,241,232,.16);border-top:3px solid var(--blanco);padding:2.2rem 1.9rem;display:flex;flex-direction:column;gap:1rem;}
+.ia:nth-child(even){animation:aparecer-down .3s .1s ease both;animation-timeline:view();animation-range:cover 1vh cover 50vh}
+.ia:nth-child(odd){animation:aparecer-up .3s .1s ease both;animation-timeline:view();animation-range:cover 1vh cover 50vh}
+.ia--qwen{border-top-color:var(--dorado)}
+.ia--dola{border-top-color:var(--azul)}
+.ia h3{font-family:var(--display);font-weight:normal;font-size:1.7rem;letter-spacing:.04em;text-transform:uppercase}
+.ia .rol{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase}
+.ia--qwen .rol{color:var(--dorado)}
+.ia--dola .rol{color:var(--azul-claro)}
+.ia p{font-size:.92rem;opacity:.82}
+.ia .links{margin-top:auto;padding-top:1.2rem;display:flex;flex-wrap:wrap;gap:1.2rem}
+.ia .links a{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dorado);border-bottom:1px solid var(--dorado);padding-bottom:.3rem;transition:.3s}
+.ia .links a:hover{color:var(--dorado-claro);border-color:var(--dorado-claro)}
+@media (max-width:960px){.bio-grid,.ia-grid{grid-template-columns:1fr}}
