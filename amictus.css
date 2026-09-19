@@ -126,7 +126,7 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .sec--purpura{background:var(--purpura)}
 .sec h2{font-family:var(--titulos);font-size:clamp(2.2rem,5vw,4rem);line-height:1.1;max-width:25ch;animation:aparecer .9s .1s ease both;animation-timeline:view();animation-range:entry contain}
 .sec h2 em{color:var(--dorado)}
-.sec--blanco h2 em{color:var(--azul)}
+.sec--blanco h2 em, .sec--blanco .seccion-head h2 em{color:var(--azul)}
 .sec--blanco .etiqueta{color:var(--azul)}
 .sec--azul .etiqueta{color:var(--dorado-claro)}
 .bajada{max-width:56ch;opacity:.88;animation:aparecer .3s .1s ease both;animation-timeline:view();animation-range:cover 1vh cover 50vh}
