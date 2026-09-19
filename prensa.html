@@ -10,9 +10,19 @@
 <link rel="stylesheet" href="amictus.css">
 <style>
 .form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
-.form-grid h3{font-family:var(--titulos);font-weight:500;font-size:1.4rem;margin-bottom:.8rem}
+.form-grid h3{font-family:var(--titulos);font-weight:500;font-size:1.4rem;margin-bottom:.8rem;color:var(--azul)}
 .form-grid p{font-size:.92rem;opacity:.85}
-.socios li{padding:.8rem 0 .8rem 2.1rem;position:relative;border-top:1px solid rgba(244,241,232,.12)}
+.form-grid .card {
+    background:#fff;
+    border-color:rgba(10,10,11,.2);
+    border-top-color:var(--azul)
+    padding-top: 1.4rem;
+    animation: aparecer-right .3s .1s ease both;
+    animation-timeline: view();
+    animation-range: cover 1vh cover 50vh;
+}
+
+.socios li{padding:.8rem 0 .8rem 2.1rem;position:relative;border-top:1px solid rgba(244,241,232,.12);animation:aparecer-down .3s .1s ease-in both;animation-timeline:view();animation-range:cover 1vh cover 20vh}
 .socios li::before{content:"";position:absolute;left:0;top:1.3rem;width:12px;height:12px;border:1.5px solid var(--dorado)}
 .socios li strong{font-family:var(--display);color:var(--dorado)}
 </style>
@@ -40,21 +50,29 @@
 
 <section class="sec sec--blanco">
   <div class="contenedor">
-    <p class="etiqueta">Formatos de colaboración</p>
-    <h2>Cuatro maneras de <em>aparecer bien.</em></h2>
+    <div class="seccion-head">
+      <div>
+        <p class="etiqueta">Formatos de colaboración</p>
+        <h2>Cuatro maneras de <em>aparecer bien.</em></h2>
+      </div>
+    </div>
     <div class="form-grid">
-      <article class="card" style="background:#fff;border-color:rgba(10,10,11,.2);border-top-color:var(--azul)"><h3 style="color:var(--azul)">Newsletter «El Hilo»</h3><p>Patrocinio nominal de un número: una marca, un contexto, un enlace. Sin disfraces: se declara.</p></article>
-      <article class="card" style="background:#fff;border-color:rgba(10,10,11,.2);border-top-color:var(--azul)"><h3 style="color:var(--azul)">QR Compra de capítulo</h3><p>Curaduría de producto dentro de la selección en tres presupuestos, con enlace de afiliado.</p></article>
-      <article class="card" style="background:#fff;border-color:rgba(10,10,11,.2);border-top-color:var(--azul)"><h3 style="color:var(--azul)">Mención en capítulo</h3><p>Cita de proceso o material cuando la marca es parte legítima de la historia (oficio, técnica, territorio).</p></article>
-      <article class="card" style="background:#fff;border-color:rgba(10,10,11,.2);border-top-color:var(--azul)"><h3 style="color:var(--azul)">Lámina co-branded</h3><p>Infografía en 4 idiomas con logo del partner y distribución en web + Pinterest.</p></article>
+      <article class="card"><h3>Newsletter «El Hilo»</h3><p>Patrocinio nominal de un número: una marca, un contexto, un enlace. Sin disfraces: se declara.</p></article>
+      <article class="card"><h3>QR Compra de capítulo</h3><p>Curaduría de producto dentro de la selección en tres presupuestos, con enlace de afiliado.</p></article>
+      <article class="card"><h3>Mención en capítulo</h3><p>Cita de proceso o material cuando la marca es parte legítima de la historia (oficio, técnica, territorio).</p></article>
+      <article class="card"><h3>Lámina co-branded</h3><p>Infografía en 4 idiomas con logo del partner y distribución en web + Pinterest.</p></article>
     </div>
   </div>
 </section>
 
 <section class="sec">
   <div class="contenedor">
-    <p class="etiqueta">Con quién hablamos el mismo idioma</p>
-    <h2>Socios <em>naturales.</em></h2>
+    <div class="seccion-head">
+      <div>
+        <p class="etiqueta">Con quién hablamos el mismo idioma</p>
+        <h2>Socios <em>naturales.</em></h2>
+      </div>
+    </div>
     <ul class="socios">
       <li><strong>Cuidado del calzado</strong> — Saphir, Tarrago, Kiwi: el kit de CURA es su vidriera natural.</li>
       <li><strong>Marroquinería y curtidos</strong> — talleres y curtiembres con trazabilidad.</li>
@@ -66,10 +84,16 @@
 
 <section class="sec sec--azul">
   <div class="contenedor">
-    <p class="etiqueta">Contacto</p>
-    <h2>Hablemos de <em style="color:var(--dorado-claro)">moda seria.</em></h2>
-    <p class="bajada">✏️ [prensa@amictus.press] — dossier de prensa en PDF disponible a pedido. Respondemos en 48 h con cifras actualizadas de audiencia.</p>
-    <div class="cta-row"><a href="mailto:prensa@amictus.press" class="btn btn--oro">Escribir a prensa</a><a href="autor.html" class="btn btn--linea">Quién está detrás</a></div>
+    <div class="seccion-head">
+      <div>
+        <p class="etiqueta">Contacto</p>
+        <h2>Hablemos de <em>moda seria.</em></h2>
+      </div>
+      <p class="bajada">✏️ [prensa@amictus.press] — dossier de prensa en PDF disponible a pedido. Respondemos en 48 h con cifras actualizadas de audiencia.</p>
+    </div>
+    <div class="cta-row">
+      <a href="mailto:prensa@amictus.press" class="btn btn--oro">Escribir a prensa</a><a href="autor.html" class="btn btn--linea">Quién está detrás</a>
+    </div>
   </div>
 </section>
 
