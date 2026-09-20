@@ -1,9 +1,7 @@
 /* ---------- Hero de la serie ---------- */
-.hero-serie{min-height:100svh;}
 .hero-serie h1{max-width:28ch;}
 .hero-serie h1 span{color:var(--dorado)}
 .hero-serie .desc{max-width:60ch;opacity:.85}
-
 
 /* ---------- Libros de la serie ---------- */
 .libros-sec h2 em{color:var(--dorado)}

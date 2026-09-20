@@ -1,0 +1,7 @@
+.mus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.mus h3{font-family:var(--titulos);font-weight:500;font-size:1.6rem;margin-bottom:.3rem}
+.mus .city{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;opacity:.6;margin-bottom:1rem}
+.mus p{font-size:.92rem;opacity:.85}
+.mus .ver{margin-top:1.2rem;font-size:.85rem;background:none;padding:0}
+.mus .ver a{color:var(--dorado);border-bottom:1px solid var(--dorado)}
+.lic{display:inline-block;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--dorado);color:var(--dorado);padding:.3rem .6rem;margin-bottom:1rem}

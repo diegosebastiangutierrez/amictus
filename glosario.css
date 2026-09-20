@@ -21,10 +21,6 @@ display: grid;
 .trad{display:block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--azul);margin:.35rem 0 .7rem}
 .def{max-width:60ch;font-size:.95rem;opacity:.85}
 .prov{display:flex;flex-direction:column;gap:.5rem;align-items:flex-end;text-align:right}
-.prov span{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;padding:.32rem .6rem;border:1px solid;white-space:nowrap}
-.prov-serie{background:var(--azul);border-color:var(--azul);color:#fff}
-.prov-libro{border-color:rgba(10,10,11,.5)}
-.prov-cap{background:var(--dorado);border-color:var(--dorado);color:var(--negro)}
 .prov-cap--np{background:none;border-style:dashed;border-color:rgba(10,10,11,.4);color:rgba(10,10,11,.55)}
 .vacio{padding:3rem 0;font-style:italic;opacity:.6}
 
