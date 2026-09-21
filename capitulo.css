@@ -21,7 +21,7 @@ animation-timeline: scroll(root);
 .toc{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:2.5rem;animation:aparecer-up .2s .1s ease-in both}
 .toc a{font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;opacity:.65;border-bottom:1px solid transparent;padding-bottom:.3rem;transition:.3s}
 .toc a:hover{opacity:1;color:var(--dorado);border-color:var(--dorado)}
-.mini-libro{display:flex;flex-direction:column;justify-content:space-between;width:384px;aspect-ratio:2/3;background-color:var(--negro-2);border:1px solid rgba(244,241,232,.2);padding:1.3rem;transition:.35s;animation:aparecer-down .4s .2s ease-in both}
+.mini-libro{display:flex;flex-direction:column;justify-content:space-between;width:384px;aspect-ratio:2/3;background-size:cover;background-position:center;background-color:var(--negro-2);border:1px solid rgba(244,241,232,.2);padding:1.3rem;transition:.35s;animation:aparecer-down .4s .2s ease-in both}
 .mini-libro:hover{transform:translateY(-8px);border-color:var(--dorado)}
 .libro-top{display:flex;justify-content:space-between;gap:.5rem;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;opacity:.75}
 .libro-filete{width:2.5rem;height:2px;background:var(--dorado);margin-bottom:1rem}
@@ -50,10 +50,5 @@ animation-timeline: scroll(root);
 .qr p{font-size:.88rem;opacity:.8}
 .qr code{display:block;margin-top:.8rem;color:var(--dorado);font-size:.75rem}
 .qr-nota{margin-top:2rem;font-size:.8rem;font-style:italic;opacity:.6;animation:aparecer-right;animation-timeline:view();animation-range:cover 1vh cover 50vh}
-.pie-cap{padding:5rem 0;border-top:1px solid rgba(244,241,232,.12)}
-.pie-cap .contenedor{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-.pie-link small{display:block;font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:.7rem}
-.pie-link a{font-family:var(--titulos);font-size:clamp(1.4rem,3vw,2.2rem);transition:.3s}
-.pie-link a:hover{color:var(--dorado)}
-.pie-link--sig{text-align:right}
-@media (max-width:960px){.cab-grid{grid-template-columns:1fr}.mini-libro{width:210px}.pie-cap .contenedor{grid-template-columns:1fr}.pie-link--sig{text-align:left}}
+
+@media (max-width:960px){.cab-grid{grid-template-columns:1fr}.mini-libro{width:210px}}
