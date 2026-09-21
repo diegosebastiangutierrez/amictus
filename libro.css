@@ -70,13 +70,14 @@
 .qr-cajas{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .qr-cajas .qr, .formatos-grid .formato{
 transition:transform .4s, all .4s;
+animation:aparecer;animation-timeline:view();animation-range:entry cover 30%
 }
 .qr-cajas .qr:hover, .formatos-grid .formato:hover{
 transform:translateY(-8px);
 border-color:var(--dorado);
 animation:aparecer-down .5s .1s ease-in both;animation-timeline:view();animation-range:cover 1% cover 30%
 }
-.qr{background:var(--negro-2);border:1px solid rgba(244,241,232,.16);border-top:3px solid var(--blanco);padding:1.7rem}
+.qr{background:var(--negro-2);border:1px solid rgba(244,241,232,.16);border-top:3px solid var(--blanco);padding:1.7rem;}
 .qr--casa{border-top-color:var(--dorado)}
 .qr--compra{border-top-color:var(--azul)}
 .qr h4{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:.8rem}
