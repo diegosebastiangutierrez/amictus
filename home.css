@@ -70,7 +70,7 @@ button{font-family:inherit}
 .hero.is-visible .chips{animation:aparecer .6s .1s ease both;}
 .hero.is-visible .desc{animation:aparecer .7s .1s ease both;}
 .hero.is-visible .cta-row{animation:aparecer-right .7s .1s ease both;}
-.hero.is-visible h1{font-family:var(--display);max-width:30ch;overflow-wrap: break-word;word-break: break-word;font-weight:normal;text-transform:uppercase;text-fit:grow;line-height:1.25;letter-spacing:.05em;margin:0 0.2rem 2.8rem;text-shadow: 0 0 20px black;animation:aparecer .3s .1s ease both;}
+.hero.is-visible h1{font-family:var(--display);max-width:30ch;overflow-wrap: break-word;word-break: break-word;font-weight:normal;text-transform:uppercase;text-fit:grow;line-height:1.25;letter-spacing:.05em;margin:0 0.2rem 2.8rem;text-shadow: 0 0 20px black;animation:aparecer;}
 
 /* ---------- Cinta ---------- */
 .marquee{background:var(--azul);overflow:hidden;padding:1.1rem 0}
@@ -83,15 +83,15 @@ button{font-family:inherit}
 
 /* ---------- Manifiesto ---------- */
 .manifiesto{background:var(--blanco);color:var(--negro);padding:9rem 0}
-.manifiesto blockquote{font-size:clamp(1.5rem,3vw,2.6rem);line-height:1.4;max-width:36ch;animation:aparecer .3s .1s ease both;animation-timeline:view();animation-range:cover 1vh cover 40vh}
+.manifiesto blockquote{font-size:clamp(1.5rem,3vw,2.6rem);line-height:1.4;max-width:36ch;animation:aparecer .3s .1s ease both;animation-timeline:view();animation-range:entry cover 35vh}
 .manifiesto blockquote em{color:var(--azul)}
-.nota-lateral{display:flex;align-items:center;gap:1rem;margin-top:3.2rem;font-size:.75rem;letter-spacing:.32em;text-transform:uppercase;color:var(--azul);animation:aparecer-right .3s .1s ease-in both;animation-timeline:view();animation-range:cover 50px cover 30vh}
+.nota-lateral{display:flex;align-items:center;gap:1rem;margin-top:3.2rem;font-size:.75rem;letter-spacing:.32em;text-transform:uppercase;color:var(--azul);animation:aparecer-right;animation-timeline:view();animation-range:entry cover 30vh}
 .nota-lateral::before{content:"";width:3rem;height:1px;background:currentColor}
 
 /* ---------- Series ---------- */
 .series{background-image:url(img/series-bg.jpg);background-size:cover;background-position:center;}
 .series-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.serie-card{border:1px solid rgba(244,241,232,.16);padding:2.2rem;transition:transform .35s,border-color .35s;animation:aparecer .3s .1s ease both;animation-timeline:view();animation-range:cover 1vh cover 50vh}
+.serie-card{border:1px solid rgba(244,241,232,.16);padding:2.2rem;transition:transform .35s,border-color .35s;animation:aparecer .3s .1s ease both;animation-timeline:view();animation-range:entry cover 30vh}
 .serie-card:hover {transform:translateY(-6px);border-color:var(--dorado)}
 .serie-num{font-family:var(--titulos);color:var(--dorado);letter-spacing:.3em;font-size:.95rem}
 .serie-card h3{font-family:var(--titulos);font-weight:500;font-size:1.9rem;letter-spacing:.14em;margin:.8rem 0 .3rem}
@@ -107,11 +107,11 @@ button{font-family:inherit}
 /* ---------- Método ---------- */
 .metodo{background:var(--blanco);color:var(--negro)}
 .metodo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2.2rem}
-.adn-item{border-top:2px solid var(--negro);padding-top:1.4rem;animation:aparecer-right .3s .1s ease both;animation-timeline:view();animation-range:cover 1vh cover 50vh}
+.adn-item{border-top:2px solid var(--negro);padding-top:1.4rem;animation:aparecer-right .3s .1s ease both;animation-timeline:view();animation-range:entry 1vh cover 25vh}
 .adn-item strong{font-family:var(--titulos);font-weight:600;display:block;font-size:1.35rem;letter-spacing:.06em;margin-bottom:.5rem}
 .adn-item p{font-size:.9rem;line-height:1.6;opacity:.75}
 .qr-row{display:flex;gap:3rem;flex-wrap:wrap;margin-top:5rem;padding-top:3rem;border-top:1px solid rgba(28,27,24,.2)}
-.qr-item{display:flex;align-items:center;gap:.9rem;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;animation:aparecer .5s .1s ease-in both;animation-timeline:view();animation-range:cover 1% cover 30%}
+.qr-item{display:flex;align-items:center;gap:.9rem;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;animation:aparecer;animation-timeline:view();animation-range:entry cover 20%}
 .qr-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
 .qr-dot--oro{background:var(--dorado)}
 .qr-dot--azul{background:var(--azul)}
@@ -125,16 +125,16 @@ border-top:1px solid rgba(244,241,232,.12)
 font-family:var(--titulos);
 font-size:clamp(1.8rem,4vw,3rem);
 line-height:1.2;
-animation:aparecer .7s .3s ease both;animation-timeline:view();animation-range:contain 10px cover 50%;
+animation:aparecer;animation-timeline:view();animation-range:contain cover 20%;
 }
 
 /* ---------- Editorial ---------- */
 .editorial{padding:9rem 0}
 .editorial .contenedor{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .editorial img{width:100%;aspect-ratio:4/5;object-fit:cover;content-visibility: auto;}
-.cita{font-family:var(--titulos);font-style:italic;font-weight:500;font-size:clamp(2rem,4vw,3.4rem);line-height:1.2;color:var(--blanco);animation:aparecer .7s .3s ease both;animation-timeline:view();animation-range:contain 10px cover 50%;}
+.cita{font-family:var(--titulos);font-style:italic;font-weight:500;font-size:clamp(2rem,4vw,3.4rem);line-height:1.2;color:var(--blanco);animation:aparecer;animation-timeline:view();animation-range:contain cover 20%;}
 .cita b{color:var(--dorado);font-weight:500}
-.firma{margin-top:2.2rem;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--dorado);animation:aparecer-down .5s .1s ease both;animation-timeline:view()}
+.firma{margin-top:2.2rem;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--dorado);animation:aparecer-down;animation-timeline:view()}
 
 
 /* ---------- Footer ---------- */
