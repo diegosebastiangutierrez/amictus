@@ -178,7 +178,7 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .seccion-head .etiqueta{display:flex;}
 .seccion-bajada{max-width:38ch;opacity:.75;animation:aparecer;animation-timeline:view();animation-range:entry cover 30%;}
 .estanteria{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.libro{aspect-ratio:2/3;padding:1.4rem;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgb(48 48 48);transition:transform .4s,border-color .4s;background-size:cover;background-position:center;content-visibility: auto;animation:aparecer-down;animation-timeline:view();animation-range:cover 1vh cover 50vh}
+.libro{aspect-ratio:2/3;padding:1.4rem;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgb(48 48 48);transition:transform .4s,border-color .4s;background-size:cover;background-position:center;content-visibility: auto;animation:aparecer-down;animation-timeline:view();animation-range:entry cover 30vh}
 .libro:hover{transform:translateY(-8px);border-color:var(--dorado)}
 .libro .theme-container{margin-top:50%;}
 .libro--negro{background-color:var(--negro-2)}

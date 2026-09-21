@@ -99,7 +99,7 @@ button{font-family:inherit}
 .serie-meta{margin-top:1.7rem;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--dorado)}
 
 /* ---------- Catálogo ---------- */
-.filtros{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;animation:aparecer-right .3s .1s ease both;animation-timeline:view();animation-range:cover 1vh cover 50vh}
+.filtros{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;animation:aparecer-down;animation-timeline:view();animation-range:entry cover 40vh}
 .btn-filtro{background:none;border:1px solid rgba(244,241,232,.25);color:var(--blanco);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;padding:.7rem 1.2rem;cursor:pointer;transition:.3s}
 .btn-filtro:hover{border-color:var(--dorado);color:var(--dorado)}
 .btn-filtro.is-active{background:var(--dorado);border-color:var(--dorado);color:var(--negro)}
