@@ -134,7 +134,7 @@ animation:aparecer;animation-timeline:view();animation-range:entry cover 20%;
 .editorial img{width:100%;aspect-ratio:4/5;object-fit:cover;content-visibility: auto;}
 .cita{font-family:var(--titulos);font-style:italic;font-weight:500;font-size:clamp(2rem,4vw,3.4rem);line-height:1.2;color:var(--blanco);animation:aparecer;animation-timeline:view();animation-range:entry cover 20%;}
 .cita b{color:var(--dorado);font-weight:500}
-.firma{margin-top:2.2rem;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--dorado);animation:aparecer-down;animation-timeline:view()}
+.firma{margin-top:2.2rem;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--dorado);animation:aparecer-down;animation-timeline:view();animation-range: entry cover 30%;}
 
 
 /* ---------- Footer ---------- */
