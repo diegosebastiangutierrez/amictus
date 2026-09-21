@@ -34,7 +34,7 @@
           <a href="#s1">§1 La primera suela</a><a href="#s2">§2 El zapato que nombró al libro</a><a href="#s3">§3 El oficio de atar</a><a href="#s4">§4 Idea clave</a><a href="#s5">§5 Glosario</a><a href="#s6">§6 Ejercicio</a>
         </div>
       </div>
-      <a class="mini-libro" href="plantilla-libro.html" aria-label="Ver ficha de CALCEUS">
+      <a class="mini-libro" href="../libro-calceus.html" aria-label="Ver ficha de CALCEUS" style="background-image:url(../../img/tapas/calceus.jpg);">
         <span class="libro-top"><span>Amictus · Codex</span><span>I·01</span></span>
         <span><span class="libro-filete"></span><span class="libro-titulo">Calceus</span><span class="libro-tema">El libro del calzado</span></span>
         <span class="libro-top"><span>40 capítulos</span><span>MMXXVI</span></span>
@@ -127,12 +127,49 @@
   </div>
 </section>
 
-<nav class="pie-cap">
-  <div class="contenedor">
-    <div class="pie-link"><small>← Volumen</small><a href="../libro-calceus.html">Índice de CALCEUS</a></div>
-    <div class="pie-link pie-link--sig"><small>Capítulo 2 →</small><a href="capitulo-02.html">Sandalias del mundo antiguo</a></div>
-  </div>
+<nav class="sec">
+ <div class="contenedor libros-nav">
+  <!-- Added id="btn-prev" -->
+  <a id="btn-prev" class="libro-prev" href="">
+   <span class="nav-arrow">←</span>
+   <!-- Added id="txt-prev-cap" and id="txt-prev-title" -->
+   <span class="nav-txt"><small id="txt-prev-cap"></small><strong id="txt-prev-title"></strong></span>
+  </a>
+  <!-- Added id="btn-next" -->
+  <a id="btn-next" class="libro-next" href="">
+   <!-- Added id="txt-next-cap" and id="txt-next-title" -->
+   <span class="nav-txt"><small id="txt-next-cap"></small><strong id="txt-next-title"></strong></span>
+   <span class="nav-arrow">→</span>
+  </a>
+ </div>
 </nav>
+
+<script>
+const prevTitle="Índice de CALCEUS";
+const nextTitle="Sandalias del mundo antiguo";
+const prevLink="../libro-calceus.html";
+const nextLink="capitulo-02.html";
+const prevCap="Volúmen I";
+const nextCap="Capítulo 02";
+// Update Previous Button Link & Aria-Label
+const prevBtn = document.getElementById("btn-prev");
+prevBtn.href = prevLink;
+prevBtn.setAttribute("aria-label", `${prevCap} · ${prevTitle}`);
+
+// Update Previous Button Texts
+document.getElementById("txt-prev-cap").textContent = prevCap;
+document.getElementById("txt-prev-title").textContent = prevTitle;
+
+// Update Next Button Link & Aria-Label
+const nextBtn = document.getElementById("btn-next");
+nextBtn.href = nextLink;
+nextBtn.setAttribute("aria-label", `${nextCap} · ${nextTitle}`);
+
+// Update Next Button Texts
+document.getElementById("txt-next-cap").textContent = nextCap;
+document.getElementById("txt-next-title").textContent = nextTitle;
+</script>
+
 <script src="../../amictus.js"></script>
 
 </body>
