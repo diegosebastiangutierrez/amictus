@@ -125,14 +125,14 @@ border-top:1px solid rgba(244,241,232,.12)
 font-family:var(--titulos);
 font-size:clamp(1.8rem,4vw,3rem);
 line-height:1.2;
-animation:aparecer;animation-timeline:view();animation-range:contain cover 20%;
+animation:aparecer;animation-timeline:view();animation-range:entry cover 20%;
 }
 
 /* ---------- Editorial ---------- */
 .editorial{padding:9rem 0}
 .editorial .contenedor{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .editorial img{width:100%;aspect-ratio:4/5;object-fit:cover;content-visibility: auto;}
-.cita{font-family:var(--titulos);font-style:italic;font-weight:500;font-size:clamp(2rem,4vw,3.4rem);line-height:1.2;color:var(--blanco);animation:aparecer;animation-timeline:view();animation-range:contain cover 20%;}
+.cita{font-family:var(--titulos);font-style:italic;font-weight:500;font-size:clamp(2rem,4vw,3.4rem);line-height:1.2;color:var(--blanco);animation:aparecer;animation-timeline:view();animation-range:entry cover 20%;}
 .cita b{color:var(--dorado);font-weight:500}
 .firma{margin-top:2.2rem;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--dorado);animation:aparecer-down;animation-timeline:view()}
 
