@@ -38,7 +38,7 @@
 /* ---------- Partes (banda blanca) ---------- */
 .partes{background:var(--blanco);color:var(--negro)}
 .partes .seccion-head h2 em{color:var(--azul)}
-.parte{display:grid;grid-template-columns:2rem 1fr auto;gap:1.2rem;align-items:baseline;padding:1.7rem 0;border-top:1px solid rgba(10,10,11,.2)}
+.parte{display:grid;grid-template-columns:2rem 1fr auto;gap:1.2rem;align-items:baseline;padding:1.7rem 0;border-top:1px solid rgba(10,10,11,.2);animation:aparecer;animation-timeline:view();animation-range:cover 10% cover 50%;}
 .parte:last-of-type{border-bottom:1px solid rgba(10,10,11,.2)}
 .parte-num{font-family:var(--titulos);color:var(--azul);font-size:1.5rem;text-align:center;}
 .parte h3{font-family:var(--titulos);font-weight:500;font-size:1.5rem;letter-spacing:.08em}
@@ -48,7 +48,7 @@
 /* ---------- Índice (negro) ---------- */
 .indice .seccion-head h2 em{color:var(--dorado)}
 .indice-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 3.5rem}
-.cap-link{display:flex;gap:1.2rem;align-items:baseline;padding:.85rem 0;border-bottom:1px dashed rgba(244,241,232,.18);transition:.3s}
+.cap-link{display:flex;gap:1.2rem;align-items:baseline;padding:.85rem 0;border-bottom:1px dashed rgba(244,241,232,.18);transition:.3s;animation:aparecer;animation-timeline:view();animation-range:cover 10% cover 50%;}
 .cap-link:hover{color:var(--dorado);padding-left:.4rem}
 .cap-n{font-family:var(--display);color:var(--dorado);font-size:.8rem;min-width:2.1rem}
 .cap-t{flex:1;font-size:.98rem}
@@ -61,7 +61,7 @@
 .herramientas{margin-top:2.5rem}
 .herramientas li{padding:.9rem 0 .9rem 2.1rem;position:relative;border-top:1px solid rgba(10,10,11,.15);font-size:.98rem}
 .herramientas li::before{content:"";position:absolute;left:0;top:1.35rem;width:12px;height:12px;border:1.5px solid var(--azul)}
-.figura{position:relative}
+.figura{position:relative;animation:aparecer-right;animation-timeline:view();animation-range:cover 10% cover 50%;}
 .figura-marco{position:relative;aspect-ratio:4/5;background:#fff;border:1px solid rgba(10,10,11,.25);display:flex;align-items:center;justify-content:center;text-align:center;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;padding:1rem}
 
 /* ---------- QR (negro) ---------- */
@@ -74,6 +74,7 @@ transition:transform .4s, all .4s;
 .qr-cajas .qr:hover, .formatos-grid .formato:hover{
 transform:translateY(-8px);
 border-color:var(--dorado);
+animation:aparecer-down .5s .1s ease-in both;animation-timeline:view();animation-range:cover 1% cover 30%
 }
 .qr{background:var(--negro-2);border:1px solid rgba(244,241,232,.16);border-top:3px solid var(--blanco);padding:1.7rem}
 .qr--casa{border-top-color:var(--dorado)}
