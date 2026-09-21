@@ -1,4 +1,4 @@
-.figura{animation:aparecer-up .3s .1s ease both;animation-timeline:view();animation-range:entry 1% contain 70%}
+.figura{animation:aparecer-up;animation-timeline:view();animation-range:entry cover 30%}
 .bio-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:5rem;align-items:start}
 .bio-grid h2{font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.1;margin-bottom:2rem}
 .bio p{margin-bottom:1.4rem;max-width:58ch;animation:aparecer-right .3s .1s ease both;animation-timeline:view();animation-range:cover 1vh cover 50vh}
