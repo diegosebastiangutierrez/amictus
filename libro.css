@@ -59,7 +59,7 @@
 .lectura-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .lectura-sec h2 em{color:var(--azul)}
 .herramientas{margin-top:2.5rem}
-.herramientas li{padding:.9rem 0 .9rem 2.1rem;position:relative;border-top:1px solid rgba(10,10,11,.15);font-size:.98rem}
+.herramientas li{padding:.9rem 0 .9rem 2.1rem;position:relative;border-top:1px solid rgba(10,10,11,.15);font-size:.98rem;animation:aparecer-right;animation-timeline:view();animation-range:cover 1% cover 30%}
 .herramientas li::before{content:"";position:absolute;left:0;top:1.35rem;width:12px;height:12px;border:1.5px solid var(--azul)}
 .figura{position:relative;animation:aparecer-right;animation-timeline:view();animation-range:cover 10% cover 50%;}
 .figura-marco{position:relative;aspect-ratio:4/5;background:#fff;border:1px solid rgba(10,10,11,.25);display:flex;align-items:center;justify-content:center;text-align:center;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;padding:1rem}
@@ -106,15 +106,6 @@ animation:aparecer-down .5s .1s ease-in both;animation-timeline:view();animation
 .siguiente small{display:block;font-family:var(--texto);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:.6rem}
 
 
-@media (max-width:960px){
-  .hero-libro{grid-template-columns:1fr;gap:4rem}
-  .indice-grid{grid-template-columns:1fr}
-  .lectura-grid{grid-template-columns:1fr;gap:3.5rem}
-  .qr-cajas, .formatos-grid{grid-template-columns:1fr}
-  .parte{grid-template-columns:3.5rem 1fr;gap:1.2rem}
-  .parte-rango{grid-column:2}
-}
-
 /* ---- Formatos: hover elegante ---- */
 .formato{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s,border-color .35s,background .35s}
 .formato::before{content:"";position:absolute;top:0;left:0;height:3px;width:0;background:var(--dorado);transition:width .5s cubic-bezier(.2,.7,.3,1)}
@@ -127,6 +118,16 @@ animation:aparecer-down .5s .1s ease-in both;animation-timeline:view();animation
 .formato:hover .canal:nth-child(3){transition-delay:100ms}
 .formato:hover .canal:nth-child(4){transition-delay:150ms}
 .formato:hover .canal:nth-child(5){transition-delay:200ms}
+
+@media (max-width:960px){
+  .hero-libro{grid-template-columns:1fr;gap:4rem}
+  .indice-grid{grid-template-columns:1fr}
+  .lectura-grid{grid-template-columns:1fr;gap:3.5rem}
+  .qr-cajas, .formatos-grid{grid-template-columns:1fr}
+  .parte{grid-template-columns:3.5rem 1fr;gap:1.2rem}
+  .parte-rango{grid-column:2}
+}
+
 /* Accesibilidad: sin movimiento para quien lo pide */
 @media (prefers-reduced-motion:reduce){
  .formato,.formato::before,.formato::after,.formato .canal{transition:none}
