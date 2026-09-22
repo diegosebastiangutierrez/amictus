@@ -297,19 +297,21 @@ function renderEstanteria(s){
   const vols = LIBROS.filter(v=>!s || v.s==s);
   grid.innerHTML = vols.map((v,i)=>{
     contadores[v.s] = (contadores[v.s]||0)+1;
-    const num = ROM[v.s-1]+'·'+String(contadores[v.s]).padStart(2,'0');
+    const num_rom = ROM[v.s-1];
+    const num = String(contadores[v.s]).padStart(2,'0');
     const num_padded = String(contadores[v.s]).padStart(2,'0');
     const piel = v.e==='pronto' ? 'libro--negro' : PIELES[i%3];
     return `
-	<a href="${VOLUMENES[v.s].nom.toLowerCase()}/libro-${v.n.toLowerCase()}.html" alt="Amictus · ${v.s} · ${v.n.toLowerCase()}" title="Amictus · ${v.s} · ${v.n}">
-		<article class="libro ${piel} ${v.e==='pronto'?'libro--pronto':''}" style="background-image:url(img/tapas/${v.n.toLowerCase()}.jpg)">
-		  <div class="libro-top"><span>Amictus · ${VOLUMENES[v.s].nom}</span><span>${num}</span></div>
+	<a href="${VOLUMENES[v.s].nom.toLowerCase()}/libro-${v.n.toLowerCase()}.html" alt="Amictus Vol. ${num_rom} ${VOLUMENES[v.s].nom} · Libro ${num} ${v.n}" title="Amictus Vol. ${num_rom} ${VOLUMENES[v.s].nom} · Libro ${num} ${v.n}">
+		<article class="libro ${piel} ${v.e==='pronto'?'libro--pronto':''}">
+      <figure><img src="img/tapas/${v.n.toLowerCase()}.jpg" alt="Tapa Libro Amictus Vol. ${num_rom} ${VOLUMENES[v.s].nom} · Libro ${num} ${v.n}"/></figure>
+		  <header class="libro-top"><span>Amictus · ${VOLUMENES[v.s].nom}</span><span>${num}</span></header>
 		  <div class="theme-container">
-			<div class="libro-filete"></div>
-			<h3 class="libro-titulo">${v.n}</h3>
-			<p class="libro-tema">${v.t}</p>
+        <div class="libro-filete"></div>
+        <h3 class="libro-titulo">${v.n}</h3>
+        <p class="libro-tema">${v.t}</p>
 		  </div>
-		  <div class="libro-pie"><span>${v.c ? v.c+' capítulos' : 'Próximamente'}</span><em class="tag">${TAGS[v.e]}</em></div>
+		  <footer class="libro-pie"><span>${v.c ? v.c+' capítulos' : 'Próximamente'}</span><em class="tag">${TAGS[v.e]}</em></footer>
 		</article>
     </a>
     `;
