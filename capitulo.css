@@ -38,7 +38,7 @@ animation-timeline: scroll(root);
 .caja--mito{border-color:#8C1F2F;background:rgba(140,31,47,.06);}
 .caja--mito h4{color:#8C1F2F}
 .prosa .figura{margin:3rem 0;animation:aparecer-right;animation-timeline:view();animation-range:cover 1vh cover 50vh}
-.glosario{width:100%;overflow-x:scroll;border-collapse:collapse;margin:1.6rem 0 2.5rem;font-size:.92rem;background:#fff;animation:aparecer-right;animation-timeline:view();animation-range:cover 1vh cover 50vh}
+.glosario{width:100%;border-collapse:collapse;margin:1.6rem 0 2.5rem;font-size:.92rem;background:#fff;animation:aparecer-right;animation-timeline:view();animation-range:cover 1vh cover 50vh}
 .glosario th{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;text-align:left;padding:.7rem .9rem;border-bottom:2px solid var(--negro);color:var(--azul)}
 .glosario td{padding:.7rem .9rem;border-bottom:1px solid rgba(10,10,11,.15)}
 .glosario td:first-child{font-weight:600}
@@ -51,4 +51,4 @@ animation-timeline: scroll(root);
 .qr code{display:block;margin-top:.8rem;color:var(--dorado);font-size:.75rem}
 .qr-nota{margin-top:2rem;font-size:.8rem;font-style:italic;opacity:.6;animation:aparecer-right;animation-timeline:view();animation-range:cover 1vh cover 50vh}
 
-@media (max-width:960px){.cab-grid{grid-template-columns:1fr}.mini-libro{display:grid;max-width:200px;margin:0 auto;align-content:space-evenly}}
+@media (max-width:960px){.cab-grid{grid-template-columns:1fr}.mini-libro{width:100%;margin:0 auto;align-content:space-evenly}}
