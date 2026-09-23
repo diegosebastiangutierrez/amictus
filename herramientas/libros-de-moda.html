@@ -90,9 +90,9 @@ document.querySelectorAll('.bk').forEach(c=>c.addEventListener('click',()=>{
 
 function miniTapa(s,l,i){
  return `<div class="tapa tapa--mini ${l.e==='w'?'tapa--pronto':PIELES[i%3]}" style="background-image:url(../img/tapas/${slug(l.n)}.jpg)">
-  <span class="tapa-top"><span>Amictus·${s.nom}</span><span>${s.rom}${String(s.libros.indexOf(l)+1).padStart(2,'0')}</span></span>
+  <span class="tapa-top"></span>
   <span class="tapa-mid"><span class="tapa-filete"></span><span class="tapa-titulo">${l.n}</span><span class="tapa-tema">${l.t}</span></span>
-  <span class="tapa-pie"><span>${l.c?l.c+' caps':'Próx.'}</span><em class="tag">${TAG[l.e]}</em></span>
+  <span class="tapa-pie"></span>
  </div>`;
 }
 function volTapa(s){
