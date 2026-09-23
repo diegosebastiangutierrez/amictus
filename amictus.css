@@ -352,7 +352,7 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 
 /* HERRAMIENTAS - ETIQUETAS */
 
-.fib-row{display:grid;grid-template-columns:1fr 120px 44px;gap:.8rem;margin-bottom:.9rem}
+.fib-row{display:grid;grid-template-columns:4fr 1fr 44px;gap:1rem;margin-bottom:1rem}
 .fib-row select,.fib-row input{background:#fff;border:1px solid rgba(10,10,11,.35);padding:.85rem 1rem;font-family:var(--texto);color:var(--negro);outline:none}
 .fib-row .quitar{border:1px solid rgba(10,10,11,.3);background:none;color:var(--negro);cursor:pointer}
 .ver-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem;margin-top:2.5rem}
@@ -486,6 +486,7 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .sim svg{width:64px;height:64px;margin:0 auto 1rem;display:block}
 .sim h3{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--negro)}
 .sim p{font-size:.78rem;opacity:.8;margin-top:.4rem}
+p.legend{margin:-1rem 0 2rem;font-size:.85rem;font-style:italic;opacity:.7}
 .orden{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2.5rem}
 .orden span{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(10,10,11,.3);padding:.5rem .9rem}
 
