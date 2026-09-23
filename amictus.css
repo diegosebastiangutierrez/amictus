@@ -259,7 +259,7 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 
 /* HERRAMIENTAS - CCOMPRAR LIBROS DE MODA */
 
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.grid2{display:grid;grid-template-columns:2fr 1fr;gap:2rem;align-items:start}
 .bk-grupo{margin-bottom:2.5rem}
 .bk-grupo h3{font-family:var(--titulos);font-weight:500;font-size:1.9rem;margin-bottom:1rem;color:var(--azul-noche)}
 .bk-grupo h3 small{font-size:.8rem;letter-spacing:.2em;opacity:.8}
