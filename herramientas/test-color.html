@@ -69,8 +69,8 @@ const RES={
 };
 const resp=Array(QS.length).fill(null);
 const $=id=>document.getElementById(id);
-$('quiz').innerHTML=QS.map((q,i)=>`<article class="paso"><figure><img src="../img/tools/test-color/${q.i}" alt="${q.q}"/></figure><header><h3><small>0${i+1}</small>${q.q}</h3></header>
- <div class="opts">${q.o.map((o,j)=>`<button class="opt" data-i="${i}" data-j="${j}">${o[0]}</button>`).join('')}</div></article>`).join('');
+$('quiz').innerHTML=QS.map((q,i)=>`<article class="paso"><figure><img src="../img/tools/test-color/${q.i}" alt="${q.q}"/></figure><div class="filas"><header><h3><small>0${i+1}</small>${q.q}</h3></header>
+ <div class="opts">${q.o.map((o,j)=>`<button class="opt" data-i="${i}" data-j="${j}">${o[0]}</button>`).join('')}</div></div></article>`).join('');
 document.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
   const i=+b.dataset.i;
   b.parentElement.querySelectorAll('.opt').forEach(x=>x.classList.remove('is-on'));
