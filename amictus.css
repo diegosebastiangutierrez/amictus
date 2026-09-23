@@ -376,8 +376,6 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .spon{display:inline-block;font-size:.56rem;letter-spacing:.12em;color:#8F6F2C;border:1px solid var(--dorado);padding:.15rem .45rem;margin-top:.3rem;margin-left:.3rem}
 .cod-out{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.6rem);color:var(--azul);margin-top:2.5rem}
 .pal-row{display:flex;gap:.9rem;flex-wrap:wrap;margin:1.2rem 0 0}
-.sw-wrap{text-align:center;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
-.sw{width:52px;height:52px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.22);margin:0 auto .4rem}
 .spon-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem}
 .spon-row span{font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--dorado);color:#8F6F2C;padding:.4rem .8rem}
 /* ---- Grilla de afiliados / sponsors ---- */
@@ -418,15 +416,15 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .nota-tool{margin-top:2.2rem;font-size:.85rem;font-style:italic;opacity:.7}
 
 /* HERRAMIENTAS - TEST COLOR */
-.paso{margin-bottom:2.5rem}
+
+.paso{margin-bottom:2.5rem;display:grid;grid-template-columns:2fr 2fr;grid-template-rows:1fr 1fr;gap:1rem;}
+.paso figure{grid-row:span 2;border:1px solid var(--azul-claro)}
+.paso figure img{width:100%;aspect-ratio:1/1;}
 .paso h3{font-family:var(--titulos);font-weight:500;font-size:clamp(1.1rem,2.5vw,2rem);margin-bottom:1rem}
 .paso h3 small{font-family:var(--display);color:var(--azul);margin-right:.8rem;font-size:1rem}
 .opts{display:flex;gap:.7rem;flex-wrap:wrap}
-
 .opt{border:1px solid rgba(10,10,11,.35);background:none;color:var(--negro);padding:.8rem 1.3rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:.3s}
-
 .opt:hover{border-color:var(--azul);color:var(--azul)}
-
 .opt.is-on{background:var(--azul);border-color:var(--azul);color:#fff}
 #dx{display:none;border:2px solid var(--azul);padding:2.5rem;margin-top:3rem;background:#fff}
 #dx.is-on{display:block}
@@ -435,13 +433,12 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 #dx .kit li{padding:.4rem 0 .4rem 1.6rem;position:relative}
 #dx .kit li::before{content:"🛍";position:absolute;left:0;font-size:.8rem}
 #dx .kit a{color:var(--cobre,#7A4A1F);color:#7A4A1F;border-bottom:1px solid #7A4A1F;font-size:.85rem}
-
 #resColor{display:none;border:2px solid var(--azul);background:#fff;padding:2.5rem;margin-top:3rem}
 #resColor.is-on{display:block}
 #resColor h3{font-family:var(--titulos);font-size:1.9rem;color:var(--azul);margin-bottom:1rem}
 .sw-row{display:flex;gap:1rem;flex-wrap:wrap;margin:1.6rem 0}
-.sw-wrap{text-align:center;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
-.sw{width:64px;height:64px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.25);margin-bottom:.4rem}
+.sw-wrap{text-align:center;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.sw{width:64px;height:64px;border-radius:50%;border:3px solid lightgrey;box-shadow:0 2px 10px rgba(0,0,0,.25);margin-bottom:.4rem}
 
 /* HERRAMIENTAS - PRECIO / USO */
 
@@ -580,6 +577,11 @@ p.legend{margin:-1rem 0 2rem;font-size:.85rem;font-style:italic;opacity:.7}
   to { transform: translateX(-100%); }
 }
 
+@media (max-width:540px){
+.paso{margin-bottom:2.5rem;display:grid;grid-template-columns:1fr;gap:1rem;}
+.paso figure{border:1px solid var(--azul-claro)}
+}
+
 @media (max-width:760px){
 .topbar nav{display:none}
 .nav-cta{display:none}
@@ -591,11 +593,11 @@ p.legend{margin:-1rem 0 2rem;font-size:.85rem;font-style:italic;opacity:.7}
 .cd-inner{justify-content:center;text-align:center}
 .cd-txt .tipo{justify-content:center}
 .footer-cols{grid-template-columns:1fr 1fr}
- .nav-txt{display:none}
- .nav-arrow{font-size:3rem}
- .libros-nav{gap:1rem}
- .libros-nav a,.libros-nav .libro-prev{display:flex;justify-content:flex-start;padding:1rem}
- .libros-nav a,.libros-nav .libro-next{display:flex;justify-content:flex-end;padding:1rem}
+.nav-txt{display:none}
+.nav-arrow{font-size:3rem}
+.libros-nav{gap:1rem}
+.libros-nav a,.libros-nav .libro-prev{display:flex;justify-content:flex-start;padding:1rem}
+.libros-nav a,.libros-nav .libro-next{display:flex;justify-content:flex-end;padding:1rem}
 }
 
 
@@ -612,9 +614,13 @@ p.legend{margin:-1rem 0 2rem;font-size:.85rem;font-style:italic;opacity:.7}
 .tool{grid-template-columns:1fr}
 .footer-cols div:nth-child(1){text-align:left}
 .footer-cols div:nth-child(3){text-align:right}
+.paso{margin-bottom:2.5rem;display:grid;grid-template-columns:2fr 4fr;grid-template-rows:1fr 1fr;gap:1rem;}
+.paso figure{grid-row:span 2;border:1px solid var(--azul-claro)}
 }
 
 @media (min-width:961px){
+.paso{margin-bottom:2.5rem;display:grid;grid-template-columns:1fr 4fr;grid-template-rows:2fr 1fr;gap:1rem;}
+.paso figure{grid-row:span 2;border:1px solid var(--azul-claro)}
 .metodo-grid{grid-template-columns:repeat(3,1fr)}
 .footer-cols div:nth-child(1){text-align:left}
 .footer-cols div:nth-child(3){text-align:right}
