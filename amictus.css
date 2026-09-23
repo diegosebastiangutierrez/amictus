@@ -591,6 +591,7 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .cd-txt .tipo{justify-content:center}
 .footer-cols{grid-template-columns:1fr 1fr}
  .nav-txt{display:none}
+ .nav-arrow{font-size:3rem}
  .libros-nav{gap:1rem}
  .libros-nav a,.libros-nav .libro-prev{display:flex;justify-content:flex-start;padding:1rem}
  .libros-nav a,.libros-nav .libro-next{display:flex;justify-content:flex-end;padding:1rem}
