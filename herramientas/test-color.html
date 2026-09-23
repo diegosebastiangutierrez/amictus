@@ -50,11 +50,11 @@
 <script src="../amictus.js"></script>
 <script>
 const QS=[
- {q:'Las venas de tu muñeca se ven…',o:[['Azules / violetas',-1],['Verdes',1],['No se distinguen',0]]},
- {q:'¿Qué metal te unifica mejor la piel?',o:[['Plata',-1],['Oro',1],['Ambos',0]]},
- {q:'Al sol, tu piel…',o:[['Se quema primero',-1],['Se broncea fácil',1],['Se quema y luego broncea',0]]},
- {q:'Tu cabello natural tiene…',o:[['Reflejos ceniza',-1],['Reflejos cobrizos / dorados',1],['Tono neutro',0]]},
- {q:'Con blanco roto (crema) vs. blanco óptico…',o:[['Mejor con óptico',-1],['Mejor con crema',1],['Igual',0]]}
+ {q:'Las venas de tu muñeca se ven…',i:'veins.jpg',o:[['Azules / violetas',-1],['Verdes',1],['No se distinguen',0]]},
+ {q:'¿Qué metal te unifica mejor la piel?',i:'metals.jpg',o:[['Plata',-1],['Oro',1],['Ambos',0]]},
+ {q:'Al sol, tu piel…',i:'skinsun.jpg',o:[['Se quema primero',-1],['Se broncea fácil',1],['Se quema y luego broncea',0]]},
+ {q:'Tu cabello natural tiene…',i:'hairtones.jpg',o:[['Reflejos ceniza',-1],['Reflejos cobrizos / dorados',1],['Tono neutro',0]]},
+ {q:'Con blanco roto (crema) vs. blanco óptico…',i:'creamoptic.jpg',o:[['Mejor con óptico',-1],['Mejor con crema',1],['Igual',0]]}
 ];
 const RES={
  calido:{t:'Perfil cálido · primavera / otoño',d:'Tu armonía vive en el lado dorado del círculo: tierras, terracota, oliva, camel y crema. El cobre de esta web es tuyo.',
@@ -69,14 +69,15 @@ const RES={
 };
 const resp=Array(QS.length).fill(null);
 const $=id=>document.getElementById(id);
-$('quiz').innerHTML=QS.map((q,i)=>`<div class="paso"><h3><small>0${i+1}</small>${q.q}</h3>
- <div class="opts">${q.o.map((o,j)=>`<button class="opt" data-i="${i}" data-j="${j}">${o[0]}</button>`).join('')}</div></div>`).join('');
+$('quiz').innerHTML=QS.map((q,i)=>`<article class="paso"><figure><img src="../img/tools/test-color/${q.i}" alt="${q.q}"/></figure><header><h3><small>0${i+1}</small>${q.q}</h3></header>
+ <div class="opts">${q.o.map((o,j)=>`<button class="opt" data-i="${i}" data-j="${j}">${o[0]}</button>`).join('')}</div></article>`).join('');
 document.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
   const i=+b.dataset.i;
   b.parentElement.querySelectorAll('.opt').forEach(x=>x.classList.remove('is-on'));
   b.classList.add('is-on');
   resp[i]=QS[i].o[+b.dataset.j][1];
   if(resp.every(r=>r!==null))pinta();
+    console.log(b);
 }));
 function pinta(){
   const s=resp.reduce((a,b)=>a+b,0);
