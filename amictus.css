@@ -259,7 +259,7 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 
 /* HERRAMIENTAS - CCOMPRAR LIBROS DE MODA */
 
-.grid2{display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:start}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
 .bk-grupo{margin-bottom:2.5rem}
 .bk-grupo h3{font-family:var(--titulos);font-weight:500;font-size:1.9rem;margin-bottom:1rem;color:var(--azul-noche)}
 .bk-grupo h3 small{font-size:.8rem;letter-spacing:.2em;opacity:.8}
@@ -282,7 +282,7 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .shelf-sec>h3{font-family:var(--titulos);color:var(--negro);font-size:clamp(1.2rem,2vw,1.7rem)}
 .shelf-block{margin-top:2.5rem;container-type:inline-size}
 .shelf-block h4{font-family:var(--titulos);font-weight:600;font-size:1.25rem;color:var(--azul);margin-bottom:1.2rem}
-.shelf-grid{--gap:1rem;--miniw:calc((100cqw - 7*var(--gap))/8);display:grid;grid-template-columns:repeat(8,1fr);grid-auto-rows:calc(1.5*var(--miniw));gap:var(--gap)}
+.shelf-grid{--gap:1rem;--miniw:calc((100cqw - 4*var(--gap))/5);display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:calc(1.5*var(--miniw));gap:var(--gap)}
 .tapa{grid-column:span 2;grid-row:span 2;padding:1.1rem;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(10,10,11,.3);color:var(--blanco);min-width:0;overflow:hidden;content-visibility: auto;}
 .tapa:hover, .vol-cover:hover{transform:translateY(-5px)}
 .tapa--negro{background-color:var(--negro-2)}
@@ -583,6 +583,8 @@ a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-wi
 .topbar nav{display:none}
 .nav-cta{display:none}
 .burger{display:block}
+.grid2{grid-template-columns:1fr}
+.resumen{position:static}
 .aff-grid{grid-template-columns:1fr}
 .cd-inner{justify-content:center;text-align:center}
 .cd-txt .tipo{justify-content:center}
