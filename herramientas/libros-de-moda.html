@@ -8,9 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link rel="stylesheet" href="../amictus.css">
-<style>
 
-</style>
 </head>
 <body>
 
@@ -66,10 +64,10 @@ const SERIES=[
   {n:'AMÉRICA',t:'Moda americana',c:null,e:'w',p:6.99},{n:'ISLAM',t:'Moda islámica',c:null,e:'w',p:6.99},
   {n:'OCEANÍA',t:'Moda de Oceanía',c:null,e:'w',p:6.99},{n:'BOREALIS',t:'Moda nórdica',c:null,e:'w',p:6.99}]},
  {nom:'MERCATUS',rom:'V',bundle:14.99,libros:[
-  {n:'AURUM INVEST',t:'Inversión en moda',c:null,e:'w',p:6.99},{n:'SUPPLY',t:'Cadena de suministro',c:null,e:'w',p:6.99},
+  {n:'INVEST',t:'Inversión en moda',c:null,e:'w',p:6.99},{n:'SUPPLY',t:'Cadena de suministro',c:null,e:'w',p:6.99},
   {n:'MERCATOR',t:'Comercio y retail',c:null,e:'w',p:6.99},{n:'DIGITALIS',t:'Moda digital',c:null,e:'w',p:6.99}]},
  {nom:'OPUS',rom:'VI',bundle:12.99,libros:[
-  {n:'ARTIFEX',t:'Los oficios',c:null,e:'w',p:6.99},{n:'INSTRUMENTUM',t:'Herramientas',c:null,e:'w',p:6.99},
+  {n:'ARTIFEX',t:'Los oficios',c:null,e:'w',p:6.99},{n:'ORGANA',t:'Herramientas',c:null,e:'w',p:6.99},
   {n:'TECHNICA',t:'Técnicas',c:null,e:'w',p:6.99}]}
 ];
 const TAG={ok:'Listo',imp:'En imprenta',free:'Gratis',w:'En escritura'};
@@ -91,14 +89,14 @@ document.querySelectorAll('.bk').forEach(c=>c.addEventListener('click',()=>{
 }));
 
 function miniTapa(s,l,i){
- return `<div class="tapa tapa--mini ${l.e==='w'?'tapa--pronto':PIELES[i%3]}" data-img="img/tapas/${slug(l.n)}.jpg">
+ return `<div class="tapa tapa--mini ${l.e==='w'?'tapa--pronto':PIELES[i%3]}" style="background-image:url(../img/tapas/${slug(l.n)}.jpg)">
   <span class="tapa-top"><span>Amictus·${s.nom}</span><span>${s.rom}${String(s.libros.indexOf(l)+1).padStart(2,'0')}</span></span>
   <span class="tapa-mid"><span class="tapa-filete"></span><span class="tapa-titulo">${l.n}</span><span class="tapa-tema">${l.t}</span></span>
   <span class="tapa-pie"><span>${l.c?l.c+' caps':'Próx.'}</span><em class="tag">${TAG[l.e]}</em></span>
  </div>`;
 }
 function volTapa(s){
- return `<div class="vol-cover" data-img="img/tapas/serie-${slug(s.nom)}.jpg">
+ return `<div class="vol-cover" style="background-image:url(../img/tapas/serie-${slug(s.nom)}.jpg)">
   <span class="tapa-top"><span>Amictus</span><span>Serie ${s.rom}</span></span>
   <span class="tapa-mid"><span class="tapa-filete"></span><span class="tapa-titulo">${s.nom}</span><span class="tapa-tema">serie completa · ${s.libros.length} libros</span></span>
   <span class="tapa-pie"><span>Bundle</span><em class="tag">US$ ${s.bundle}</em></span>
