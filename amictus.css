@@ -510,7 +510,7 @@ p.legend{margin:-1rem 0 2rem;font-size:.85rem;font-style:italic;opacity:.7}
 .cd-txt h3{font-family:var(--titulos);font-weight:500;font-size:clamp(1.6rem,3.5vw,2.6rem);margin-top:.7rem;line-height:1.25}
 .cd-txt h3 em{color:var(--dorado)}
 .cd-txt p{font-size:.85rem;opacity:.7;margin-top:.5rem}
-.cd-num{display:flex;flex-direction:row;flex-wrap:wrap;;gap:1.6rem;animation:aparecer-down;animation-timeline:view();animation-range:cover 1vh cover 40vh}
+.cd-num{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-evenly;gap:1.6rem;animation:aparecer-down;animation-timeline:view();animation-range:cover 1vh cover 40vh}
 .cd-num div{text-align:center;min-width:5rem;}
 .cd-num strong{display:block;font-family:var(--display);font-weight:normal;font-size:clamp(2rem,5vw,3.6rem);color:var(--dorado);line-height:1}
 .cd-num span{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6}
