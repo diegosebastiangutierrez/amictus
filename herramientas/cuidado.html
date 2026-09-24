@@ -23,14 +23,16 @@
 <section class="sec sec--blanco">
   <div class="contenedor">
     <article class="paso">
-      <figure><img/></figure>
+      <figure><img id="material" src="../img/texturas/materiales.jpg" alt="Materiales a cuidar"/></figure>
       <div class="filas">
-        <h3><small>1</small>El material</h3><div class="opts" id="mats"></div></div>
+        <div><h3><small>1</small>El material</h3></div>
+        <div class="opts" id="mats"></div>
+      </div>
     </article>
     <article class="paso">
-      <figure><img/></figure>
+      <figure><img id="moment" src="../img/texturas/momento.jpg" alt="Momento a evaluar para el cuidado"/></figure>
       <div class="filas">
-        <h3><small>2</small>El momento</h3>
+        <div><h3><small>2</small>El momento</h3></div>
         <div class="opts" id="conds"></div>
       </div>
     </article>
@@ -64,7 +66,7 @@ const CONDS={
  'revivir':{n:'Pieza olvidada',t:'Sumá: inspección en tres pasos (suela/costuras, superficie, olor) y recién después rutina completa.'}
 };
 let mat=null,cond=null;
-const $=id=>document.getElementById(id);
+const $ = id => document.getElementById(id);
 $('mats').innerHTML=Object.entries(MATS).map(([k,v])=>`<button class="opt" data-k="${k}">${v.n}</button>`).join('');
 $('conds').innerHTML=Object.entries(CONDS).map(([k,v])=>`<button class="opt" data-k="${k}">${v.n}</button>`).join('');
 
@@ -88,6 +90,10 @@ $('mats').addEventListener('click',e=>{
   $('mats').querySelectorAll('.opt').forEach(x=>x.classList.remove('is-on'));
   e.target.classList.add('is-on');
   mat=e.target.dataset.k;
+  
+  // Cambia el src de la imagen de material usando el ID de la clave (ej: "cuero.jpg", "gamuza.jpg")
+  $('material').src = `../img/texturas/${mat}.jpg`;
+  
   pinta();
 });
 
@@ -95,8 +101,14 @@ $('conds').addEventListener('click',e=>{
   if(!e.target.classList.contains('opt')) return;
   $('conds').querySelectorAll('.opt').forEach(x=>x.classList.remove('is-on'));
   e.target.classList.add('is-on');
-  cond=e.target.dataset.k;pinta();
+  cond=e.target.dataset.k;
+  
+  // Cambia el src de la imagen de momento usando el ID de la clave (ej: "diario.jpg", "guardado.jpg")
+  $('moment').src = `../img/texturas/${cond}.jpg`; 
+  
+  pinta();
 });
+
 </script>
 </body>
 </html>
