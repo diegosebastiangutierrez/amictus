@@ -30,7 +30,7 @@
     </div>
     <div id="out"></div>
 
-    <p style="margin-top:2rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;opacity:.6">Espacios de sponsor naturales de este veredicto</p>
+    <p class="sponsors-space">Espacios de sponsor naturales de este veredicto</p>
     <div class="spon-row" id="spon"></div>
 
     <div class="aff-sec">
@@ -86,7 +86,7 @@ function card(it){return `<article class="aff-card" data-aff="${it[2]}"><p class
 function pinta(){
  const pre=$('pre').value, prob=$('pro').value, pais=$('pais').value;
  const r=D[pre][prob]||['casa','Sin dato específico: ante la duda, menos es más.','—'];
- $('out').innerHTML=`<div class="veredicto veredicto--${r[0]}"><h3>${r[0]==='casa'?'🏠':'🏆'} ${C[r[0]]}</h3><p style="margin-top:1rem;max-width:60ch;color:var(--negro)">${r[1]}</p><p class="costo">${r[0]==='pro'?'Costo estimado: '+r[2]:'Costo: '+r[2]}</p></div>`;
+ $('out').innerHTML=`<div class="veredicto veredicto--${r[0]}"><h3>${r[0]==='casa'?'🏠':'🏆'} ${C[r[0]]}</h3><p class="explain">${r[1]}</p><p class="costo">${r[0]==='pro'?'Costo estimado: '+r[2]:'Costo: '+r[2]}</p></div>`;
  const sponsors=new Set(); let items=[];
  if(r[0]==='casa'){
   $('affTitle').textContent='Kit para hacerlo en casa · afiliados & sponsors';
