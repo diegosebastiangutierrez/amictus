@@ -67,20 +67,36 @@ let mat=null,cond=null;
 const $=id=>document.getElementById(id);
 $('mats').innerHTML=Object.entries(MATS).map(([k,v])=>`<button class="opt" data-k="${k}">${v.n}</button>`).join('');
 $('conds').innerHTML=Object.entries(CONDS).map(([k,v])=>`<button class="opt" data-k="${k}">${v.n}</button>`).join('');
+
 function pinta(){
   if(!mat||!cond)return;
   const m=MATS[mat],c=CONDS[cond];
   $('dx').classList.add('is-on');
   $('dx').innerHTML=`<h3>Rutina para ${m.n.toLowerCase()} · ${c.n.toLowerCase()}</h3>
-   <h4>Rutina base</h4><ul class="checklist">${m.r.map(x=>`<li>${x}</li>`).join('')}</ul>
+  <h4>Rutina base</h4>
+  <ul class="checklist">
+  ${m.r.map(x=>`
+    <li>${x}</li>`).join('')}
+  </ul>
    <h4>Para este momento</h4><p>${c.t}</p>
    <h4>Kit en tres presupuestos (QR Compra)</h4><ul class="kit">${m.k.map(x=>`<li>${x} — <a href="qrs.html">ver selección amictus.press/x</a></li>`).join('')}</ul>
    <p style="margin-top:1.6rem;font-size:.85rem;opacity:.7">Fuente: ${m.l} · caps. ${m.c} — <a href="glosario.html" style="border-bottom:1px solid currentColor">glosario</a></p>`;
 }
-$('mats').addEventListener('click',e=>{if(!e.target.classList.contains('opt'))return;
-  $('mats').querySelectorAll('.opt').forEach(x=>x.classList.remove('is-on'));e.target.classList.add('is-on');mat=e.target.dataset.k;pinta();});
-$('conds').addEventListener('click',e=>{if(!e.target.classList.contains('opt'))return;
-  $('conds').querySelectorAll('.opt').forEach(x=>x.classList.remove('is-on'));e.target.classList.add('is-on');cond=e.target.dataset.k;pinta();});
+
+$('mats').addEventListener('click',e=>{
+  if(!e.target.classList.contains('opt')) return;
+  $('mats').querySelectorAll('.opt').forEach(x=>x.classList.remove('is-on'));
+  e.target.classList.add('is-on');
+  mat=e.target.dataset.k;
+  pinta();
+});
+
+$('conds').addEventListener('click',e=>{
+  if(!e.target.classList.contains('opt')) return;
+  $('conds').querySelectorAll('.opt').forEach(x=>x.classList.remove('is-on'));
+  e.target.classList.add('is-on');
+  cond=e.target.dataset.k;pinta();
+});
 </script>
 </body>
 </html>
